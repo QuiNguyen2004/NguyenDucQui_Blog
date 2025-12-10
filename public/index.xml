@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Blog Lập Trình</title>
+    <link>http://localhost:1313/QuiNguyen2004/NguyenDucQui_Blog.git/</link>
+    <description>Recent content on Blog Lập Trình</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>vi</language>
+    <lastBuildDate>Wed, 10 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/QuiNguyen2004/NguyenDucQui_Blog.git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/QuiNguyen2004/NguyenDucQui_Blog.git/about/</link>
+      <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/QuiNguyen2004/NguyenDucQui_Blog.git/about/</guid>
+      <description>&lt;h2 id=&#34;-xin-chào-mình-là-nguyễn-đức-qui&#34;&gt;👋 Xin chào! Mình là [Nguyễn Đức Qui]&lt;/h2&gt;
+&lt;p&gt;Chào mừng bạn đến với blog cá nhân của mình. Đây là nơi mình chia sẻ hành trình học tập và nghiên cứu về &lt;strong&gt;Lập trình Mạng&lt;/strong&gt;, &lt;strong&gt;Java&lt;/strong&gt; và &lt;strong&gt;JavaScript&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Đồ án này được thực hiện trong khuôn khổ học phần &lt;strong&gt;[Tên Môn Học]&lt;/strong&gt; tại &lt;strong&gt;[Tên Trường Đại Học]&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;-mục-tiêu-phát-triển&#34;&gt;🚀 Mục tiêu phát triển&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Xây dựng nền tảng vững chắc về Lập trình hướng đối tượng (OOP) với Java.&lt;/li&gt;
+&lt;li&gt;Hiểu sâu về cơ chế hoạt động của Web và giao thức mạng.&lt;/li&gt;
+&lt;li&gt;Trở thành một Fullstack Developer trong tương lai.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-kỹ-năng-công-nghệ-tech-stack&#34;&gt;🛠 Kỹ năng công nghệ (Tech Stack)&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Lĩnh vực&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Công nghệ / Công cụ&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Ngôn ngữ&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Java, JavaScript, HTML/CSS&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Framework&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Spring Boot (Learning), Node.js&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Tools&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Git/GitHub, VS Code, IntelliJ IDEA&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Database&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;MySQL, MongoDB&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;-liên-hệ-với-mình&#34;&gt;📫 Liên hệ với mình&lt;/h3&gt;
+&lt;p&gt;Nếu bạn có cùng đam mê hoặc muốn trao đổi về lập trình, hãy kết nối với mình qua:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bài 1: Lập trình mạng cơ bản với Java Socket</title>
+      <link>http://localhost:1313/QuiNguyen2004/NguyenDucQui_Blog.git/posts/bai-1-java-socket/</link>
+      <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/QuiNguyen2004/NguyenDucQui_Blog.git/posts/bai-1-java-socket/</guid>
+      <description>&lt;h2 id=&#34;1-java-socket-là-gì&#34;&gt;1. Java Socket là gì?&lt;/h2&gt;
+&lt;p&gt;Socket là điểm đầu cuối của liên kết truyền thông hai chiều giữa hai chương trình chạy trên mạng. Trong Java, gói &lt;code&gt;java.net&lt;/code&gt; cung cấp các class để lập trình mạng.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Socket:&lt;/strong&gt; Dùng cho Client.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ServerSocket:&lt;/strong&gt; Dùng cho Server (để lắng nghe kết nối).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-code-ví-dụ-client---server-đơn-giản&#34;&gt;2. Code ví dụ: Client - Server đơn giản&lt;/h2&gt;
+&lt;p&gt;Dưới đây là ví dụ tạo một Server lắng nghe và một Client gửi lời chào.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

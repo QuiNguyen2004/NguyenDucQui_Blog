@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/QuiNguyen2004/NguyenDucQui_Blog.git/about/</loc>
+    <lastmod>2025-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/QuiNguyen2004/NguyenDucQui_Blog.git/posts/bai-1-java-socket/</loc>
+    <lastmod>2025-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/QuiNguyen2004/NguyenDucQui_Blog.git/</loc>
+    <lastmod>2025-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/QuiNguyen2004/NguyenDucQui_Blog.git/tags/java/</loc>
+    <lastmod>2025-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/QuiNguyen2004/NguyenDucQui_Blog.git/tags/network/</loc>
+    <lastmod>2025-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/QuiNguyen2004/NguyenDucQui_Blog.git/posts/</loc>
+    <lastmod>2025-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/QuiNguyen2004/NguyenDucQui_Blog.git/tags/</loc>
+    <lastmod>2025-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/QuiNguyen2004/NguyenDucQui_Blog.git/categories/</loc>
+  </url>
+</urlset>

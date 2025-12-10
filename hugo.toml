@@ -1,0 +1,26 @@
+baseURL = "https://github.com/QuiNguyen2004/NguyenDucQui_Blog.git/"
+languageCode = "vi"
+title = "Blog Lập Trình"
+theme = "PaperMod"
+
+[params]
+    defaultTheme = "auto"
+    ShowShareButtons = true
+    ShowCodeCopyButtons = true
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Trang Chủ"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    identifier = "blog"
+    name = "Bài Viết"
+    url = "/posts"
+    weight = 20
+  [[menu.main]]
+    identifier = "about"
+    name = "Profile"
+    url = "/about"
+    weight = 30
