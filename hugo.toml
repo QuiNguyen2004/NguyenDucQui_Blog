@@ -5,26 +5,29 @@ theme = "PaperMod"
 publishDir = "docs"
 
 [params]
-    defaultTheme = "auto"
+    defaultTheme = "light"
     ShowShareButtons = true
     ShowCodeCopyButtons = true
-
-    # --- KHẮC PHỤC LỖI GIAO DIỆN KHÔNG HIỆN (QUAN TRỌNG) ---
     [params.assets]
         disableFingerprinting = true
     # -------------------------------------------------------
-
-    # Phần Profile ở trang chủ
     [params.profileMode]
         enabled = true
-        title = "Nguyen Duc Qui"
-        subtitle = "Network & Web Developer"
-        imageUrl = "https://github.com/QuiNguyen2004.png"
+        title = "NGUYỄN ĐỨC QUI"
+        subtitle = "Bạn sẽ bắt đầu hiểu tại sao bài tập này được gọi là Mô hình Dickens, liên quan đến việc xây dựng tư duy lập trình mạng vững chắc."
+        
+        # QUAN TRỌNG: Đã sửa lại đúng tên file ảnh trong máy bạn
+        imageUrl = "anhtrangchu.jpg"
+        
         imageTitle = "Avatar"
-        imageWidth = 120
-        imageHeight = 120
+        imageWidth = 400 
+        imageHeight = 400
+        
+        [[params.profileMode.buttons]]
+            name = "KHÁM PHÁ NGAY"
+            url = "/posts"
 
-    # Các icon mạng xã hội
+    # 4. Icon mạng xã hội bên dưới
     [[params.socialIcons]]
         name = "github"
         url = "https://github.com/QuiNguyen2004"

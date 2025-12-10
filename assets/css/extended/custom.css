@@ -1,0 +1,125 @@
+/* --- 1. PHÁ BỎ GIỚI HẠN CHIỀU RỘNG CỦA THEME (QUAN TRỌNG NHẤT) --- */
+.main {
+    max-width: 100% !important; /* Cho phép mở rộng tối đa */
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+}
+
+/* Nhập font chữ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap');
+
+/* --- 2. CẤU HÌNH KHUNG TRÀN VIỀN --- */
+.philip-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;       
+    padding: 0 5%;     
+    box-sizing: border-box;
+    min-height: 85vh;  
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff; 
+}
+
+/* CỘT TRÁI (CHỮ) */
+.content-col {
+    flex: 1;
+    padding-right: 50px;
+    padding-left: 20px;
+}
+
+.top-tag {
+    font-size: 14px;
+    font-weight: 600;
+    color: #999;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.main-name {
+    font-size: clamp(35px, 4vw, 70px); /* Tự động to nhỏ theo màn hình */
+    font-weight: 900;
+    color: #222;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.summary-text {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+/* Nút bấm */
+.btn-philip {
+    display: inline-block;
+    background: linear-gradient(to right, #8490ff, #62bdfc);
+    color: white !important;
+    padding: 18px 45px;
+    font-weight: 700;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(132, 144, 255, 0.4);
+    transition: transform 0.3s;
+}
+
+.btn-philip:hover { transform: translateY(-5px); }
+
+/* Link mạng xã hội */
+.social-links-safe { margin-top: 30px; }
+.social-links-safe a {
+    margin-right: 25px;
+    text-decoration: none;
+    color: #444;
+    font-weight: 700;
+    border-bottom: 2px solid transparent;
+}
+.social-links-safe a:hover { color: #6c63ff; border-bottom: 2px solid #6c63ff; }
+
+/* CỘT PHẢI (ẢNH) */
+.image-col {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.avatar-img {
+    width: 100%;
+    max-width: 650px; /* Ảnh to */
+    height: auto;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.decor-frame {
+    position: absolute;
+    width: 90%; 
+    height: 90%;
+    max-width: 650px;
+    top: -40px;
+    right: -40px; /* Lệch sang phải */
+    border: 30px solid rgba(132, 144, 255, 0.1);
+    border-radius: 20px;
+    z-index: 1;
+}
+
+/* MOBILE */
+@media (max-width: 1024px) {
+    .philip-wrapper {
+        flex-direction: column-reverse;
+        padding: 50px 20px;
+        text-align: center;
+        justify-content: center;
+    }
+    .content-col { padding: 0; margin-top: 50px; }
+    .summary-text { margin: 0 auto 40px auto; }
+    .decor-frame { right: auto; top: -20px; }
+}

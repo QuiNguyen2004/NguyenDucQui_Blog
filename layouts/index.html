@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="philip-wrapper">
+    <div class="content-col">
+        <span class="top-tag">ĐÂY LÀ TÔI</span>
+        <h3 class="main-name">{{ site.Params.profileMode.title }}</h3>
+        <p class="summary-text">{{ site.Params.profileMode.subtitle }}</p>
+        
+        <div class="action-area">
+            {{- range site.Params.profileMode.buttons }}
+            <a href="{{ .url }}" class="btn-philip">{{ .name }}</a>
+            {{- end }}
+        </div>
+    </div>
+
+    <div class="image-col">
+        <div class="decor-frame"></div>
+        <img src="{{ site.Params.profileMode.imageUrl | absURL }}" alt="Avatar" class="avatar-img">
+    </div>
+</div>
+{{ end }}
