@@ -43,6 +43,7 @@ public class Server {
         }
     }
 }
+```
 ### Code Client (`Client.java`)
 Client kết nối tới Server (localhost) và gửi tin nhắn.
 

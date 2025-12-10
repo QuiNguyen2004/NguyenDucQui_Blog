@@ -8,6 +8,24 @@ theme = "PaperMod"
     defaultTheme = "auto"
     ShowShareButtons = true
     ShowCodeCopyButtons = true
+    
+    # Phần Profile ở trang chủ
+    [params.profileMode]
+        enabled = true
+        title = "Nguyen Duc Qui" # Tên to đùng ở trang chủ
+        subtitle = "Network & Web Developer" # Dòng chữ nhỏ bên dưới
+        imageUrl = "https://github.com/QuiNguyen2004.png" # Lấy luôn ảnh Avatar GitHub của bạn cho nhanh
+        imageTitle = "Avatar"
+        imageWidth = 120
+        imageHeight = 120
+
+    # Các icon mạng xã hội
+    [[params.socialIcons]]
+        name = "github"
+        url = "https://github.com/QuiNguyen2004"
+    [[params.socialIcons]]
+        name = "facebook"
+        url = "https://facebook.com/link-cua-ban"
 
 [menu]
   [[menu.main]]
