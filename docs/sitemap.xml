@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/about/</loc>
+    <loc>https://quinguyen2004.github.io/NguyenDucQui_Blog/about/</loc>
     <lastmod>2025-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/</loc>
+    <loc>https://quinguyen2004.github.io/NguyenDucQui_Blog/</loc>
     <lastmod>2025-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/posts/bai-1-java-socket/</loc>
+    <loc>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/bai-1-java-socket/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/tags/java/</loc>
+    <loc>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/java/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/tags/network/</loc>
+    <loc>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/network/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/posts/</loc>
+    <loc>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/tags/</loc>
+    <loc>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/categories/</loc>
+    <loc>https://quinguyen2004.github.io/NguyenDucQui_Blog/categories/</loc>
   </url>
 </urlset>

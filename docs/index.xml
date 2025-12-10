@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Blog Lập Trình</title>
-    <link>http://localhost:1313/NguyenDucQui_Blog/</link>
+    <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/</link>
     <description>Recent content on Blog Lập Trình</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>vi</language>
     <lastBuildDate>Wed, 10 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://quinguyen2004.github.io/NguyenDucQui_Blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/about/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/about/</link>
       <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/about/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/about/</guid>
       <description>&lt;h2 id=&#34;-xin-chào-mình-là-nguyễn-đức-qui&#34;&gt;👋 Xin chào! Mình là [Nguyễn Đức Qui]&lt;/h2&gt;
 &lt;p&gt;Chào mừng bạn đến với blog cá nhân của mình. Đây là nơi mình chia sẻ hành trình học tập và nghiên cứu về &lt;strong&gt;Lập trình Mạng&lt;/strong&gt;, &lt;strong&gt;Java&lt;/strong&gt; và &lt;strong&gt;JavaScript&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Đồ án này được thực hiện trong khuôn khổ học phần &lt;strong&gt;[Tên Môn Học]&lt;/strong&gt; tại &lt;strong&gt;[Tên Trường Đại Học]&lt;/strong&gt;.&lt;/p&gt;
@@ -54,9 +54,9 @@
     </item>
     <item>
       <title>Bài 1: Lập trình mạng cơ bản với Java Socket</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/bai-1-java-socket/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/bai-1-java-socket/</link>
       <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/bai-1-java-socket/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/bai-1-java-socket/</guid>
       <description>&lt;h2 id=&#34;1-java-socket-là-gì&#34;&gt;1. Java Socket là gì?&lt;/h2&gt;
 &lt;p&gt;Socket là điểm đầu cuối của liên kết truyền thông hai chiều giữa hai chương trình chạy trên mạng. Trong Java, gói &lt;code&gt;java.net&lt;/code&gt; cung cấp các class để lập trình mạng.&lt;/p&gt;
 &lt;ul&gt;

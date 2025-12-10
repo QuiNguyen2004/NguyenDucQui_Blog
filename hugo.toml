@@ -1,20 +1,25 @@
 baseURL = 'https://quinguyen2004.github.io/NguyenDucQui_Blog/'
-publishDir = "docs"
-languageCode = "vi"
-title = "Blog Lập Trình"
+languageCode = 'vi'
+title = 'Blog Lập Trình'
 theme = "PaperMod"
+publishDir = "docs"
 
 [params]
     defaultTheme = "auto"
     ShowShareButtons = true
     ShowCodeCopyButtons = true
-    
+
+    # --- KHẮC PHỤC LỖI GIAO DIỆN KHÔNG HIỆN (QUAN TRỌNG) ---
+    [params.assets]
+        disableFingerprinting = true
+    # -------------------------------------------------------
+
     # Phần Profile ở trang chủ
     [params.profileMode]
         enabled = true
-        title = "Nguyen Duc Qui" # Tên to đùng ở trang chủ
-        subtitle = "Network & Web Developer" # Dòng chữ nhỏ bên dưới
-        imageUrl = "https://github.com/QuiNguyen2004.png" # Lấy luôn ảnh Avatar GitHub của bạn cho nhanh
+        title = "Nguyen Duc Qui"
+        subtitle = "Network & Web Developer"
+        imageUrl = "https://github.com/QuiNguyen2004.png"
         imageTitle = "Avatar"
         imageWidth = 120
         imageHeight = 120
