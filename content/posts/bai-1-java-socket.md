@@ -1,6 +1,6 @@
 ---
 title: "Bài 1: Lập trình mạng cơ bản với Java Socket"
-date: 2025-12-10
+date: 2025-12-01
 draft: false
 tags: ["Java", "Network"]
 ---
