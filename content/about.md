@@ -27,8 +27,8 @@ Chào mừng bạn đến với blog cá nhân của mình. Đây là nơi mình
 
 ### 📫 Liên hệ với mình
 Nếu bạn có cùng đam mê hoặc muốn trao đổi về lập trình, hãy kết nối với mình qua:
-* **Email:** [email-cua-ban]@gmail.com
-* **GitHub:** [Link GitHub của bạn]
+* **Email:** nguyenducqui2004@gmail.com
+* **GitHub:** https://github.com/QuiNguyen2004/NguyenDucQui_Blog
 * **Facebook:** [Link Facebook nếu muốn]
 
 ---
