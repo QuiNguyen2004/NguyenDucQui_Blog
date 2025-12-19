@@ -3,7 +3,7 @@ publishDir = 'docs'
 languageCode = 'vi'
 title = 'DUC QUI BLOG'
 theme = "PaperMod"
-
+canonifyURLs = true
 
 [params]
     defaultTheme = "light"
