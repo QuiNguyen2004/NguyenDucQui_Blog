@@ -1,6 +1,6 @@
 /* --- 1. PHÁ BỎ GIỚI HẠN CHIỀU RỘNG CỦA THEME (QUAN TRỌNG NHẤT) --- */
 .main {
-    max-width: 100% !important; /* Cho phép mở rộng tối đa */
+    max-width: 85% !important; /* Cho phép mở rộng tối đa */
     width: 100% !important;
     padding: 0 !important;
     margin: 0 auto !important;
@@ -122,4 +122,49 @@
     .content-col { padding: 0; margin-top: 50px; }
     .summary-text { margin: 0 auto 40px auto; }
     .decor-frame { right: auto; top: -20px; }
+}
+
+/* Code CSS để hiện Menu xổ xuống cho PaperMod */
+.header .menu > ul > li {
+    position: relative;
+    display: inline-block;
+}
+
+/* Mặc định ẩn menu con */
+.header .menu > ul > li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--entry); /* Màu nền trùng với theme */
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    padding: 10px 0;
+    list-style: none;
+    z-index: 1000;
+    border: 1px solid var(--border);
+}
+
+/* Di chuột vào thì hiện menu con */
+.header .menu > ul > li:hover > ul {
+    display: block;
+}
+
+/* Chỉnh lại các mục trong menu con */
+.header .menu > ul > li > ul > li {
+    display: block;
+    margin: 0;
+}
+
+.header .menu > ul > li > ul > li > a {
+    display: block;
+    padding: 8px 20px;
+    font-size: 14px;
+    color: var(--primary);
+    white-space: nowrap; /* Không xuống dòng */
+}
+
+.header .menu > ul > li > ul > li > a:hover {
+    background-color: var(--tertiary); /* Màu nền khi di chuột vào */
 }

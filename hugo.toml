@@ -1,8 +1,8 @@
 baseURL = 'https://quinguyen2004.github.io/NguyenDucQui_Blog/'
+publishDir = 'docs'
 languageCode = 'vi'
 title = 'Blog Lập Trình'
 theme = "PaperMod"
-publishDir = "docs"
 
 [params]
     defaultTheme = "light"
@@ -25,7 +25,7 @@ publishDir = "docs"
         
         [[params.profileMode.buttons]]
             name = "KHÁM PHÁ NGAY"
-            url = "/posts"
+            url = "http://localhost:1313/NguyenDucQui_Blog/about/"
 
     # 4. Icon mạng xã hội bên dưới
     [[params.socialIcons]]
@@ -38,16 +38,36 @@ publishDir = "docs"
 [menu]
   [[menu.main]]
     identifier = "home"
-    name = "Trang Chủ"
+    name = "HOME"
     url = "/"
     weight = 10
+
+  # MENU CHA
   [[menu.main]]
-    identifier = "blog"
-    name = "Bài Viết"
+    identifier = "courses"
+    name = "KHÓA HỌC"
     url = "/posts"
     weight = 20
+
+  [[menu.main]]
+    identifier = "gellery"
+    name = "GELLERY"
+    url = "/gellery"
+    weight = 30  
+
   [[menu.main]]
     identifier = "about"
-    name = "Profile"
+    name = "ABOUT"
     url = "/about"
-    weight = 30
+    weight = 40
+
+  [[menu.main]]
+    identifier = "contact"
+    name = "CONTACT"
+    url = "/contact"
+    weight = 50
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

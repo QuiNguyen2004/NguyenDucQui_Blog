@@ -5,9 +5,25 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Posts | Blog Lập Trình</title>
+<title>Lộ Trình Học Tập | Blog Lập Trình</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - Blog Lập Trình">
+<meta name="description" content="
+
+    
+        
+        
+            Java
+            Tư duy Logic & Backend
+        
+    
+    
+        
+        
+            JavaScript
+            Sáng tạo Giao diện
+        
+    
+">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/NguyenDucQui_Blog/posts/">
 <link crossorigin="anonymous" href="/NguyenDucQui_Blog/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
@@ -66,18 +82,28 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/" title="Trang Chủ">
-                    <span>Trang Chủ</span>
+                <a href="http://localhost:1313/NguyenDucQui_Blog/" title="HOME">
+                    <span>HOME</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/posts" title="Bài Viết">
-                    <span class="active">Bài Viết</span>
+                <a href="http://localhost:1313/NguyenDucQui_Blog/posts" title="KHÓA HỌC">
+                    <span class="active">KHÓA HỌC</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/about" title="Profile">
-                    <span>Profile</span>
+                <a href="http://localhost:1313/NguyenDucQui_Blog/gellery" title="GELLERY">
+                    <span>GELLERY</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/NguyenDucQui_Blog/about" title="ABOUT">
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/NguyenDucQui_Blog/contact" title="CONTACT">
+                    <span>CONTACT</span>
                 </a>
             </li>
         </ul>
@@ -86,22 +112,114 @@
 <main class="main"> 
 <header class="page-header">
   <h1>
-    Posts
+    Lộ Trình Học Tập
   </h1>
 </header>
+<div class="post-content"><style>
+/* 1. Ẩn tiêu đề và danh sách bài viết cũ bên dưới */
+.page-header, .post-entry, .paginav { display: none !important; }
+
+/* 2. Cấu hình khung chia đôi */
+.post-content { margin: 0 !important; padding: 0 !important; max-width: 100% !important; width: 100% !important; }
+
+.split-container {
+display: flex;
+width: 100%;
+height: 80vh; /* Cao 80% màn hình */
+border-radius: 25px; /* Bo tròn góc */
+overflow: hidden;
+box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+font-family: sans-serif;
+margin-top: 20px;
+}
+
+.split-side {
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+text-decoration: none !important;
+transition: all 0.5s ease;
+position: relative;
+overflow: hidden;
+cursor: pointer;
+}
+
+/* Hiệu ứng khi di chuột: Bên nào được chọn sẽ to ra */
+.split-side:hover { flex: 2; }
+
+/* MÀU NỀN CỘT TRÁI (JAVA) */
+.side-java { background: #2c3e50; color: white; }
+
+/* MÀU NỀN CỘT PHẢI (JS) */
+.side-js { background: #f1c40f; color: black; }
+
+.split-content { text-align: center; z-index: 10; transition: transform 0.3s; }
+.split-side:hover .split-content { transform: scale(1.1); }
+
+.split-title { font-size: 3rem; font-weight: bold; display: block; text-transform: uppercase; }
+.split-desc { font-size: 1.2rem; margin-top: 10px; display: block; }
+
+/* --- CHỈNH SỬA LOGO NỀN MỜ --- */
+.bg-img {
+position: absolute;
+top: 50%;     
+left: 50%;      
+transform: translate(-50%, -50%); 
+width: 30%;     
+opacity: 0.15;
+pointer-events: none;
+filter: grayscale(100%);
+transition: opacity 0.5s;
+}
+
+/* Khi di chuột vào thì ảnh rõ hơn chút */
+.split-side:hover .bg-img { opacity: 0.25; }
+
+/* Mobile */
+@media(max-width:768px){ .split-container{flex-direction:column; height:80vh;} .split-title{font-size:2rem;} }
+</style>
+<div class="split-container">
+    <a href="/NguyenDucQui_Blog/posts/java-full-course/" class="split-side side-java">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" class="bg-img">
+        <div class="split-content">
+            <span class="split-title">Java</span>
+            <span class="split-desc">Tư duy Logic & Backend</span>
+        </div>
+    </a>
+    <a href="/NguyenDucQui_Blog/posts/js-full-course/" class="split-side side-js">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" class="bg-img">
+        <div class="split-content">
+            <span class="split-title">JavaScript</span>
+            <span class="split-desc">Sáng tạo Giao diện</span>
+        </div>
+    </a>
+</div>
+
+</div>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Bài 1: Lập trình mạng cơ bản với Java Socket
+    <h2 class="entry-hint-parent">Lộ trình: JavaScript &amp; Web (Full Course)
     </h2>
   </header>
   <div class="entry-content">
-    <p>1. Java Socket là gì? Socket là điểm đầu cuối của liên kết truyền thông hai chiều giữa hai chương trình chạy trên mạng. Trong Java, gói java.net cung cấp các class để lập trình mạng.
-Socket: Dùng cho Client. ServerSocket: Dùng cho Server (để lắng nghe kết nối). 2. Code ví dụ: Client - Server đơn giản Dưới đây là ví dụ tạo một Server lắng nghe và một Client gửi lời chào.
-...</p>
+    <p>Kiến thức về JavaScript, DOM, Fetch API và giao diện Web.</p>
   </div>
-  <footer class="entry-footer"><span title='2025-12-01 00:00:00 +0000 UTC'>December 1, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Bài 1: Lập trình mạng cơ bản với Java Socket" href="http://localhost:1313/NguyenDucQui_Blog/posts/bai-1-java-socket/"></a>
+  <footer class="entry-footer"><span title='2024-12-14 00:00:00 +0000 UTC'>December 14, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to Lộ trình: JavaScript & Web (Full Course)" href="http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Lộ trình: Lập trình Java Network (Full Course)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Toàn bộ kiến thức về Java Socket, Multi-threading và Network.</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-12-14 00:00:00 +0000 UTC'>December 14, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to Lộ trình: Lập trình Java Network (Full Course)" href="http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/"></a>
 </article>
     </main>
     

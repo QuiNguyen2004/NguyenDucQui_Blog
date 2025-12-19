@@ -53,18 +53,32 @@
 &lt;p&gt;Nếu bạn có cùng đam mê hoặc muốn trao đổi về lập trình, hãy kết nối với mình qua:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Bài 1: Lập trình mạng cơ bản với Java Socket</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/bai-1-java-socket/</link>
-      <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/bai-1-java-socket/</guid>
-      <description>&lt;h2 id=&#34;1-java-socket-là-gì&#34;&gt;1. Java Socket là gì?&lt;/h2&gt;
-&lt;p&gt;Socket là điểm đầu cuối của liên kết truyền thông hai chiều giữa hai chương trình chạy trên mạng. Trong Java, gói &lt;code&gt;java.net&lt;/code&gt; cung cấp các class để lập trình mạng.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Socket:&lt;/strong&gt; Dùng cho Client.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ServerSocket:&lt;/strong&gt; Dùng cho Server (để lắng nghe kết nối).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;2-code-ví-dụ-client---server-đơn-giản&#34;&gt;2. Code ví dụ: Client - Server đơn giản&lt;/h2&gt;
-&lt;p&gt;Dưới đây là ví dụ tạo một Server lắng nghe và một Client gửi lời chào.&lt;/p&gt;</description>
+      <title>Lộ trình: JavaScript &amp; Web (Full Course)</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</guid>
+      <description>Kiến thức về JavaScript, DOM, Fetch API và giao diện Web.</description>
+    </item>
+    <item>
+      <title>Lộ trình: Lập trình Java Network (Full Course)</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/</guid>
+      <description>Toàn bộ kiến thức về Java Socket, Multi-threading và Network.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/contact/</guid>
+      <description>Thông tin liên hệ và gửi tin nhắn</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/gellery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/gellery/</guid>
+      <description>Thành Tựu</description>
     </item>
   </channel>
 </rss>

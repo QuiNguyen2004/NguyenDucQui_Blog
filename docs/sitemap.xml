@@ -8,21 +8,21 @@
     <loc>http://localhost:1313/NguyenDucQui_Blog/</loc>
     <lastmod>2025-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/posts/bai-1-java-socket/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/tags/java/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/tags/network/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/NguyenDucQui_Blog/posts/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/tags/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</loc>
+    <lastmod>2024-12-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/</loc>
+    <lastmod>2024-12-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/NguyenDucQui_Blog/contact/</loc>
+  </url><url>
+    <loc>http://localhost:1313/NguyenDucQui_Blog/gellery/</loc>
   </url><url>
     <loc>http://localhost:1313/NguyenDucQui_Blog/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/NguyenDucQui_Blog/tags/</loc>
   </url>
 </urlset>
