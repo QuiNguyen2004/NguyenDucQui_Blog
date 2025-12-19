@@ -26,7 +26,7 @@ theme = "PaperMod"
         
         [[params.profileMode.buttons]]
             name = "KHÁM PHÁ NGAY"
-            url = "http://localhost:1313/NguyenDucQui_Blog/about/"
+            url = "about/"
 
     # 4. Icon mạng xã hội bên dưới
     [[params.socialIcons]]
@@ -34,7 +34,7 @@ theme = "PaperMod"
         url = "https://github.com/QuiNguyen2004"
     [[params.socialIcons]]
         name = "facebook"
-        url = "https://facebook.com/link-cua-ban"
+        url = "https://www.facebook.com/qui.nguyen.660694"
 
 [menu]
   [[menu.main]]
@@ -47,25 +47,25 @@ theme = "PaperMod"
   [[menu.main]]
     identifier = "courses"
     name = "KHÓA HỌC"
-    url = "/posts"
+    url = "posts/"
     weight = 20
 
   [[menu.main]]
     identifier = "gellery"
     name = "GELLERY"
-    url = "/gellery"
+    url = "gellery/"
     weight = 30  
 
   [[menu.main]]
     identifier = "about"
     name = "ABOUT"
-    url = "/about"
+    url = "about/"
     weight = 40
 
   [[menu.main]]
     identifier = "contact"
     name = "CONTACT"
-    url = "/contact"
+    url = "contact/"
     weight = 50
 
 [markup]
