@@ -3,7 +3,6 @@ publishDir = 'docs'
 languageCode = 'vi'
 title = 'DUC QUI BLOG'
 theme = "PaperMod"
-canonifyURLs = true
 
 [params]
     defaultTheme = "light"
@@ -47,25 +46,25 @@ canonifyURLs = true
   [[menu.main]]
     identifier = "courses"
     name = "KHÓA HỌC"
-    url = "/posts"
+    url = "posts/"
     weight = 20
 
   [[menu.main]]
     identifier = "gellery"
     name = "GELLERY"
-    url = "/gellery"
+    url = "gellery/"
     weight = 30  
 
   [[menu.main]]
     identifier = "about"
     name = "ABOUT"
-    url = "/about"
+    url = "about/"
     weight = 40
 
   [[menu.main]]
     identifier = "contact"
     name = "CONTACT"
-    url = "/contact"
+    url = "contact/"
     weight = 50
 
 [markup]
