@@ -1,170 +1,265 @@
-/* --- 1. PHÁ BỎ GIỚI HẠN CHIỀU RỘNG CỦA THEME (QUAN TRỌNG NHẤT) --- */
-.main {
-    max-width: 85% !important; /* Cho phép mở rộng tối đa */
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 auto !important;
+/* ============================================================
+   1. CẤU HÌNH CHUNG & LAYOUT (PHÁ BỎ GIỚI HẠN THEME)
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700;800;900&display=swap');
+
+:root {
+    --content-width: 850px; /* Độ rộng lý tưởng để đọc bài viết */
 }
 
-/* Nhập font chữ */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap');
+.main {
+    max-width: 1200px !important; /* Giới hạn độ rộng tổng thể để không bị loãng */
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
 
-/* --- 2. CẤU HÌNH KHUNG TRÀN VIỀN --- */
+/* ============================================================
+   LÀM ĐẸP PHẦN HEADER 
+   ============================================================ */
+
+.post-header {
+    max-width: var(--content-width);
+    margin: 2rem auto 2rem auto !important; /* Tạo khoảng cách cực đẹp với nội dung dưới */
+    text-align: left; /* Đưa tất cả ra giữa */
+}
+
+/* Tiêu đề bài viết lớn */
+.post-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: clamp(2rem, 4vw, 3rem) !important; /* Chữ tự co giãn cực mượt */
+    font-weight: 900 !important;
+    line-height: 1.2 !important;
+    color: var(--primary);
+    margin-bottom: 1.5rem !important;
+    letter-spacing: -0.03em !important;
+    background: linear-gradient(to right, var(--primary), var(--secondary)); /* Hiệu ứng màu chữ nhẹ */
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color: transparent; (Bỏ dòng này nếu bạn muốn màu đen thuần) */
+}
+
+/* Phần Ngày tháng & Thời gian đọc */
+.post-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #888;
+    display: flex;
+    justify-content:left; /* Căn giữa meta */
+    gap: 15px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/* ============================================================
+   2. TRANG CHỦ 
+   ============================================================ */
 .philip-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;       
-    padding: 0 5%;     
-    box-sizing: border-box;
-    min-height: 85vh;  
+    min-height: 80vh;
     font-family: 'Poppins', sans-serif;
-    background-color: #fff; 
+    gap: 40px;
 }
 
-/* CỘT TRÁI (CHỮ) */
-.content-col {
-    flex: 1;
-    padding-right: 50px;
-    padding-left: 20px;
-}
-
-.top-tag {
-    font-size: 14px;
-    font-weight: 600;
-    color: #999;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    display: block;
-}
+.content-col { flex: 1.2; }
+.image-col { flex: 1; position: relative; display: flex; justify-content: center; }
 
 .main-name {
-    font-size: clamp(35px, 4vw, 70px); /* Tự động to nhỏ theo màn hình */
+    font-size: clamp(30px, 5vw, 60px);
     font-weight: 900;
-    color: #222;
-    text-transform: uppercase;
     line-height: 1.1;
-    margin-bottom: 30px;
-}
-
-.summary-text {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.8;
-    margin-bottom: 40px;
-    max-width: 600px;
-}
-
-/* Nút bấm */
-.btn-philip {
-    display: inline-block;
-    background: linear-gradient(to right, #8490ff, #62bdfc);
-    color: white !important;
-    padding: 18px 45px;
-    font-weight: 700;
-    border-radius: 5px;
-    text-decoration: none;
-    box-shadow: 0 10px 20px rgba(132, 144, 255, 0.4);
-    transition: transform 0.3s;
-}
-
-.btn-philip:hover { transform: translateY(-5px); }
-
-/* Link mạng xã hội */
-.social-links-safe { margin-top: 30px; }
-.social-links-safe a {
-    margin-right: 25px;
-    text-decoration: none;
-    color: #444;
-    font-weight: 700;
-    border-bottom: 2px solid transparent;
-}
-.social-links-safe a:hover { color: #6c63ff; border-bottom: 2px solid #6c63ff; }
-
-/* CỘT PHẢI (ẢNH) */
-.image-col {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    position: relative;
+    margin-bottom: 20px;
+    color: var(--primary);
 }
 
 .avatar-img {
     width: 100%;
-    max-width: 650px; /* Ảnh to */
-    height: auto;
+    max-width: 500px;
     border-radius: 20px;
-    position: relative;
     z-index: 2;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 .decor-frame {
     position: absolute;
-    width: 90%; 
-    height: 90%;
-    max-width: 650px;
-    top: -40px;
-    right: -40px; /* Lệch sang phải */
-    border: 30px solid rgba(132, 144, 255, 0.1);
+    width: 100%; height: 100%;
+    top: 20px; right: -20px;
+    border: 15px solid var(--tertiary);
     border-radius: 20px;
     z-index: 1;
 }
 
-/* MOBILE */
-@media (max-width: 1024px) {
-    .philip-wrapper {
-        flex-direction: column-reverse;
-        padding: 50px 20px;
-        text-align: center;
-        justify-content: center;
-    }
-    .content-col { padding: 0; margin-top: 50px; }
-    .summary-text { margin: 0 auto 40px auto; }
-    .decor-frame { right: auto; top: -20px; }
+/* ============================================================
+   3. NỘI DUNG BÀI VIẾT (TRANG JAVA - QUAN TRỌNG)
+   ============================================================ */
+/* Căn giữa toàn bộ nội dung bài viết */
+.post-content {
+    max-width: var(--content-width);
+    margin: 0 auto; /* Đưa toàn bộ chữ và ảnh ra giữa */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--primary);
+    line-height: 1.8;
 }
 
-/* Code CSS để hiện Menu xổ xuống cho PaperMod */
-.header .menu > ul > li {
-    position: relative;
-    display: inline-block;
+/* Hình ảnh trong bài viết */
+.post-content img {
+    display: block;
+    margin: 3rem auto; /* Căn giữa ảnh và tạo khoảng cách trên dưới */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 65% !important;
+    height: auto;
 }
 
-/* Mặc định ẩn menu con */
+.post-content img:hover {
+    transform: scale(1.01);
+}
+
+/* Tiêu đề bài viết */
+.post-content h2 {
+    margin: 3rem 0 1.5rem 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--tertiary);
+    display: inline-block; /* Chỉ gạch chân dưới chữ */
+}
+
+.post-content h3 {
+    margin: 2rem 0 1rem 0;
+    color: var(--secondary);
+}
+
+/* Văn bản */
+.post-content p {
+    text-align: justify; /* Căn đều hai bên cho đẹp */
+    margin-bottom: 1.5rem;
+}
+
+/* Chú thích ảnh (Viết nghiêng dưới ảnh) */
+.post-content em {
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: -2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Blockquote (Trích dẫn) */
+.post-content blockquote {
+    border-left: 5px solid var(--tertiary);
+    padding-left: 20px;
+    font-style: italic;
+    background: var(--code-bg);
+    margin: 2rem 0;
+}
+
+/* ============================================================
+   4. MENU XỔ XUỐNG (DROPDOWN MENU)
+   ============================================================ */
+.header .menu > ul > li { position: relative; }
 .header .menu > ul > li > ul {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--entry); /* Màu nền trùng với theme */
-    min-width: 200px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 5px;
+    top: 100%; left: 0;
+    background-color: var(--theme);
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
     padding: 10px 0;
-    list-style: none;
     z-index: 1000;
     border: 1px solid var(--border);
 }
 
-/* Di chuột vào thì hiện menu con */
-.header .menu > ul > li:hover > ul {
-    display: block;
-}
-
-/* Chỉnh lại các mục trong menu con */
-.header .menu > ul > li > ul > li {
-    display: block;
-    margin: 0;
-}
-
+.header .menu > ul > li:hover > ul { display: block; }
 .header .menu > ul > li > ul > li > a {
     display: block;
-    padding: 8px 20px;
+    padding: 10px 20px;
     font-size: 14px;
-    color: var(--primary);
-    white-space: nowrap; /* Không xuống dòng */
 }
 
 .header .menu > ul > li > ul > li > a:hover {
-    background-color: var(--tertiary); /* Màu nền khi di chuột vào */
+    background-color: var(--tertiary);
+}
+
+/* ============================================================
+   5. MOBILE RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+    .philip-wrapper { flex-direction: column-reverse; text-align: center; }
+    .content-col { padding: 0; }
+    .main-name { font-size: 35px; }
+}
+/* ============================================================
+   CẤU HÌNH MỤC LỤC (TOC) CHUYÊN NGHIỆP
+   ============================================================ */
+
+/* Khung viền ngoài của Mục lục */
+.toc {
+    margin: 2rem auto;
+    padding: 0;
+    max-width: var(--content-width); /* Luôn rộng bằng nội dung bài viết */
+    background: var(--code-bg); /* Màu nền nhạt */
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Phần tiêu đề "Mục lục nội dung" */
+/* Phần tiêu đề "Mục lục nội dung" - Đã chỉnh đậm hơn */
+/* Sửa lỗi mờ và làm đậm mục lục */
+.toc summary {
+    padding: 18px 20px !important;
+    opacity: 1 !important;            /* Ép độ đậm nhạt lên tối đa (hết mờ) */
+    color: var(--primary) !important; /* Lấy màu chữ đậm nhất của theme */
+    font-weight: 900 !important;      /* Đậm nhất */
+    font-size: 1.1rem !important;
+    text-transform: uppercase;        /* Viết hoa cho chuyên nghiệp */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Làm đậm các đường gạch nối bên trong cho rõ ràng */
+.toc .inner ul {
+    border-left: 2px solid var(--border) !important; /* Tăng độ dày đường kẻ dọc */
+}
+
+.toc .inner a {
+    color: var(--primary) !important; /* Ép màu các mục con đậm lên */
+    font-weight: 600 !important;
+    opacity: 0.9;
+}
+
+/* Tạo biểu tượng mũi tên giả để đẹp hơn */
+.toc summary::after {
+    content: "↓";
+    transition: transform 0.3s;
+}
+
+.toc[open] summary::after {
+    transform: rotate(180deg);
+}
+
+/* Phần nội dung danh sách bên trong */
+.toc .inner {
+    padding: 0 20px 20px 20px;
+    font-size: 0.95rem;
+}
+
+.toc .inner li {
+    margin: 10px 0;
+}
+
+.toc .inner a:hover {
+    color: var(--tertiary);
+    padding-left: 5px; /* Hiệu ứng đẩy nhẹ sang phải khi di chuột vào */
+}
+
+/* Responsive cho Mobile */
+@media (max-width: 800px) {
+    .toc {
+        margin: 1.5rem 10px;
+    }
 }

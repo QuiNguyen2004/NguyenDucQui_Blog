@@ -1,8 +1,9 @@
 baseURL = 'https://quinguyen2004.github.io/NguyenDucQui_Blog/'
 publishDir = 'docs'
 languageCode = 'vi'
-title = 'Blog Lập Trình'
+title = 'DUC QUI BLOG'
 theme = "PaperMod"
+
 
 [params]
     defaultTheme = "light"

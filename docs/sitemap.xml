@@ -2,24 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/about/</loc>
-    <lastmod>2025-12-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/NguyenDucQui_Blog/</loc>
-    <lastmod>2025-12-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/posts/</loc>
-    <lastmod>2024-12-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</loc>
     <lastmod>2024-12-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/</loc>
     <lastmod>2024-12-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/contact/</loc>
-  </url><url>
-    <loc>http://localhost:1313/NguyenDucQui_Blog/gellery/</loc>
+    <loc>http://localhost:1313/NguyenDucQui_Blog/posts/</loc>
+    <lastmod>2024-12-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/NguyenDucQui_Blog/categories/</loc>
   </url><url>

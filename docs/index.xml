@@ -1,70 +1,247 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Blog Lập Trình</title>
+    <title>DUC QUI BLOG</title>
     <link>http://localhost:1313/NguyenDucQui_Blog/</link>
-    <description>Recent content on Blog Lập Trình</description>
+    <description>Recent content on DUC QUI BLOG</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>vi</language>
     <lastBuildDate>Wed, 10 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/NguyenDucQui_Blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About</title>
+      <title></title>
       <link>http://localhost:1313/NguyenDucQui_Blog/about/</link>
       <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/NguyenDucQui_Blog/about/</guid>
-      <description>&lt;h2 id=&#34;-xin-chào-mình-là-nguyễn-đức-qui&#34;&gt;👋 Xin chào! Mình là [Nguyễn Đức Qui]&lt;/h2&gt;
-&lt;p&gt;Chào mừng bạn đến với blog cá nhân của mình. Đây là nơi mình chia sẻ hành trình học tập và nghiên cứu về &lt;strong&gt;Lập trình Mạng&lt;/strong&gt;, &lt;strong&gt;Java&lt;/strong&gt; và &lt;strong&gt;JavaScript&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Đồ án này được thực hiện trong khuôn khổ học phần &lt;strong&gt;[Tên Môn Học]&lt;/strong&gt; tại &lt;strong&gt;[Tên Trường Đại Học]&lt;/strong&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;-mục-tiêu-phát-triển&#34;&gt;🚀 Mục tiêu phát triển&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Xây dựng nền tảng vững chắc về Lập trình hướng đối tượng (OOP) với Java.&lt;/li&gt;
-&lt;li&gt;Hiểu sâu về cơ chế hoạt động của Web và giao thức mạng.&lt;/li&gt;
-&lt;li&gt;Trở thành một Fullstack Developer trong tương lai.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;-kỹ-năng-công-nghệ-tech-stack&#34;&gt;🛠 Kỹ năng công nghệ (Tech Stack)&lt;/h3&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Lĩnh vực&lt;/th&gt;
-          &lt;th style=&#34;text-align: left&#34;&gt;Công nghệ / Công cụ&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Ngôn ngữ&lt;/strong&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Java, JavaScript, HTML/CSS&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Framework&lt;/strong&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Spring Boot (Learning), Node.js&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Tools&lt;/strong&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Git/GitHub, VS Code, IntelliJ IDEA&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Database&lt;/strong&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;MySQL, MongoDB&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;-liên-hệ-với-mình&#34;&gt;📫 Liên hệ với mình&lt;/h3&gt;
-&lt;p&gt;Nếu bạn có cùng đam mê hoặc muốn trao đổi về lập trình, hãy kết nối với mình qua:&lt;/p&gt;</description>
+      <description>&lt;style&gt;
+/* 1. Cấu hình khung chung */
+.about-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 20px;
+    font-family: sans-serif;
+}
+
+/* 2. Phần Ảnh (Nằm trên cùng) */
+.about-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.my-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; /* Bo tròn ảnh đại diện */
+    object-fit: cover;
+    border: 4px solid var(--primary);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.my-photo:hover {
+    transform: scale(1.05);
+}
+
+/* 3. Phần Chữ */
+.about-text {
+    text-align: center;
+}
+
+.main-name {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--primary);
+}
+
+.sub-title {
+    font-size: 1rem;
+    color: var(--secondary);
+    font-weight: 500;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.intro-block {
+    background: var(--entry);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    text-align: justify; /* Căn đều 2 bên cho đẹp mắt với văn bản dài */
+    margin-bottom: 30px;
+    line-height: 1.8;
+    color: var(--primary);
+}
+
+.intro-block p {
+    margin-bottom: 15px; /* Khoảng cách giữa các đoạn văn */
+}
+
+.intro-block strong {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.intro-block em {
+    font-style: italic;
+    color: var(--secondary);
+}
+
+/* 4. Tech Stack */
+.tech-container {
+    margin-bottom: 40px;
+}
+
+.tech-header {
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: inline-block;
+    border-bottom: 2px solid var(--primary);
+    text-transform: uppercase;
+}
+
+.tech-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-badge {
+    background: var(--theme);
+    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.tech-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Màu sắc riêng cho từng công nghệ */
+.badge-java { color: #e74c3c; border-color: #e74c3c; } 
+.badge-socket { color: #3498db; border-color: #3498db; } 
+.badge-js { color: #f1c40f; border-color: #f1c40f; } 
+
+/* 5. Footer liên hệ */
+.contact-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-links a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--primary);
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.contact-links a:hover {
+    background: var(--entry);
+}
+/* --- PHẦN MỚI: TESTIMONIALS (ĐÁNH GIÁ) --- */
+.testimonials-section {
+    margin-top: 50px;
+    text-align: left;
+}
+.testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.testi-card {
+    background: var(--entry);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.quote-icon {
+    font-size: 2rem;
+    color: var(--secondary);
+    opacity: 0.3;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-family: serif;
+}
+.testi-content {
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: var(--primary);
+    line-height: 1.6;
+}
+.testi-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+}
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ddd; /* Màu nền tạm nếu không có ảnh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #555;
+    font-size: 14px;
+}
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+.author-name {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.author-role {
+    font-size: 0.8rem;
+    color: var(--secondary);
+}
+&lt;/style&gt;
+&lt;div class=&#34;about-wrapper&#34;&gt;
+    &lt;div class=&#34;about-image&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/NguyenDucQui_Blog/anhtrangchu.jpg&#34; class=&#34;my-photo&#34; alt=&#34;Avatar&#34;&gt;
+    &lt;/div&gt;   
+    &lt;div class=&#34;about-text&#34;&gt;
+        &lt;div class=&#34;main-name&#34;&gt;Nguyễn Đức Qui&lt;/div&gt;
+        &lt;div class=&#34;sub-title&#34;&gt;Kỹ sư Công nghệ Thông tin (Tương lai)&lt;/div&gt;        
+        &lt;div class=&#34;intro-block&#34;&gt;
+            &lt;p&gt;Tên tôi là &lt;strong&gt;Đức Qui&lt;/strong&gt;. Nếu như &#34;Đức&#34; đại diện cho sự tử tế trong đạo đức nghề nghiệp, thì &#34;Qui&#34; gợi nhắc tôi về sự &lt;strong&gt;Quy chuẩn&lt;/strong&gt; và &lt;strong&gt;Kiên định&lt;/strong&gt; – những yếu tố cốt lõi của một hệ thống mạng vững chắc. Tôi luôn mong muốn sống và làm việc đúng như tên mình: xây dựng những giải pháp công nghệ không chỉ hoạt động tốt mà còn phải chuẩn mực, minh bạch và đáng tin cậy. Sắp hoàn thành chương trình đại học, tôi đã sẵn sàng &#34;Online&#34;, tự tin kết nối và truyền tải giá trị của mình vào thế giới công nghệ rộng lớn.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Lộ trình: JavaScript &amp; Web (Full Course)</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</link>
-      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</guid>
-      <description>Kiến thức về JavaScript, DOM, Fetch API và giao diện Web.</description>
-    </item>
-    <item>
-      <title>Lộ trình: Lập trình Java Network (Full Course)</title>
+      <title>Java là gì? Tổng quan về ngôn ngữ lập trình Java</title>
       <link>http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/</guid>
-      <description>Toàn bộ kiến thức về Java Socket, Multi-threading và Network.</description>
+      <description>Toàn bộ kiến thức về Java</description>
+    </item>
+    <item>
+      <title>JavaScript là gì? Tổng quan về ngôn ngữ lập trình JavaScript</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</guid>
+      <description>Kiến thức về JavaScript</description>
     </item>
     <item>
       <title></title>
