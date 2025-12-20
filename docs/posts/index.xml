@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Lộ Trình Học Tập on DUC QUI BLOG</title>
-    <link>http://localhost:1313/NguyenDucQui_Blog/posts/</link>
+    <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/</link>
     <description>Recent content in Lộ Trình Học Tập on DUC QUI BLOG</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>vi</language>
     <lastBuildDate>Sat, 14 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java là gì? Tổng quan về ngôn ngữ lập trình Java</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/java-full-course/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/java-full-course/</guid>
       <description>Toàn bộ kiến thức về Java</description>
     </item>
     <item>
       <title>JavaScript là gì? Tổng quan về ngôn ngữ lập trình JavaScript</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/js-full-course/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/js-full-course/</guid>
       <description>Kiến thức về JavaScript</description>
     </item>
   </channel>

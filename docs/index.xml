@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>DUC QUI BLOG</title>
-    <link>http://localhost:1313/NguyenDucQui_Blog/</link>
+    <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/</link>
     <description>Recent content on DUC QUI BLOG</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>vi</language>
     <lastBuildDate>Wed, 10 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://quinguyen2004.github.io/NguyenDucQui_Blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/about/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/about/</link>
       <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/about/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/about/</guid>
       <description>&lt;style&gt;
 /* 1. Cấu hình khung chung */
 .about-wrapper {
@@ -221,7 +221,7 @@
 &lt;/style&gt;
 &lt;div class=&#34;about-wrapper&#34;&gt;
     &lt;div class=&#34;about-image&#34;&gt;
-        &lt;img src=&#34;http://localhost:1313/NguyenDucQui_Blog/anhtrangchu.jpg&#34; class=&#34;my-photo&#34; alt=&#34;Avatar&#34;&gt;
+        &lt;img src=&#34;https://quinguyen2004.github.io/NguyenDucQui_Blog/anhtrangchu.jpg&#34; class=&#34;my-photo&#34; alt=&#34;Avatar&#34;&gt;
     &lt;/div&gt;   
     &lt;div class=&#34;about-text&#34;&gt;
         &lt;div class=&#34;main-name&#34;&gt;Nguyễn Đức Qui&lt;/div&gt;
@@ -231,30 +231,30 @@
     </item>
     <item>
       <title>Java là gì? Tổng quan về ngôn ngữ lập trình Java</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/java-full-course/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/java-full-course/</guid>
       <description>Toàn bộ kiến thức về Java</description>
     </item>
     <item>
       <title>JavaScript là gì? Tổng quan về ngôn ngữ lập trình JavaScript</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/js-full-course/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/js-full-course/</guid>
       <description>Kiến thức về JavaScript</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/contact/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/contact/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/contact/</guid>
       <description>Thông tin liên hệ và gửi tin nhắn</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/gellery/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/gellery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/gellery/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/gellery/</guid>
       <description>Thành Tựu</description>
     </item>
   </channel>
