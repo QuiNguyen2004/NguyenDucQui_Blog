@@ -2,178 +2,178 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on DUC QUI</title>
-    <link>http://localhost:1313/NguyenDucQui_Blog/tags/</link>
+    <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/</link>
     <description>Recent content in Tags on DUC QUI</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>vi</language>
     <lastBuildDate>Fri, 26 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Backend</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/backend/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/backend/</link>
       <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/backend/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/backend/</guid>
       <description></description>
     </item>
     <item>
       <title>Data Structures</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/data-structures/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/data-structures/</link>
       <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/data-structures/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/data-structures/</guid>
       <description></description>
     </item>
     <item>
       <title>Java</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/java/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/java/</link>
       <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/java/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/java/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/programming/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/programming/</link>
       <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/programming/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Cookies</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/cookies/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/cookies/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/cookies/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/cookies/</guid>
       <description></description>
     </item>
     <item>
       <title>DOM</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/dom/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/dom/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/dom/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/dom/</guid>
       <description></description>
     </item>
     <item>
       <title>Error Handling</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/error-handling/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/error-handling/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/error-handling/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/error-handling/</guid>
       <description></description>
     </item>
     <item>
       <title>ES6</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/es6/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/es6/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/es6/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/es6/</guid>
       <description></description>
     </item>
     <item>
       <title>Exception</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/exception/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/exception/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/exception/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/exception/</guid>
       <description></description>
     </item>
     <item>
       <title>File</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/file/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/file/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/file/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/file/</guid>
       <description></description>
     </item>
     <item>
       <title>Frontend</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/frontend/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/frontend/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/frontend/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/frontend/</guid>
       <description></description>
     </item>
     <item>
       <title>Functional Programming</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/functional-programming/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/functional-programming/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/functional-programming/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/functional-programming/</guid>
       <description></description>
     </item>
     <item>
       <title>IO</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/io/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/io/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/io/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/io/</guid>
       <description></description>
     </item>
     <item>
       <title>JavaScript</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/javascript/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/javascript/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/javascript/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>NIO</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/nio/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/nio/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/nio/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/nio/</guid>
       <description></description>
     </item>
     <item>
       <title>Performance</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/performance/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/performance/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/performance/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/performance/</guid>
       <description></description>
     </item>
     <item>
       <title>Storage</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/storage/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/storage/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/storage/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/storage/</guid>
       <description></description>
     </item>
     <item>
       <title>Stream API</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/stream-api/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/stream-api/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/stream-api/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/stream-api/</guid>
       <description></description>
     </item>
     <item>
       <title>String</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/string/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/string/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/string/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/string/</guid>
       <description></description>
     </item>
     <item>
       <title>Tips</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/tips/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/tips/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/tips/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/tips/</guid>
       <description></description>
     </item>
     <item>
       <title>Array</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/array/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/array/</link>
       <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/array/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/array/</guid>
       <description></description>
     </item>
     <item>
       <title>API</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/api/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/api/</link>
       <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/api/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/api/</guid>
       <description></description>
     </item>
     <item>
       <title>Async</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/async/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/async/</link>
       <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/async/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/async/</guid>
       <description></description>
     </item>
     <item>
       <title>Promise</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/tags/promise/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/promise/</link>
       <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/tags/promise/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/promise/</guid>
       <description></description>
     </item>
   </channel>
