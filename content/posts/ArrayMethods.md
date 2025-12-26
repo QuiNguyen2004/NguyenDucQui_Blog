@@ -4,6 +4,9 @@ date: 2025-12-24
 author: "Đức Qui"
 tags: ["JavaScript", "Array", "Functional Programming"]
 categories: ["Tutorial"]
+ShowToc: true
+TocOpen: true
+hidemeta: false
 ---
 <style>
     /* Container chính giới hạn chiều rộng và căn giữa */
