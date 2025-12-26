@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Exception on DUC QUI</title>
+    <link>http://localhost:1313/NguyenDucQui_Blog/tags/exception/</link>
+    <description>Recent content in Exception on DUC QUI</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>vi</language>
+    <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/tags/exception/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java Exception Handling: Bắt lỗi chuyên nghiệp với Try-Catch và Multi-catch</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/exceptionhandling/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/exceptionhandling/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Lỗi (Bug) là điều không thể tránh khỏi. Thay vì để ứng dụng &#34;sập&#34; (crash) trước mặt người dùng, Java cung cấp cơ chế `try-catch` để xử lý tình huống ngoại lệ một cách duyên dáng.
+&lt;h2 id=&#34;1-cấu-trúc-cơ-bản-try---catch---finally&#34;&gt;1. Cấu trúc cơ bản: Try - Catch - Finally&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Try:&lt;/strong&gt; Chứa đoạn code &amp;ldquo;nguy hiểm&amp;rdquo; có khả năng gây lỗi.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Catch:&lt;/strong&gt; Nơi xử lý khi lỗi xảy ra.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Finally:&lt;/strong&gt; Code trong khối này &lt;strong&gt;LUÔN LUÔN&lt;/strong&gt; chạy, dù có lỗi hay không (Thường dùng để đóng kết nối DB, đóng file).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-phân-biệt-throw-và-throws&#34;&gt;2. Phân biệt &lt;code&gt;throw&lt;/code&gt; và &lt;code&gt;throws&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;throw&lt;/code&gt;&lt;/strong&gt;: Hành động ném ra một lỗi cụ thể (Dùng bên trong thân hàm).
+&lt;ul&gt;
+&lt;li&gt;Ví dụ: &lt;code&gt;if (age &amp;lt; 18) throw new ArithmeticException(&amp;quot;Chưa đủ tuổi&amp;quot;);&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;throws&lt;/code&gt;&lt;/strong&gt;: Khai báo rằng hàm này &lt;em&gt;có thể&lt;/em&gt; gây ra lỗi, người gọi hàm phải tự xử lý (Dùng ở chữ ký hàm).
+&lt;ul&gt;
+&lt;li&gt;Ví dụ: &lt;code&gt;public void readFile() throws IOException { ... }&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-tính-năng-multi-catch-java-7&#34;&gt;3. Tính năng Multi-catch (Java 7+)&lt;/h2&gt;
+&lt;p&gt;Trước đây, nếu muốn bắt nhiều lỗi, bạn phải viết nhiều khối &lt;code&gt;catch&lt;/code&gt; lặp lại code. Từ Java 7, bạn có thể gộp chúng lại bằng dấu &lt;code&gt;|&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

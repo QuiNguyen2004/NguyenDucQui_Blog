@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Storage on DUC QUI</title>
+    <link>http://localhost:1313/NguyenDucQui_Blog/tags/storage/</link>
+    <description>Recent content in Storage on DUC QUI</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>vi</language>
+    <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/tags/storage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LocalStorage và SessionStorage: Lưu dữ liệu ngay trên trình duyệt</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/localstoragesessionstorage/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/localstoragesessionstorage/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Bạn muốn lưu giữ trạng thái &#34;Đã đăng nhập&#34; hoặc chế độ &#34;Dark Mode&#34; ngay cả khi người dùng F5 tải lại trang? Trình duyệt cung cấp cho chúng ta **Web Storage API**.
+&lt;h2 id=&#34;1-phân-biệt-localstorage-và-sessionstorage&#34;&gt;1. Phân biệt LocalStorage và SessionStorage&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Đặc điểm&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;LocalStorage&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;SessionStorage&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Thời gian sống&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Vĩnh viễn&lt;/strong&gt; (đến khi code xóa hoặc user xóa cache).&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Tạm thời&lt;/strong&gt; (mất ngay khi đóng Tab/Trình duyệt).&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Phạm vi&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Chung cho cả domain.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Riêng biệt cho từng Tab.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Dung lượng&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Khoảng 5MB-10MB.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Khoảng 5MB.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;2-cách-sử-dụng-giống-hệt-nhau&#34;&gt;2. Cách sử dụng (Giống hệt nhau)&lt;/h2&gt;
+&lt;p&gt;Chúng ta có 4 hàm cơ bản: &lt;code&gt;setItem&lt;/code&gt;, &lt;code&gt;getItem&lt;/code&gt;, &lt;code&gt;removeItem&lt;/code&gt;, &lt;code&gt;clear&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Java | Blog Lập Trình</title>
+<title>Java | DUC QUI</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -40,7 +40,7 @@
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/NguyenDucQui_Blog/" accesskey="h" title="Blog Lập Trình (Alt + H)">Blog Lập Trình</a>
+            <a href="http://localhost:1313/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -71,22 +71,22 @@
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/posts" title="KHÓA HỌC">
-                    <span>KHÓA HỌC</span>
+                <a href="http://localhost:1313/NguyenDucQui_Blog/posts/" title="COURSE">
+                    <span>COURSE</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/gellery" title="GELLERY">
-                    <span>GELLERY</span>
+                <a href="http://localhost:1313/NguyenDucQui_Blog/summary/" title="SUMMARY">
+                    <span>SUMMARY</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/about" title="ABOUT">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/about/" title="ABOUT">
                     <span>ABOUT</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/contact" title="CONTACT">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/contact/" title="CONTACT">
                     <span>CONTACT</span>
                 </a>
             </li>
@@ -102,94 +102,203 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Bài 1: Lập trình mạng cơ bản với Java Socket
+    <h2 class="entry-hint-parent">Làm chủ Java Collections: Hướng dẫn cơ bản về ArrayList, HashSet và HashMap
     </h2>
   </header>
   <div class="entry-content">
-    <p>1. Java Socket là gì? Socket là điểm đầu cuối của liên kết truyền thông hai chiều giữa hai chương trình chạy trên mạng. Trong Java, gói java.net cung cấp các class để lập trình mạng.
-Socket: Dùng cho Client. ServerSocket: Dùng cho Server (để lắng nghe kết nối). 2. Code ví dụ: Client - Server đơn giản Dưới đây là ví dụ tạo một Server lắng nghe và một Client gửi lời chào.
+    <p>Trong lập trình Java, việc quản lý và lưu trữ dữ liệu hiệu quả là một kỹ năng cốt lõi. Khác với mảng (Array) cố định kích thước, **Java Collections Framework** cung cấp các cấu trúc dữ liệu linh hoạt, có khả năng tự động thay đổi kích thước và đi kèm với nhiều thuật toán mạnh mẽ.Trong bài viết này, chúng ta sẽ tìm hiểu 3 class phổ biến nhất mà mọi lập trình viên Java đều phải biết: ArrayList, HashSet, và HashMap.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-12-01 00:00:00 +0000 UTC'>December 1, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Bài 1: Lập trình mạng cơ bản với Java Socket" href="http://localhost:1313/NguyenDucQui_Blog/posts/bai-1-java-socket/"></a>
+  <footer class="entry-footer"><span title='2025-12-26 00:00:00 +0000 UTC'>December 26, 2025</span>&nbsp;·&nbsp;<span>Đức Qui</span></footer>
+  <a class="entry-link" aria-label="post link to Làm chủ Java Collections: Hướng dẫn cơ bản về ArrayList, HashSet và HashMap" href="http://localhost:1313/NguyenDucQui_Blog/posts/javacollectionsframework/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Trước đây, để đọc một file text, chúng ta phải dùng `FileReader`, `BufferedReader` bọc nhau rất rườm rà. Kể từ Java 7 (và hoàn thiện ở Java 8), gói `java.nio.file` (New IO) giúp thao tác file trở nên cực kỳ đơn giản.1. Các class cốt lõi của Java NIO Path: Đại diện cho đường dẫn file (thay thế cho File cũ). Paths: Class tiện ích để tạo đối tượng Path. Files: Class chứa các phương thức static mạnh mẽ để thao tác file (đọc, ghi, copy, delete…). 2. Đọc file nhanh với Files.readAllLines Phương thức này đọc toàn bộ nội dung file và trả về một List&lt;String&gt;, mỗi phần tử là một dòng.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-25 00:00:00 +0000 UTC'>December 25, 2025</span>&nbsp;·&nbsp;<span>Đức Qui</span></footer>
+  <a class="entry-link" aria-label="post link to Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO" href="http://localhost:1313/NguyenDucQui_Blog/posts/javaioandfilehandling/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Java 8 Streams API: Tạm biệt vòng lặp for, chào đón code hiện đại
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Nếu như Collections Framework (Bài 1) giúp bạn lưu trữ dữ liệu, thì **Streams API** (ra mắt từ Java 8) chính là công cụ mạnh mẽ để **xử lý** đống dữ liệu đó.Trước Java 8, để lọc hay biến đổi dữ liệu, chúng ta phải viết những vòng lặp for dài dòng. Với Streams, bạn viết code giống như đang viết câu lệnh SQL: mô tả bạn muốn gì, thay vì mô tả phải làm từng bước thế nào.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-25 00:00:00 +0000 UTC'>December 25, 2025</span>&nbsp;·&nbsp;<span>Đức Qui</span></footer>
+  <a class="entry-link" aria-label="post link to Java 8 Streams API: Tạm biệt vòng lặp for, chào đón code hiện đại" href="http://localhost:1313/NguyenDucQui_Blog/posts/java8streamsapi/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Java Exception Handling: Bắt lỗi chuyên nghiệp với Try-Catch và Multi-catch
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Lỗi (Bug) là điều không thể tránh khỏi. Thay vì để ứng dụng &#34;sập&#34; (crash) trước mặt người dùng, Java cung cấp cơ chế `try-catch` để xử lý tình huống ngoại lệ một cách duyên dáng.1. Cấu trúc cơ bản: Try - Catch - Finally Try: Chứa đoạn code “nguy hiểm” có khả năng gây lỗi. Catch: Nơi xử lý khi lỗi xảy ra. Finally: Code trong khối này LUÔN LUÔN chạy, dù có lỗi hay không (Thường dùng để đóng kết nối DB, đóng file). 2. Phân biệt throw và throws throw: Hành động ném ra một lỗi cụ thể (Dùng bên trong thân hàm). Ví dụ: if (age &lt; 18) throw new ArithmeticException(&#34;Chưa đủ tuổi&#34;); throws: Khai báo rằng hàm này có thể gây ra lỗi, người gọi hàm phải tự xử lý (Dùng ở chữ ký hàm). Ví dụ: public void readFile() throws IOException { ... } 3. Tính năng Multi-catch (Java 7&#43;) Trước đây, nếu muốn bắt nhiều lỗi, bạn phải viết nhiều khối catch lặp lại code. Từ Java 7, bạn có thể gộp chúng lại bằng dấu |.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-25 00:00:00 +0000 UTC'>December 25, 2025</span>&nbsp;·&nbsp;<span>Đức Qui</span></footer>
+  <a class="entry-link" aria-label="post link to Java Exception Handling: Bắt lỗi chuyên nghiệp với Try-Catch và Multi-catch" href="http://localhost:1313/NguyenDucQui_Blog/posts/exceptionhandling/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Làm chủ Java String: 5 hàm quan trọng và Kỹ thuật tối ưu hiệu năng
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Trong Java, `String` là đối tượng bất biến (immutable). Điều này có nghĩa là mỗi khi bạn chỉnh sửa chuỗi, Java thực tế đang tạo ra một chuỗi mới trong bộ nhớ. Hiểu rõ các hàm xử lý chuỗi và cách tối ưu chúng là chìa khóa để viết code chuyên nghiệp.1. 5 Hàm xử lý chuỗi “bất ly thân” Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thực tế:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-25 00:00:00 +0000 UTC'>December 25, 2025</span>&nbsp;·&nbsp;<span>Đức Qui</span></footer>
+  <a class="entry-link" aria-label="post link to Làm chủ Java String: 5 hàm quan trọng và Kỹ thuật tối ưu hiệu năng" href="http://localhost:1313/NguyenDucQui_Blog/posts/javastringmethods/"></a>
 </article>
     </main>
-    
-<footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/NguyenDucQui_Blog/">Blog Lập Trình</a></span> · 
+    <footer class="custom-footer">
+    <div class="footer-container">
+        
+        <div class="footer-col">
+            <h4 class="footer-title">VỀ TÔI</h4>
+            <div class="footer-line"></div>
+            <p class="footer-text">
+                Chào mừng bạn đến với Blog của Đức Qui. Đây là nơi tôi chia sẻ các kiến thức về lập trình mạng, bảo mật hệ thống và các dự án cá nhân. Cảm ơn bạn đã ghé thăm!
+            </p>
+            <p class="copyright-text">
+                © 2025 <strong>Nguyễn Đức Qui</strong>. All Rights Reserved.
+            </p>
+        </div>
 
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
+        <div class="footer-col">
+            <h4 class="footer-title">HÃY THEO DÕI TÔI</h4>
+            <div class="footer-line"></div>
+            <p class="footer-text">Kết nối với tôi qua các mạng xã hội:</p>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/qui.nguyen.660694" target="_blank" class="social-btn facebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+                </a>
+                
+                <a href="https://github.com/QuiNguyen2004" target="_blank" class="social-btn github">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                
+                <a href="https://mail.google.com/mail/u/0/#inbox" class="social-btn email">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
+            </div>
+        </div>
+
+    </div>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
 
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
+<style>
+     
+    .custom-footer {
+        background-color: #04091e;  
+        color: #fff;
+        padding: 60px 0 40px 0;
+        margin-top: auto;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
+    .footer-container {
+        max-width: 1200px;  
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;  
+        gap: 50px;
+    }
 
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
+     
+    .footer-col {
+        flex: 1;
+        min-width: 300px;  
+    }
+
+    .footer-title {
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+
+     
+    .footer-line {
+        width: 40px;
+        height: 3px;
+        background-color: #6c8af1;  
+        margin-bottom: 25px;
+    }
+
+    .footer-text {
+        font-size: 14px;
+        line-height: 1.8;
+        color: #aab1c6;  
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    .copyright-text {
+        font-size: 13px;
+        color: #6c757d;
+        margin-top: 30px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 20px;
+    }
+
+     
+    .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: rgba(255,255,255,0.05);  
+        color: #fff;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .social-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-btn:hover {
+        transform: translateY(-3px);
+    }
+    .social-btn.facebook:hover { background-color: #3b5998; }
+    .social-btn.github:hover { background-color: #333; }
+    .social-btn.email:hover { background-color: #ea4335; }
+
+     
+    @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;  
+            gap: 40px;
         }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-</body>
+        .footer-line { margin-bottom: 15px; }
+    }
+</style></body>
 
 </html>

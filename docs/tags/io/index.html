@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="light">
+
+<head><script src="/NguyenDucQui_Blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=NguyenDucQui_Blog/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>IO | DUC QUI</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/NguyenDucQui_Blog/tags/io/">
+<link crossorigin="anonymous" href="/NguyenDucQui_Blog/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/NguyenDucQui_Blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/NguyenDucQui_Blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/NguyenDucQui_Blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/NguyenDucQui_Blog/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/NguyenDucQui_Blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/NguyenDucQui_Blog/tags/io/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/NguyenDucQui_Blog/tags/io/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    }
+
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/NguyenDucQui_Blog/" title="HOME">
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/NguyenDucQui_Blog/posts/" title="COURSE">
+                    <span>COURSE</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/NguyenDucQui_Blog/summary/" title="SUMMARY">
+                    <span>SUMMARY</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/NguyenDucQui_Blog/about/" title="ABOUT">
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/NguyenDucQui_Blog/contact/" title="CONTACT">
+                    <span>CONTACT</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    IO
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Trước đây, để đọc một file text, chúng ta phải dùng `FileReader`, `BufferedReader` bọc nhau rất rườm rà. Kể từ Java 7 (và hoàn thiện ở Java 8), gói `java.nio.file` (New IO) giúp thao tác file trở nên cực kỳ đơn giản.1. Các class cốt lõi của Java NIO Path: Đại diện cho đường dẫn file (thay thế cho File cũ). Paths: Class tiện ích để tạo đối tượng Path. Files: Class chứa các phương thức static mạnh mẽ để thao tác file (đọc, ghi, copy, delete…). 2. Đọc file nhanh với Files.readAllLines Phương thức này đọc toàn bộ nội dung file và trả về một List&lt;String&gt;, mỗi phần tử là một dòng.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-25 00:00:00 +0000 UTC'>December 25, 2025</span>&nbsp;·&nbsp;<span>Đức Qui</span></footer>
+  <a class="entry-link" aria-label="post link to Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO" href="http://localhost:1313/NguyenDucQui_Blog/posts/javaioandfilehandling/"></a>
+</article>
+    </main>
+    <footer class="custom-footer">
+    <div class="footer-container">
+        
+        <div class="footer-col">
+            <h4 class="footer-title">VỀ TÔI</h4>
+            <div class="footer-line"></div>
+            <p class="footer-text">
+                Chào mừng bạn đến với Blog của Đức Qui. Đây là nơi tôi chia sẻ các kiến thức về lập trình mạng, bảo mật hệ thống và các dự án cá nhân. Cảm ơn bạn đã ghé thăm!
+            </p>
+            <p class="copyright-text">
+                © 2025 <strong>Nguyễn Đức Qui</strong>. All Rights Reserved.
+            </p>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-title">HÃY THEO DÕI TÔI</h4>
+            <div class="footer-line"></div>
+            <p class="footer-text">Kết nối với tôi qua các mạng xã hội:</p>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/qui.nguyen.660694" target="_blank" class="social-btn facebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+                </a>
+                
+                <a href="https://github.com/QuiNguyen2004" target="_blank" class="social-btn github">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                
+                <a href="https://mail.google.com/mail/u/0/#inbox" class="social-btn email">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<style>
+     
+    .custom-footer {
+        background-color: #04091e;  
+        color: #fff;
+        padding: 60px 0 40px 0;
+        margin-top: auto;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .footer-container {
+        max-width: 1200px;  
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;  
+        gap: 50px;
+    }
+
+     
+    .footer-col {
+        flex: 1;
+        min-width: 300px;  
+    }
+
+    .footer-title {
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+
+     
+    .footer-line {
+        width: 40px;
+        height: 3px;
+        background-color: #6c8af1;  
+        margin-bottom: 25px;
+    }
+
+    .footer-text {
+        font-size: 14px;
+        line-height: 1.8;
+        color: #aab1c6;  
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    .copyright-text {
+        font-size: 13px;
+        color: #6c757d;
+        margin-top: 30px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 20px;
+    }
+
+     
+    .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: rgba(255,255,255,0.05);  
+        color: #fff;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .social-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-btn:hover {
+        transform: translateY(-3px);
+    }
+    .social-btn.facebook:hover { background-color: #3b5998; }
+    .social-btn.github:hover { background-color: #333; }
+    .social-btn.email:hover { background-color: #ea4335; }
+
+     
+    @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;  
+            gap: 40px;
+        }
+        .footer-line { margin-bottom: 15px; }
+    }
+</style></body>
+
+</html>

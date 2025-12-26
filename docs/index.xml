@@ -1,261 +1,1716 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>DUC QUI BLOG</title>
-    <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/</link>
-    <description>Recent content on DUC QUI BLOG</description>
+    <title>DUC QUI</title>
+    <link>http://localhost:1313/NguyenDucQui_Blog/</link>
+    <description>Recent content on DUC QUI</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>vi</language>
-    <lastBuildDate>Wed, 10 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://quinguyen2004.github.io/NguyenDucQui_Blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Làm chủ Java Collections: Hướng dẫn cơ bản về ArrayList, HashSet và HashMap</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/javacollectionsframework/</link>
+      <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/javacollectionsframework/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Trong lập trình Java, việc quản lý và lưu trữ dữ liệu hiệu quả là một kỹ năng cốt lõi. Khác với mảng (Array) cố định kích thước, **Java Collections Framework** cung cấp các cấu trúc dữ liệu linh hoạt, có khả năng tự động thay đổi kích thước và đi kèm với nhiều thuật toán mạnh mẽ.
+&lt;p&gt;Trong bài viết này, chúng ta sẽ tìm hiểu 3 class phổ biến nhất mà mọi lập trình viên Java đều phải biết: &lt;strong&gt;ArrayList&lt;/strong&gt;, &lt;strong&gt;HashSet&lt;/strong&gt;, và &lt;strong&gt;HashMap&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/javaioandfilehandling/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/javaioandfilehandling/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Trước đây, để đọc một file text, chúng ta phải dùng `FileReader`, `BufferedReader` bọc nhau rất rườm rà. Kể từ Java 7 (và hoàn thiện ở Java 8), gói `java.nio.file` (New IO) giúp thao tác file trở nên cực kỳ đơn giản.
+&lt;h2 id=&#34;1-các-class-cốt-lõi-của-java-nio&#34;&gt;1. Các class cốt lõi của Java NIO&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Path&lt;/code&gt;&lt;/strong&gt;: Đại diện cho đường dẫn file (thay thế cho &lt;code&gt;File&lt;/code&gt; cũ).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Paths&lt;/code&gt;&lt;/strong&gt;: Class tiện ích để tạo đối tượng &lt;code&gt;Path&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Files&lt;/code&gt;&lt;/strong&gt;: Class chứa các phương thức static mạnh mẽ để thao tác file (đọc, ghi, copy, delete&amp;hellip;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-đọc-file-nhanh-với-filesreadalllines&#34;&gt;2. Đọc file nhanh với &lt;code&gt;Files.readAllLines&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Phương thức này đọc toàn bộ nội dung file và trả về một &lt;code&gt;List&amp;lt;String&amp;gt;&lt;/code&gt;, mỗi phần tử là một dòng.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM Manipulation: Cách JavaScript &#39;nói chuyện&#39; với HTML</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/dommanipulation/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/dommanipulation/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Để làm website &#34;động&#34; (click nút thì hiện popup, đổi màu...), JavaScript cần thao tác với DOM (Document Object Model). Dưới đây là các lệnh cơ bản nhất.
+&lt;h2 id=&#34;1-truy-xuất-phần-tử-selectors&#34;&gt;1. Truy xuất phần tử (Selectors)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;document.getElementById(&#39;id&#39;)&lt;/code&gt;&lt;/strong&gt;: Lấy theo ID (nhanh nhất).
+&lt;strong&gt;&lt;code&gt;document.querySelector(&#39;.class&#39;)&lt;/code&gt;&lt;/strong&gt;: Lấy phần tử đầu tiên khớp với CSS Selector (Rất linh hoạt).
+&lt;strong&gt;&lt;code&gt;document.querySelectorAll(&#39;p&#39;)&lt;/code&gt;&lt;/strong&gt;: Lấy tất cả các thẻ p.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java 8 Streams API: Tạm biệt vòng lặp for, chào đón code hiện đại</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/java8streamsapi/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/java8streamsapi/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Nếu như Collections Framework (Bài 1) giúp bạn lưu trữ dữ liệu, thì **Streams API** (ra mắt từ Java 8) chính là công cụ mạnh mẽ để **xử lý** đống dữ liệu đó.
+&lt;p&gt;Trước Java 8, để lọc hay biến đổi dữ liệu, chúng ta phải viết những vòng lặp &lt;code&gt;for&lt;/code&gt; dài dòng. Với Streams, bạn viết code giống như đang viết câu lệnh SQL: mô tả &lt;strong&gt;bạn muốn gì&lt;/strong&gt;, thay vì mô tả &lt;strong&gt;phải làm từng bước thế nào&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java Exception Handling: Bắt lỗi chuyên nghiệp với Try-Catch và Multi-catch</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/exceptionhandling/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/exceptionhandling/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Lỗi (Bug) là điều không thể tránh khỏi. Thay vì để ứng dụng &#34;sập&#34; (crash) trước mặt người dùng, Java cung cấp cơ chế `try-catch` để xử lý tình huống ngoại lệ một cách duyên dáng.
+&lt;h2 id=&#34;1-cấu-trúc-cơ-bản-try---catch---finally&#34;&gt;1. Cấu trúc cơ bản: Try - Catch - Finally&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Try:&lt;/strong&gt; Chứa đoạn code &amp;ldquo;nguy hiểm&amp;rdquo; có khả năng gây lỗi.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Catch:&lt;/strong&gt; Nơi xử lý khi lỗi xảy ra.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Finally:&lt;/strong&gt; Code trong khối này &lt;strong&gt;LUÔN LUÔN&lt;/strong&gt; chạy, dù có lỗi hay không (Thường dùng để đóng kết nối DB, đóng file).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-phân-biệt-throw-và-throws&#34;&gt;2. Phân biệt &lt;code&gt;throw&lt;/code&gt; và &lt;code&gt;throws&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;throw&lt;/code&gt;&lt;/strong&gt;: Hành động ném ra một lỗi cụ thể (Dùng bên trong thân hàm).
+&lt;ul&gt;
+&lt;li&gt;Ví dụ: &lt;code&gt;if (age &amp;lt; 18) throw new ArithmeticException(&amp;quot;Chưa đủ tuổi&amp;quot;);&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;throws&lt;/code&gt;&lt;/strong&gt;: Khai báo rằng hàm này &lt;em&gt;có thể&lt;/em&gt; gây ra lỗi, người gọi hàm phải tự xử lý (Dùng ở chữ ký hàm).
+&lt;ul&gt;
+&lt;li&gt;Ví dụ: &lt;code&gt;public void readFile() throws IOException { ... }&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-tính-năng-multi-catch-java-7&#34;&gt;3. Tính năng Multi-catch (Java 7+)&lt;/h2&gt;
+&lt;p&gt;Trước đây, nếu muốn bắt nhiều lỗi, bạn phải viết nhiều khối &lt;code&gt;catch&lt;/code&gt; lặp lại code. Từ Java 7, bạn có thể gộp chúng lại bằng dấu &lt;code&gt;|&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript ES6&#43;: 3 Tính năng &#39;nhỏ nhưng có võ&#39; bạn phải biết</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/es6andfeatures/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/es6andfeatures/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Kể từ phiên bản ES6 (2015), JavaScript đã lột xác hoàn toàn. Nếu bạn vẫn đang viết code theo kiểu cũ, bạn đang bỏ lỡ những cú pháp giúp code ngắn gọn và &#34;sạch&#34; hơn gấp nhiều lần. Hôm nay, chúng ta sẽ tìm hiểu 3 tính năng được sử dụng nhiều nhất: **Arrow Functions**, **Destructuring** và **Template Literals**.
+&lt;h2 id=&#34;1-arrow-functions-&#34;&gt;1. Arrow Functions (&lt;code&gt;=&amp;gt;&lt;/code&gt;)&lt;/h2&gt;
+&lt;p&gt;Đây là cách viết hàm ngắn gọn hơn, bỏ đi từ khóa &lt;code&gt;function&lt;/code&gt; rườm rà.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Làm chủ Java String: 5 hàm quan trọng và Kỹ thuật tối ưu hiệu năng</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/javastringmethods/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/javastringmethods/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Trong Java, `String` là đối tượng bất biến (immutable). Điều này có nghĩa là mỗi khi bạn chỉnh sửa chuỗi, Java thực tế đang tạo ra một chuỗi mới trong bộ nhớ. Hiểu rõ các hàm xử lý chuỗi và cách tối ưu chúng là chìa khóa để viết code chuyên nghiệp.
+&lt;h2 id=&#34;1-5-hàm-xử-lý-chuỗi-bất-ly-thân&#34;&gt;1. 5 Hàm xử lý chuỗi &amp;ldquo;bất ly thân&amp;rdquo;&lt;/h2&gt;
+&lt;p&gt;Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thực tế:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LocalStorage và SessionStorage: Lưu dữ liệu ngay trên trình duyệt</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/localstoragesessionstorage/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/localstoragesessionstorage/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Bạn muốn lưu giữ trạng thái &#34;Đã đăng nhập&#34; hoặc chế độ &#34;Dark Mode&#34; ngay cả khi người dùng F5 tải lại trang? Trình duyệt cung cấp cho chúng ta **Web Storage API**.
+&lt;h2 id=&#34;1-phân-biệt-localstorage-và-sessionstorage&#34;&gt;1. Phân biệt LocalStorage và SessionStorage&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Đặc điểm&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;LocalStorage&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;SessionStorage&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Thời gian sống&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Vĩnh viễn&lt;/strong&gt; (đến khi code xóa hoặc user xóa cache).&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Tạm thời&lt;/strong&gt; (mất ngay khi đóng Tab/Trình duyệt).&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Phạm vi&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Chung cho cả domain.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Riêng biệt cho từng Tab.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Dung lượng&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Khoảng 5MB-10MB.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Khoảng 5MB.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;2-cách-sử-dụng-giống-hệt-nhau&#34;&gt;2. Cách sử dụng (Giống hệt nhau)&lt;/h2&gt;
+&lt;p&gt;Chúng ta có 4 hàm cơ bản: &lt;code&gt;setItem&lt;/code&gt;, &lt;code&gt;getItem&lt;/code&gt;, &lt;code&gt;removeItem&lt;/code&gt;, &lt;code&gt;clear&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bộ ba &#39;Thần thánh&#39; Map, Filter, Reduce: Bí kíp xử lý mảng trong JS</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/arraymethods/</link>
+      <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/arraymethods/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Khi làm việc với các Framework hiện đại như React hay Vue, bạn sẽ rất ít khi dùng vòng lặp `for` truyền thống. Thay vào đó, chúng ta sử dụng các &#34;Functional Array Methods&#34;. Dưới đây là 3 hàm quan trọng nhất.
+&lt;p&gt;Giả sử ta có danh sách sản phẩm:&lt;/p&gt;</description>
+    </item>
     <item>
       <title></title>
-      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/about/</link>
+      <link>http://localhost:1313/NguyenDucQui_Blog/about/</link>
       <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/about/</guid>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/about/</guid>
       <description>&lt;style&gt;
-/* 1. Cấu hình khung chung */
-.about-wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    padding-top: 20px;
-    font-family: sans-serif;
+/* =========================================
+   1. CẤU HÌNH KHUNG TOÀN TRANG (Đã chỉnh lại cho 1 cột)
+   ========================================= */
+.main { 
+    max-width: 100% !important; /* Để container ngoài cùng full */
+    margin: 0 auto !important; 
+    padding: 0 !important; 
 }
 
-/* 2. Phần Ảnh (Nằm trên cùng) */
-.about-image {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
+/* Layout Chính: Căn giữa, giới hạn chiều rộng để dễ đọc */
+.page-layout { 
+    width: 100%;
+    max-width: 960px; 
+    margin: 40px auto; 
+    padding: 0 20px;
+    display: block; 
 }
 
-.my-photo {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%; /* Bo tròn ảnh đại diện */
-    object-fit: cover;
-    border: 4px solid var(--primary);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    z-index: 2;
-    transition: transform 0.3s ease;
-}
-
-.my-photo:hover {
-    transform: scale(1.05);
-}
-
-/* 3. Phần Chữ */
-.about-text {
+/* =========================================
+   2. HEADER: ẢNH BANNER
+   ========================================= */
+.about-image { 
+    display: block;
+    width: 100%;
     text-align: center;
+    margin: 0 auto 50px auto;
+}
+.my-photo {
+    display: block;
+    width: 100%;
+    height: 1000px; 
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+    border: none;
 }
 
-.main-name {
-    font-size: 2.2rem;
+/* =========================================
+   3. GIAO DIỆN THÔNG TIN (INFO + INTRO)
+   ========================================= */
+.profile-split-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed #eee; /* Đường gạch ngăn cách nhẹ */
+}
+
+/* Cột thông tin nhỏ bên trái */
+.profile-info-side {
+    flex: 0 0 200px; /* Cố định chiều rộng cột info */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Canh trái cho gọn */
+    gap: 20px; 
+    padding-right: 20px;
+    border-right: 1px solid #eee;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    font-family: &#39;Segoe UI&#39;, sans-serif;
+}
+.meta-label {
+    font-size: 0.75rem; color: #888; text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 5px; font-weight: 600;
+}
+.meta-value {
+    font-size: 0.95rem; font-weight: 700; color: #333;
+    display: flex; align-items: center; gap: 8px;
+}
+.meta-icon { font-size: 1rem; }
+
+/* Cột Text giới thiệu bên phải */
+.profile-text-side {
+    flex: 1;
+}
+
+.content-style { 
+    font-family: &#39;Segoe UI&#39;, sans-serif; 
+    font-size: 1.05rem; 
+    line-height: 1.8; 
+    color: var(--primary); 
+    text-align: justify; 
+}
+.content-style p { margin-bottom: 20px; }
+.content-style strong { color: #000; font-weight: 700; }
+
+/* Responsive cho Mobile */
+@media (max-width: 768px) {
+    .profile-split-layout { flex-direction: column; gap: 30px; border: none; }
+    .profile-info-side { 
+        width: 100%; 
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: space-between;
+        border-right: none; 
+        border-bottom: 1px solid #eee; 
+        padding-bottom: 20px; padding-right: 0;
+    }
+    .meta-item { margin-bottom: 10px; width: 48%; } /* Chia 2 cột trên mobile */
+    .my-photo { height: 400px; } /* Ảnh nhỏ lại trên mobile */
+}
+
+/* =========================================
+   4. TESTIMONIALS (GÓC NHÌN ĐỒNG ĐỘI)
+   ========================================= */
+.testimonials-section { margin-top: 40px; padding-top: 30px; border-top: 1px solid #eee; }
+.tech-header {
+    width: 100%; text-align: center; 
+    font-weight: 800; font-size: 1.2rem; margin-bottom: 30px; color: #444; text-transform: uppercase; letter-spacing: 1px;
+}
+.testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+@media (max-width: 768px) { .testi-grid { grid-template-columns: 1fr; } }
+
+.testi-card { 
+    background: var(--entry); 
+    padding: 25px; 
+    border-radius: 12px; 
+    border: 1px solid var(--border); 
+    font-size: 0.95rem; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03); 
+    transition: transform 0.2s;
+}
+.testi-card:hover { transform: translateY(-3px); } /* Hiệu ứng hover nhẹ */
+
+.quote-icon { font-size: 2.5rem; color: #ddd; line-height: 1; margin-bottom: 10px; font-family: serif; }
+.testi-author { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
+.author-avatar { 
+    width: 40px; height: 40px; border-radius: 50%; 
+    display: flex; align-items: center; justify-content: center; 
+    font-weight: bold; font-size: 1rem; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.author-info { display: flex; flex-direction: column; }
+.author-name { font-weight: 700; font-size: 0.95rem; color: var(--primary); }
+.author-role { font-size: 0.75rem; color: var(--secondary); margin-top: 2px; }
+
+&lt;/style&gt;
+&lt;div class=&#34;page-layout&#34;&gt;    
+    &lt;div class=&#34;about-image&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/NguyenDucQui_Blog/anhabout.jpg&#34; class=&#34;my-photo&#34; alt=&#34;Avatar&#34;&gt;
+    &lt;/div&gt;                 
+    &lt;div class=&#34;profile-split-layout&#34;&gt;               
+        &lt;div class=&#34;profile-info-side&#34;&gt;
+            &lt;div class=&#34;meta-item&#34;&gt;
+                &lt;span class=&#34;meta-label&#34;&gt;Địa điểm&lt;/span&gt;
+                &lt;div class=&#34;meta-value&#34;&gt;&lt;span class=&#34;meta-icon&#34;&gt;📍&lt;/span&gt; TP. Hồ Chí Minh&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;meta-item&#34;&gt;
+                &lt;span class=&#34;meta-label&#34;&gt;Email&lt;/span&gt;
+                &lt;div class=&#34;meta-value&#34;&gt;&lt;span class=&#34;meta-icon&#34;&gt;📧&lt;/span&gt; nguyenducqui2004@gmail.com&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;meta-item&#34;&gt;
+                &lt;span class=&#34;meta-label&#34;&gt;Học vấn&lt;/span&gt;
+                &lt;div class=&#34;meta-value&#34;&gt;&lt;span class=&#34;meta-icon&#34;&gt;🎓&lt;/span&gt; HUTECH University&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;meta-item&#34;&gt;
+                &lt;span class=&#34;meta-label&#34;&gt;Trạng thái&lt;/span&gt;
+                &lt;div class=&#34;meta-value&#34;&gt;&lt;span class=&#34;meta-icon&#34;&gt;🟢&lt;/span&gt; Sẵn sàng&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;profile-text-side&#34;&gt;                   
+            &lt;div class=&#34;content-style&#34;&gt;
+                &lt;p&gt;Tên tôi là &lt;strong&gt;Đức Qui&lt;/strong&gt;. Nếu như &#34;Đức&#34; đại diện cho sự tử tế trong đạo đức nghề nghiệp, thì &#34;Qui&#34; gợi nhắc tôi về sự Quy chuẩn và Kiên định – những yếu tố cốt lõi của một hệ thống mạng vững chắc. Tôi luôn mong muốn sống và làm việc đúng như tên mình: xây dựng những giải pháp công nghệ không chỉ hoạt động tốt mà còn phải chuẩn mực, minh bạch và đáng tin cậy. Sắp hoàn thành chương trình đại học, tôi đã sẵn sàng &#34;Online&#34;, tự tin kết nối và truyền tải giá trị của mình vào thế giới công nghệ rộng lớn.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/summary/</link>
+      <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/summary/</guid>
+      <description>&lt;style&gt;
+/* =========================================
+   1. CẤU HÌNH KHUNG CV
+   ========================================= */
+.post-content { max-width: 100% !important; padding: 0 !important; background: transparent !important; }
+
+.cv-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+    font-family: &#39;Segoe UI&#39;, sans-serif;
+    color: var(--primary);
+}
+
+/* =========================================
+   2. CỘT TRÁI (THÔNG TIN &amp; KỸ NĂNG)
+   ========================================= */
+.cv-sidebar {
+    flex: 0 0 280px; /* Chiều rộng cố định cột trái */
+    background: var(--entry);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    height: fit-content;
+}
+/* --- PHẦN CHỈNH SỬA ẢNH TRÒN (FIXED) --- */
+.cv-avatar {
+    /* Dùng !important để ghi đè CSS mặc định của theme */
+    width: 200px !important;
+    height: 200px !important;   
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 5px solid #ffffff !important;
+    margin: 0 auto 25px auto !important;
+    display: block !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+    background-color: #fff !important; 
+    padding: 0 !important;
+    max-width: unset !important;
+}
+/* Tiêu đề mục nhỏ */
+.sidebar-title {
+    font-size: 14px;
     font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    color: #555;
+}
+
+/* Kỹ năng dạng Tag */
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
+.tag {
+    background: #eef2ff;
+    color: #6c8af1;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+}
+/* Dark mode fix cho tag */
+@media (prefers-color-scheme: dark) {
+    .tag { background: #333; color: #a2b9ff; }
+}
+
+/* Thông tin liên hệ */
+.contact-list { list-style: none; padding: 0; margin-bottom: 30px; }
+.contact-list li {
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.icon { width: 16px; color: #888; }
+
+/* =========================================
+   3. CỘT PHẢI (NỘI DUNG CHÍNH)
+   ========================================= */
+.cv-main { flex: 1; }
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+.section-icon {
+    width: 40px; height: 40px;
+    background: #6c8af1;
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+}
+.section-title {
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin: 0;
+}
+
+/* Timeline Item (Dùng cho Kinh nghiệm &amp; Giáo dục) */
+.timeline-box {
+    border-left: 2px solid #e0e0e0;
+    padding-left: 30px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+/* Dấu chấm tròn trên timeline */
+.timeline-item::before {
+    content: &#34;&#34;;
+    position: absolute;
+    left: -37px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border: 3px solid #6c8af1;
+    border-radius: 50%;
+}
+
+.time-badge {
+    display: inline-block;
+    background: #6c8af1;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+}
+
+.item-title {
+    font-size: 18px;
+    font-weight: 700;
     margin-bottom: 5px;
     color: var(--primary);
 }
 
-.sub-title {
-    font-size: 1rem;
-    color: var(--secondary);
-    font-weight: 500;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.item-subtitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: #888;
+    margin-bottom: 10px;
+    display: block;
 }
 
-.intro-block {
+.item-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--secondary);
+    text-align: justify;
+}
+.item-desc ul { margin-left: 20px; margin-top: 5px; }
+
+/* Grid cho Chứng chỉ &amp; Giải thưởng */
+.grid-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+/* --- SỬA LẠI CSS CARD-SIMPLE --- */
+.card-simple {
     background: var(--entry);
-    padding: 30px;
-    border-radius: 15px;
+    padding: 25px 15px; /* Tăng khoảng cách đệm */
     border: 1px solid var(--border);
-    text-align: justify; /* Căn đều 2 bên cho đẹp mắt với văn bản dài */
-    margin-bottom: 30px;
-    line-height: 1.8;
+    border-radius: 16px; /* Bo góc tròn nhiều hơn giống hình mẫu */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* Hiệu ứng bóng đổ nhẹ giống thẻ bài */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card-simple:hover {
+    transform: translateY(-5px); /* Hiệu ứng bay lên khi di chuột */
+}
+
+/* --- THÊM CLASS MỚI CHO ẢNH CHỨNG CHỈ --- */
+.cert-img {
+    width: 350px; /* Kích thước ảnh */
+    height: 350px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 8px; 
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
     color: var(--primary);
 }
-
-.intro-block p {
-    margin-bottom: 15px; /* Khoảng cách giữa các đoạn văn */
+/* =========================================
+   4. LIGHTBOX (HIỆU ỨNG PHÓNG TO ẢNH)
+   ========================================= */
+/* Lớp phủ nền đen mờ */
+.lightbox-overlay {
+    display: none; /* Mặc định ẩn */
+    position: fixed; /* Cố định trên màn hình */
+    z-index: 9999; /* Nổi lên trên cùng mọi thứ */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Màu đen mờ 85% */
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out; /* Con trỏ chuột báo hiệu bấm để thoát */
+    padding: 20px;
+    backdrop-filter: blur(5px); /* Hiệu ứng làm mờ nền phía sau (tùy chọn) */
 }
 
-.intro-block strong {
-    color: var(--primary);
-    font-weight: bold;
+/* Class này được thêm vào bằng JS để hiện overlay lên */
+.lightbox-overlay.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
 }
 
-.intro-block em {
-    font-style: italic;
-    color: var(--secondary);
+/* Ảnh lớn bên trong overlay */
+.lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 2px solid #fff;
+    animation: zoomIn 0.3s ease;
 }
 
-/* 4. Tech Stack */
-.tech-container {
+/* Thêm hiệu ứng chuyển động nhẹ nhàng */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes zoomIn { from { transform: scale(0.9); } to { transform: scale(1); } }
+
+/* Con trỏ chuột khi di vào ảnh nhỏ để biết là bấm được */
+.cert-img.lightbox-trigger {
+    cursor: zoom-in;
+    transition: transform 0.2s;
+}
+.cert-img.lightbox-trigger:hover {
+   transform: scale(1.05);
+}
+/* =========================================
+   5. SKILL RATING (CHẤM ĐIỂM KỸ NĂNG)
+   ========================================= */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Tự động chia cột */
+    gap: 15px;
+    margin-left: 20px; /* Căn lề giống timeline-box cũ */
     margin-bottom: 40px;
 }
 
-.tech-header {
-    font-weight: bold;
-    margin-bottom: 15px;
-    display: inline-block;
-    border-bottom: 2px solid var(--primary);
-    text-transform: uppercase;
-}
-
-.tech-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.tech-badge {
-    background: var(--theme);
-    border: 1px solid var(--border);
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.2s;
-}
-
-.tech-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Màu sắc riêng cho từng công nghệ */
-.badge-java { color: #e74c3c; border-color: #e74c3c; } 
-.badge-socket { color: #3498db; border-color: #3498db; } 
-.badge-js { color: #f1c40f; border-color: #f1c40f; } 
-
-/* 5. Footer liên hệ */
-.contact-links {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.contact-links a {
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--primary);
-    padding: 10px 20px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    transition: background 0.3s;
-}
-
-.contact-links a:hover {
+.skill-card-rating {
     background: var(--entry);
-}
-/* --- PHẦN MỚI: TESTIMONIALS (ĐÁNH GIÁ) --- */
-.testimonials-section {
-    margin-top: 50px;
-    text-align: left;
-}
-.testi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-.testi-card {
-    background: var(--entry);
-    padding: 20px;
-    border-radius: 12px;
     border: 1px solid var(--border);
-    position: relative;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-.quote-icon {
-    font-size: 2rem;
-    color: var(--secondary);
-    opacity: 0.3;
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    font-family: serif;
-}
-.testi-content {
-    font-style: italic;
-    font-size: 0.95rem;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    color: var(--primary);
-    line-height: 1.6;
-}
-.testi-author {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-top: 1px solid var(--border);
-    padding-top: 10px;
-}
-.author-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #ddd; /* Màu nền tạm nếu không có ảnh */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #555;
-    font-size: 14px;
-}
-.author-info {
+    border-radius: 10px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
+    gap: 8px;
+    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
 }
-.author-name {
-    font-weight: bold;
-    font-size: 0.9rem;
+
+.skill-card-rating:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
-.author-role {
-    font-size: 0.8rem;
+
+/* Thanh màu trang trí dưới đáy giống hình 1 */
+.skill-card-rating::after {
+    content: &#39;&#39;;
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 3px;
+    background: #e0e0e0;
+}
+/* Các màu sắc riêng cho từng loại (Tùy chọn) */
+.skill-card-rating.blue::after { background: #6c8af1; }
+.skill-card-rating.orange::after { background: #ff9f43; }
+.skill-card-rating.purple::after { background: #a55eea; }
+.skill-card-rating.green::after { background: #2bcbba; }
+
+.skill-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skill-name {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* HỆ THỐNG CHẤM ĐIỂM (DOTS) */
+.rating-dots {
+    display: flex;
+    gap: 4px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #e0e0e0; /* Màu xám cho điểm chưa đạt */
+}
+
+.dot.filled {
+    background-color: #6c8af1; /* Màu xanh cho điểm đã đạt */
+}
+/* =========================================
+   6. MỤC TIÊU VÀ ĐỊNH HƯỚNG (NEW)
+   ========================================= */
+.goals-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-left: 20px; /* Thụt vào thẳng hàng với timeline */
+    margin-bottom: 40px;
+}
+
+.goal-card {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: transform 0.3s;
+}
+
+.goal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.goal-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.goal-icon-box {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.short-term .goal-icon-box {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.long-term .goal-icon-box {
+    background-color: #ffebee;
+    color: #e53935;
+}
+
+.goal-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.goal-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.goal-list li {
+    font-size: 15px;
     color: var(--secondary);
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Dark mode overrides for goals */
+@media (prefers-color-scheme: dark) {
+    .goal-card { background: #1e1e1e; border-color: #333; }
+    .short-term .goal-icon-box { background-color: #15202b; color: #64b5f6; }
+    .long-term .goal-icon-box { background-color: #2c1a1a; color: #ef9a9a; }
 }
 &lt;/style&gt;
-&lt;div class=&#34;about-wrapper&#34;&gt;
-    &lt;div class=&#34;about-image&#34;&gt;
-        &lt;img src=&#34;https://quinguyen2004.github.io/NguyenDucQui_Blog/anhtrangchu.jpg&#34; class=&#34;my-photo&#34; alt=&#34;Avatar&#34;&gt;
-    &lt;/div&gt;   
-    &lt;div class=&#34;about-text&#34;&gt;
-        &lt;div class=&#34;main-name&#34;&gt;Nguyễn Đức Qui&lt;/div&gt;
-        &lt;div class=&#34;sub-title&#34;&gt;Kỹ sư Công nghệ Thông tin (Tương lai)&lt;/div&gt;        
-        &lt;div class=&#34;intro-block&#34;&gt;
-            &lt;p&gt;Tên tôi là &lt;strong&gt;Đức Qui&lt;/strong&gt;. Nếu như &#34;Đức&#34; đại diện cho sự tử tế trong đạo đức nghề nghiệp, thì &#34;Qui&#34; gợi nhắc tôi về sự &lt;strong&gt;Quy chuẩn&lt;/strong&gt; và &lt;strong&gt;Kiên định&lt;/strong&gt; – những yếu tố cốt lõi của một hệ thống mạng vững chắc. Tôi luôn mong muốn sống và làm việc đúng như tên mình: xây dựng những giải pháp công nghệ không chỉ hoạt động tốt mà còn phải chuẩn mực, minh bạch và đáng tin cậy. Sắp hoàn thành chương trình đại học, tôi đã sẵn sàng &#34;Online&#34;, tự tin kết nối và truyền tải giá trị của mình vào thế giới công nghệ rộng lớn.&lt;/p&gt;</description>
+&lt;div class=&#34;cv-container&#34;&gt;
+    &lt;div class=&#34;cv-sidebar&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/NguyenDucQui_Blog/avarta1.jpg&#34; class=&#34;cv-avatar&#34; alt=&#34;Avatar&#34;&gt;      
+        &lt;div class=&#34;sidebar-title&#34;&gt;LIÊN HỆ&lt;/div&gt;
+        &lt;ul class=&#34;contact-list&#34;&gt;
+            &lt;li&gt;&lt;/span&gt; TP. Hồ Chí Minh&lt;/li&gt;
+            &lt;li&gt;&lt;/span&gt; nguyenducqui2004@gmail.com&lt;/li&gt;
+            &lt;li&gt;&lt;/span&gt; Đại học HUTECH&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;div class=&#34;sidebar-title&#34;&gt;KỸ NĂNG CHUYÊN MÔN&lt;/div&gt;
+        &lt;div class=&#34;skill-tags&#34;&gt;
+            &lt;span class=&#34;tag&#34;&gt;Java Core&lt;/span&gt;
+            &lt;span class=&#34;tag&#34;&gt;Socket Programming&lt;/span&gt;
+            &lt;span class=&#34;tag&#34;&gt;Network Security&lt;/span&gt;
+            &lt;span class=&#34;tag&#34;&gt;Wazuh / OPNsense&lt;/span&gt;
+            &lt;span class=&#34;tag&#34;&gt;Linux / Ubuntu&lt;/span&gt;
+            &lt;span class=&#34;tag&#34;&gt;Git / Github&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;sidebar-title&#34;&gt;KỸ NĂNG MỀM&lt;/div&gt;
+        &lt;div class=&#34;skill-tags&#34;&gt;
+            &lt;span class=&#34;tag&#34;&gt;Làm việc nhóm&lt;/span&gt;
+            &lt;span class=&#34;tag&#34;&gt;Tư duy phản biện&lt;/span&gt;
+            &lt;span class=&#34;tag&#34;&gt;Giải quyết vấn đề&lt;/span&gt;
+            &lt;span class=&#34;tag&#34;&gt;Quản lý thời gian&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;a href=&#34;https://drive.google.com/file/d/1OFvfhNxF8TCTsTdroENzYTbKmw6mQpUr/view?usp=drive_link&#34; style=&#34;display:block; text-align:center; background:#6c8af1; color:white; padding:10px; border-radius:6px; margin-top:20px; font-weight:bold; text-decoration:none;&#34;&gt;📥 TẢI CV (PDF)&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;cv-main&#34;&gt;
+        &lt;div class=&#34;section-header&#34;&gt;
+            &lt;div class=&#34;section-icon&#34;&gt;🎓&lt;/div&gt;
+            &lt;h2 class=&#34;section-title&#34;&gt;GIÁO DỤC&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;timeline-box&#34;&gt;
+            &lt;div class=&#34;timeline-item&#34;&gt;
+                &lt;span class=&#34;time-badge&#34;&gt;2025 - Hiện tại&lt;/span&gt;
+                &lt;h3 class=&#34;item-title&#34;&gt;Sinh viên ngành Công nghệ thông tin&lt;/h3&gt;
+                &lt;span class=&#34;item-subtitle&#34;&gt;Đại học Công nghệ TP.HCM (HUTECH)&lt;/span&gt;
+                &lt;div class=&#34;item-desc&#34;&gt;
+                    &lt;p&gt;Chuyên ngành: &lt;strong&gt;An Ninh Mạng&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Asynchronous JavaScript: Từ Callback Hell đến Async/Await hiện đại</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/asynchronousjavascript/</link>
+      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/asynchronousjavascript/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+JavaScript là ngôn ngữ đơn luồng (single-threaded). Điều này có nghĩa là nó chỉ làm một việc tại một thời điểm. Vậy làm sao nó xử lý được các tác vụ tốn thời gian như gọi API, đọc file mà không làm treo trình duyệt? Đó là nhờ cơ chế **Bất đồng bộ (Asynchronous)**.
+&lt;h2 id=&#34;1-quá-khứ-callback-hell&#34;&gt;1. Quá khứ: Callback Hell&lt;/h2&gt;
+&lt;p&gt;Ngày xưa, chúng ta truyền hàm vào trong hàm. Nếu logic phức tạp, code sẽ lồng nhau chằng chịt hình tháp, gọi là &amp;ldquo;Callback Hell&amp;rdquo;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Java là gì? Tổng quan về ngôn ngữ lập trình Java</title>
-      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/java-full-course/</link>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/java-full-course/</guid>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/</guid>
       <description>Toàn bộ kiến thức về Java</description>
     </item>
     <item>
       <title>JavaScript là gì? Tổng quan về ngôn ngữ lập trình JavaScript</title>
-      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/js-full-course/</link>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/js-full-course/</guid>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</guid>
       <description>Kiến thức về JavaScript</description>
     </item>
     <item>
       <title></title>
-      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/contact/</link>
+      <link>http://localhost:1313/NguyenDucQui_Blog/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/contact/</guid>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/contact/</guid>
       <description>Thông tin liên hệ và gửi tin nhắn</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/gellery/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/gellery/</guid>
-      <description>Thành Tựu</description>
     </item>
   </channel>
 </rss>

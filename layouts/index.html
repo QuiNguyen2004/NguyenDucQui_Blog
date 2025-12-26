@@ -1,20 +1,224 @@
 {{ define "main" }}
-<div class="philip-wrapper">
-    <div class="content-col">
-        <span class="top-tag">ĐÂY LÀ TÔI</span>
-        <h3 class="main-name">{{ site.Params.profileMode.title }}</h3>
-        <p class="summary-text">{{ site.Params.profileMode.subtitle }}</p>
-        
-        <div class="action-area">
-            {{- range site.Params.profileMode.buttons }}
-            <a href="{{ .url }}" class="btn-philip">{{ .name }}</a>
-            {{- end }}
+
+<style>
+    /* --- CẤU HÌNH CHUNG --- */
+    .main-page-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* --- PHẦN 1: BANNER TRÊN (Philip Style) --- */
+    .hero-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 60px 0;
+        margin-bottom: 80px; /* Cách phần dưới ra */
+    }
+
+    /* Cột chữ bên trái */
+    .hero-content {
+        flex: 1;
+        padding-right: 50px;
+    }
+    .hero-tag {
+        font-size: 14px;
+        font-weight: 700;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        display: block;
+        margin-bottom: 15px;
+    }
+    .hero-title {
+        font-size: 48px;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 25px;
+        line-height: 1.2;
+    }
+    .hero-desc {
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--secondary);
+        margin-bottom: 35px;
+        max-width: 90%;
+    }
+
+    /* Cột ảnh bên phải (Có khung xanh trang trí) */
+    .hero-image-box {
+        flex: 1;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Khung viền xanh phía sau */
+    .hero-decor-frame {
+        position: absolute;
+        width: 85%;
+        height: 85%;
+        border: 10px solid #a2b9ff; /* Màu viền xanh nhạt */
+        z-index: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .hero-img {
+        position: relative;
+        z-index: 1; /* Nổi lên trên khung */
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 0; /* Ảnh vuông góc hoặc tùy chỉnh */
+    }
+
+    /* --- PHẦN 2: ABOUT DƯỚI (Thông tin cá nhân) --- */
+    .about-section {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        margin-bottom: 100px;
+    }
+
+    /* Cột ảnh bên trái */
+    .about-image-col {
+        flex: 1;
+        text-align: center;
+    }
+    .about-img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+    }
+    .about-image-col1 {
+        flex: 1;
+        text-align: center;
+    }
+    .about-img1 {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+    }
+    .about-image-col {
+        flex: 1;
+        text-align: center;
+    }
+    .about-img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+    }
+
+    /* Cột chữ bên phải */
+    .about-text-col {
+        flex: 1;
+    }
+    .about-subtitle {
+        font-size: 14px;
+        font-weight: 700;
+        color: #555;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        display: block;
+    }
+    .about-title {
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: var(--primary);
+    }
+    .about-desc {
+        font-size: 16px;
+        line-height: 1.8;
+        color: var(--secondary);
+        margin-bottom: 30px;
+        text-align: justify;
+    }
+
+    /* --- NÚT BẤM CHUNG (Màu xanh) --- */
+    .btn-blue {
+        display: inline-block;
+        background-color: #6c8af1; /* Màu xanh chủ đạo */
+        color: #fff !important;
+        padding: 14px 35px;
+        border-radius: 4px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(108, 138, 241, 0.4);
+        transition: transform 0.2s, background-color 0.2s;
+        text-transform: uppercase;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+    }
+    .btn-blue:hover {
+        background-color: #5a75d6;
+        transform: translateY(-3px);
+    }
+
+    /* --- RESPONSIVE (Cho điện thoại) --- */
+    @media (max-width: 900px) {
+        .hero-section, .about-section {
+            flex-direction: column;
+            text-align: left;
+            padding: 40px 0;
+            gap: 40px;
+        }
+        .hero-content { padding-right: 0; }
+        .hero-decor-frame { width: 90%; height: 90%; }
+        .hero-img, .about-img { max-width: 100%; }
+        /* Đảo thứ tự trên mobile nếu cần: Ảnh lên trên chữ */
+        .hero-image-box { order: -1; margin-bottom: 20px; } 
+    }
+</style>
+
+<div class="main-page-container">
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <span class="hero-tag">ĐÂY LÀ TÔI</span>
+            <h1 class="hero-title">{{ site.Params.profileMode.title | default "NGUYỄN ĐỨC QUI" }}</h1>
+            
+            <p class="hero-desc">
+                {{ site.Params.profileMode.subtitle | default "Với tư duy cầu tiến và khả năng thích nghi nhanh, tôi sẵn sàng cống hiến hết mình để tạo ra giá trị ngay lập tức." }}
+            </p>
+            
+            <a href="{{ "summary/" | absURL }}" class="btn-blue">KHÁM PHÁ NGAY</a>
+        </div>
+
+        <div class="about-image-col1">
+            <img src="{{ "avarta1.jpg" | absURL }}" alt="Avarta" class="about-img1">
         </div>
     </div>
 
-    <div class="image-col">
-        <div class="decor-frame"></div>
-        <img src="{{ site.Params.profileMode.imageUrl | absURL }}" alt="Avatar" class="avatar-img">
+
+    <div class="about-section">
+        <div class="about-image-col">
+            <img src="{{ "avarta2.jpg" | absURL }}" alt="About Me" class="about-img">
+        </div>
+
+        <div class="about-text-col">
+            <span class="about-subtitle">VỀ TÔI</span>
+            <h2 class="about-title">THÔNG TIN CÁ NHÂN</h2>
+            <p class="about-desc">
+                Ở đây, tôi tập trung vào một loạt các vật dụng và tính năng mà chúng ta sử dụng trong cuộc sống mà không cần đắn đo kỹ lưỡng về chúng. 
+                Tôi đam mê nghiên cứu sâu về các giao thức mạng và xây dựng các hệ thống bảo mật an toàn. 
+                Mục tiêu của tôi là mang lại giá trị thực tế thông qua các dòng code chuẩn mực.
+            </p>
+            <a href="{{ "about/" | absURL }}" class="btn-blue">XEM CHI TIẾT ĐẦY ĐỦ</a>
+        </div>
     </div>
+
 </div>
 {{ end }}

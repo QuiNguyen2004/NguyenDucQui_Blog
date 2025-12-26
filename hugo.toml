@@ -1,34 +1,33 @@
 baseURL = 'https://quinguyen2004.github.io/NguyenDucQui_Blog/'
 publishDir = 'docs'
 languageCode = 'vi'
-title = 'DUC QUI BLOG'
+title = 'DUC QUI'
 theme = "PaperMod"
-
 
 [params]
     defaultTheme = "light"
-    ShowShareButtons = true
     ShowCodeCopyButtons = true
+    
     [params.assets]
         disableFingerprinting = true
-    # -------------------------------------------------------
+
+    # --- CẤU HÌNH PROFILE (AVATAR) ---
     [params.profileMode]
         enabled = true
         title = "NGUYỄN ĐỨC QUI"
-        subtitle = "Bạn sẽ bắt đầu hiểu tại sao bài tập này được gọi là Mô hình Dickens, liên quan đến việc xây dựng tư duy lập trình mạng vững chắc."
+        subtitle = "Với tư duy cầu tiến và khả năng thích nghi nhanh, tôi sẵn sàng cống hiến hết mình để tạo ra giá trị ngay lập tức."
         
-        # QUAN TRỌNG: Đã sửa lại đúng tên file ảnh trong máy bạn
-        imageUrl = "anhtrangchu.jpg"
-        
+        # Đảm bảo ảnh avarta1.jpg nằm trong thư mục static/avarta1.jpg
+        imageUrl = "avarta1.jpg"
         imageTitle = "Avatar"
-        imageWidth = 400 
-        imageHeight = 400
+        imageWidth = 200
+        imageHeight = 200
         
         [[params.profileMode.buttons]]
             name = "KHÁM PHÁ NGAY"
-            url = "about/"
+            url = "posts/"  # Sửa lại thành posts/ để bấm vào xem bài học
 
-    # 4. Icon mạng xã hội bên dưới
+    # --- MẠNG XÃ HỘI ---
     [[params.socialIcons]]
         name = "github"
         url = "https://github.com/QuiNguyen2004"
@@ -36,6 +35,7 @@ theme = "PaperMod"
         name = "facebook"
         url = "https://www.facebook.com/qui.nguyen.660694"
 
+# --- MENU ---
 [menu]
   [[menu.main]]
     identifier = "home"
@@ -43,17 +43,16 @@ theme = "PaperMod"
     url = "/"
     weight = 10
 
-  # MENU CHA
   [[menu.main]]
     identifier = "courses"
-    name = "KHÓA HỌC"
+    name = "COURSE"
     url = "posts/"
     weight = 20
 
   [[menu.main]]
-    identifier = "gellery"
-    name = "GELLERY"
-    url = "gellery/"
+    identifier = "summary"
+    name = "SUMMARY"
+    url = "summary/"
     weight = 30  
 
   [[menu.main]]
@@ -68,6 +67,7 @@ theme = "PaperMod"
     url = "contact/"
     weight = 50
 
+# --- CHO PHÉP CHẠY HTML TRONG MARKDOWN ---
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

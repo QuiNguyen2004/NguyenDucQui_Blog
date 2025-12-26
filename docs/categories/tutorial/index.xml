@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tutorial on DUC QUI</title>
+    <link>http://localhost:1313/NguyenDucQui_Blog/categories/tutorial/</link>
+    <description>Recent content in Tutorial on DUC QUI</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>vi</language>
+    <lastBuildDate>Fri, 26 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/categories/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Làm chủ Java Collections: Hướng dẫn cơ bản về ArrayList, HashSet và HashMap</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/javacollectionsframework/</link>
+      <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/javacollectionsframework/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Trong lập trình Java, việc quản lý và lưu trữ dữ liệu hiệu quả là một kỹ năng cốt lõi. Khác với mảng (Array) cố định kích thước, **Java Collections Framework** cung cấp các cấu trúc dữ liệu linh hoạt, có khả năng tự động thay đổi kích thước và đi kèm với nhiều thuật toán mạnh mẽ.
+&lt;p&gt;Trong bài viết này, chúng ta sẽ tìm hiểu 3 class phổ biến nhất mà mọi lập trình viên Java đều phải biết: &lt;strong&gt;ArrayList&lt;/strong&gt;, &lt;strong&gt;HashSet&lt;/strong&gt;, và &lt;strong&gt;HashMap&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/javaioandfilehandling/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/javaioandfilehandling/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Trước đây, để đọc một file text, chúng ta phải dùng `FileReader`, `BufferedReader` bọc nhau rất rườm rà. Kể từ Java 7 (và hoàn thiện ở Java 8), gói `java.nio.file` (New IO) giúp thao tác file trở nên cực kỳ đơn giản.
+&lt;h2 id=&#34;1-các-class-cốt-lõi-của-java-nio&#34;&gt;1. Các class cốt lõi của Java NIO&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Path&lt;/code&gt;&lt;/strong&gt;: Đại diện cho đường dẫn file (thay thế cho &lt;code&gt;File&lt;/code&gt; cũ).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Paths&lt;/code&gt;&lt;/strong&gt;: Class tiện ích để tạo đối tượng &lt;code&gt;Path&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Files&lt;/code&gt;&lt;/strong&gt;: Class chứa các phương thức static mạnh mẽ để thao tác file (đọc, ghi, copy, delete&amp;hellip;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-đọc-file-nhanh-với-filesreadalllines&#34;&gt;2. Đọc file nhanh với &lt;code&gt;Files.readAllLines&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Phương thức này đọc toàn bộ nội dung file và trả về một &lt;code&gt;List&amp;lt;String&amp;gt;&lt;/code&gt;, mỗi phần tử là một dòng.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DOM Manipulation: Cách JavaScript &#39;nói chuyện&#39; với HTML</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/dommanipulation/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/dommanipulation/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Để làm website &#34;động&#34; (click nút thì hiện popup, đổi màu...), JavaScript cần thao tác với DOM (Document Object Model). Dưới đây là các lệnh cơ bản nhất.
+&lt;h2 id=&#34;1-truy-xuất-phần-tử-selectors&#34;&gt;1. Truy xuất phần tử (Selectors)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;document.getElementById(&#39;id&#39;)&lt;/code&gt;&lt;/strong&gt;: Lấy theo ID (nhanh nhất).
+&lt;strong&gt;&lt;code&gt;document.querySelector(&#39;.class&#39;)&lt;/code&gt;&lt;/strong&gt;: Lấy phần tử đầu tiên khớp với CSS Selector (Rất linh hoạt).
+&lt;strong&gt;&lt;code&gt;document.querySelectorAll(&#39;p&#39;)&lt;/code&gt;&lt;/strong&gt;: Lấy tất cả các thẻ p.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java 8 Streams API: Tạm biệt vòng lặp for, chào đón code hiện đại</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/java8streamsapi/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/java8streamsapi/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Nếu như Collections Framework (Bài 1) giúp bạn lưu trữ dữ liệu, thì **Streams API** (ra mắt từ Java 8) chính là công cụ mạnh mẽ để **xử lý** đống dữ liệu đó.
+&lt;p&gt;Trước Java 8, để lọc hay biến đổi dữ liệu, chúng ta phải viết những vòng lặp &lt;code&gt;for&lt;/code&gt; dài dòng. Với Streams, bạn viết code giống như đang viết câu lệnh SQL: mô tả &lt;strong&gt;bạn muốn gì&lt;/strong&gt;, thay vì mô tả &lt;strong&gt;phải làm từng bước thế nào&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java Exception Handling: Bắt lỗi chuyên nghiệp với Try-Catch và Multi-catch</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/exceptionhandling/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/exceptionhandling/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Lỗi (Bug) là điều không thể tránh khỏi. Thay vì để ứng dụng &#34;sập&#34; (crash) trước mặt người dùng, Java cung cấp cơ chế `try-catch` để xử lý tình huống ngoại lệ một cách duyên dáng.
+&lt;h2 id=&#34;1-cấu-trúc-cơ-bản-try---catch---finally&#34;&gt;1. Cấu trúc cơ bản: Try - Catch - Finally&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Try:&lt;/strong&gt; Chứa đoạn code &amp;ldquo;nguy hiểm&amp;rdquo; có khả năng gây lỗi.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Catch:&lt;/strong&gt; Nơi xử lý khi lỗi xảy ra.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Finally:&lt;/strong&gt; Code trong khối này &lt;strong&gt;LUÔN LUÔN&lt;/strong&gt; chạy, dù có lỗi hay không (Thường dùng để đóng kết nối DB, đóng file).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-phân-biệt-throw-và-throws&#34;&gt;2. Phân biệt &lt;code&gt;throw&lt;/code&gt; và &lt;code&gt;throws&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;throw&lt;/code&gt;&lt;/strong&gt;: Hành động ném ra một lỗi cụ thể (Dùng bên trong thân hàm).
+&lt;ul&gt;
+&lt;li&gt;Ví dụ: &lt;code&gt;if (age &amp;lt; 18) throw new ArithmeticException(&amp;quot;Chưa đủ tuổi&amp;quot;);&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;throws&lt;/code&gt;&lt;/strong&gt;: Khai báo rằng hàm này &lt;em&gt;có thể&lt;/em&gt; gây ra lỗi, người gọi hàm phải tự xử lý (Dùng ở chữ ký hàm).
+&lt;ul&gt;
+&lt;li&gt;Ví dụ: &lt;code&gt;public void readFile() throws IOException { ... }&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-tính-năng-multi-catch-java-7&#34;&gt;3. Tính năng Multi-catch (Java 7+)&lt;/h2&gt;
+&lt;p&gt;Trước đây, nếu muốn bắt nhiều lỗi, bạn phải viết nhiều khối &lt;code&gt;catch&lt;/code&gt; lặp lại code. Từ Java 7, bạn có thể gộp chúng lại bằng dấu &lt;code&gt;|&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript ES6&#43;: 3 Tính năng &#39;nhỏ nhưng có võ&#39; bạn phải biết</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/es6andfeatures/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/es6andfeatures/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Kể từ phiên bản ES6 (2015), JavaScript đã lột xác hoàn toàn. Nếu bạn vẫn đang viết code theo kiểu cũ, bạn đang bỏ lỡ những cú pháp giúp code ngắn gọn và &#34;sạch&#34; hơn gấp nhiều lần. Hôm nay, chúng ta sẽ tìm hiểu 3 tính năng được sử dụng nhiều nhất: **Arrow Functions**, **Destructuring** và **Template Literals**.
+&lt;h2 id=&#34;1-arrow-functions-&#34;&gt;1. Arrow Functions (&lt;code&gt;=&amp;gt;&lt;/code&gt;)&lt;/h2&gt;
+&lt;p&gt;Đây là cách viết hàm ngắn gọn hơn, bỏ đi từ khóa &lt;code&gt;function&lt;/code&gt; rườm rà.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Làm chủ Java String: 5 hàm quan trọng và Kỹ thuật tối ưu hiệu năng</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/javastringmethods/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/javastringmethods/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Trong Java, `String` là đối tượng bất biến (immutable). Điều này có nghĩa là mỗi khi bạn chỉnh sửa chuỗi, Java thực tế đang tạo ra một chuỗi mới trong bộ nhớ. Hiểu rõ các hàm xử lý chuỗi và cách tối ưu chúng là chìa khóa để viết code chuyên nghiệp.
+&lt;h2 id=&#34;1-5-hàm-xử-lý-chuỗi-bất-ly-thân&#34;&gt;1. 5 Hàm xử lý chuỗi &amp;ldquo;bất ly thân&amp;rdquo;&lt;/h2&gt;
+&lt;p&gt;Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thực tế:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LocalStorage và SessionStorage: Lưu dữ liệu ngay trên trình duyệt</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/localstoragesessionstorage/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/localstoragesessionstorage/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Bạn muốn lưu giữ trạng thái &#34;Đã đăng nhập&#34; hoặc chế độ &#34;Dark Mode&#34; ngay cả khi người dùng F5 tải lại trang? Trình duyệt cung cấp cho chúng ta **Web Storage API**.
+&lt;h2 id=&#34;1-phân-biệt-localstorage-và-sessionstorage&#34;&gt;1. Phân biệt LocalStorage và SessionStorage&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Đặc điểm&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;LocalStorage&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;SessionStorage&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Thời gian sống&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Vĩnh viễn&lt;/strong&gt; (đến khi code xóa hoặc user xóa cache).&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Tạm thời&lt;/strong&gt; (mất ngay khi đóng Tab/Trình duyệt).&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Phạm vi&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Chung cho cả domain.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Riêng biệt cho từng Tab.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Dung lượng&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Khoảng 5MB-10MB.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Khoảng 5MB.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;2-cách-sử-dụng-giống-hệt-nhau&#34;&gt;2. Cách sử dụng (Giống hệt nhau)&lt;/h2&gt;
+&lt;p&gt;Chúng ta có 4 hàm cơ bản: &lt;code&gt;setItem&lt;/code&gt;, &lt;code&gt;getItem&lt;/code&gt;, &lt;code&gt;removeItem&lt;/code&gt;, &lt;code&gt;clear&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bộ ba &#39;Thần thánh&#39; Map, Filter, Reduce: Bí kíp xử lý mảng trong JS</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/arraymethods/</link>
+      <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/arraymethods/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+Khi làm việc với các Framework hiện đại như React hay Vue, bạn sẽ rất ít khi dùng vòng lặp `for` truyền thống. Thay vào đó, chúng ta sử dụng các &#34;Functional Array Methods&#34;. Dưới đây là 3 hàm quan trọng nhất.
+&lt;p&gt;Giả sử ta có danh sách sản phẩm:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Asynchronous JavaScript: Từ Callback Hell đến Async/Await hiện đại</title>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/asynchronousjavascript/</link>
+      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/asynchronousjavascript/</guid>
+      <description>&lt;style&gt;
+    /* Container chính giới hạn chiều rộng và căn giữa */
+    .post-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.7;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 12px;
+    }
+
+    /* Style cho nút Quay lại */
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff !important;
+        background-color: #2c3e50;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .back-btn:hover {
+        background-color: #34495e;
+        transform: translateX(-5px);
+    }
+    .back-btn::before {
+        content: &#34;←&#34;;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Tiêu đề */
+    .post-container h1 { color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px; }
+    .post-container h2 { 
+        color: black; /* Màu cam nổi bật cho tiêu đề phụ */
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    /* Đoạn văn */
+    .post-container p { margin-bottom: 20px; }
+    
+    /* Inline code (ví dụ: single-threaded) */
+    .post-container p code, li code {
+        background-color: #f8f9fa;
+        color: #d63031;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: &#39;Fira Code&#39;, monospace;
+        font-size: 0.9em;
+    }
+
+    /* Khối Code block (Pre) */
+    .post-container pre {
+        background-color: #1e1e1e !important; /* Nền tối màu chuẩn dev */
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto; /* Thanh cuộn ngang nếu code quá dài */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        border: 1px solid #333;
+    }
+    .post-container pre code {
+        background-color: transparent !important;
+        color: inherit;
+        padding: 0;
+    }
+
+    /* Phần trích dẫn (Blockquote) cho Quy tắc */
+    .post-container blockquote {
+        background-color: #e8f4fd;
+        border-left: 5px solid #3498db;
+        margin: 30px 0;
+        padding: 15px 20px;
+        color: #2c3e50;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+    }
+    .post-container blockquote strong {
+        color: #d35400;
+    }
+&lt;/style&gt;
+&lt;div class=&#34;post-container&#34;&gt;
+JavaScript là ngôn ngữ đơn luồng (single-threaded). Điều này có nghĩa là nó chỉ làm một việc tại một thời điểm. Vậy làm sao nó xử lý được các tác vụ tốn thời gian như gọi API, đọc file mà không làm treo trình duyệt? Đó là nhờ cơ chế **Bất đồng bộ (Asynchronous)**.
+&lt;h2 id=&#34;1-quá-khứ-callback-hell&#34;&gt;1. Quá khứ: Callback Hell&lt;/h2&gt;
+&lt;p&gt;Ngày xưa, chúng ta truyền hàm vào trong hàm. Nếu logic phức tạp, code sẽ lồng nhau chằng chịt hình tháp, gọi là &amp;ldquo;Callback Hell&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
