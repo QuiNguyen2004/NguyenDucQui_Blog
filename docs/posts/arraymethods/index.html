@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="light">
 
-<head><script src="/NguyenDucQui_Blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=NguyenDucQui_Blog/livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Bộ ba &#39;Thần thánh&#39; Map, Filter, Reduce: Bí kíp xử lý mảng trong JS | DUC QUI</title>
 <meta name="keywords" content="JavaScript, Array, Functional Programming">
 <meta name="description" content="
@@ -12,16 +12,16 @@
 Khi làm việc với các Framework hiện đại như React hay Vue, bạn sẽ rất ít khi dùng vòng lặp `for` truyền thống. Thay vào đó, chúng ta sử dụng các &#34;Functional Array Methods&#34;. Dưới đây là 3 hàm quan trọng nhất.
 Giả sử ta có danh sách sản phẩm:">
 <meta name="author" content="Đức Qui">
-<link rel="canonical" href="http://localhost:1313/NguyenDucQui_Blog/posts/arraymethods/">
+<link rel="canonical" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/arraymethods/">
 <link crossorigin="anonymous" href="/NguyenDucQui_Blog/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/NguyenDucQui_Blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/NguyenDucQui_Blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/NguyenDucQui_Blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/NguyenDucQui_Blog/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/NguyenDucQui_Blog/safari-pinned-tab.svg">
+<link rel="icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/NguyenDucQui_Blog/posts/arraymethods/">
+<link rel="alternate" hreflang="en" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/arraymethods/">
 <noscript>
     <style>
         #theme-toggle,
@@ -36,13 +36,85 @@ Giả sử ta có danh sách sản phẩm:">
         document.querySelector("html").dataset.theme = 'dark';
     }
 
+</script><meta property="og:url" content="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/arraymethods/">
+  <meta property="og:site_name" content="DUC QUI">
+  <meta property="og:title" content="Bộ ba &#39;Thần thánh&#39; Map, Filter, Reduce: Bí kíp xử lý mảng trong JS">
+  <meta property="og:description" content="Khi làm việc với các Framework hiện đại như React hay Vue, bạn sẽ rất ít khi dùng vòng lặp `for` truyền thống. Thay vào đó, chúng ta sử dụng các &#34;Functional Array Methods&#34;. Dưới đây là 3 hàm quan trọng nhất.Giả sử ta có danh sách sản phẩm:">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-12-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-12-24T00:00:00+00:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="Array">
+    <meta property="article:tag" content="Functional Programming">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bộ ba &#39;Thần thánh&#39; Map, Filter, Reduce: Bí kíp xử lý mảng trong JS">
+<meta name="twitter:description" content="
+
+Khi làm việc với các Framework hiện đại như React hay Vue, bạn sẽ rất ít khi dùng vòng lặp `for` truyền thống. Thay vào đó, chúng ta sử dụng các &#34;Functional Array Methods&#34;. Dưới đây là 3 hàm quan trọng nhất.
+Giả sử ta có danh sách sản phẩm:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Lộ Trình Học Tập",
+      "item": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Bộ ba 'Thần thánh' Map, Filter, Reduce: Bí kíp xử lý mảng trong JS",
+      "item": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/arraymethods/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Bộ ba 'Thần thánh' Map, Filter, Reduce: Bí kíp xử lý mảng trong JS",
+  "name": "Bộ ba \u0027Thần thánh\u0027 Map, Filter, Reduce: Bí kíp xử lý mảng trong JS",
+  "description": "\rKhi làm việc với các Framework hiện đại như React hay Vue, bạn sẽ rất ít khi dùng vòng lặp `for` truyền thống. Thay vào đó, chúng ta sử dụng các \"Functional Array Methods\". Dưới đây là 3 hàm quan trọng nhất.\rGiả sử ta có danh sách sản phẩm:\n",
+  "keywords": [
+    "JavaScript", "Array", "Functional Programming"
+  ],
+  "articleBody": "\rKhi làm việc với các Framework hiện đại như React hay Vue, bạn sẽ rất ít khi dùng vòng lặp `for` truyền thống. Thay vào đó, chúng ta sử dụng các \"Functional Array Methods\". Dưới đây là 3 hàm quan trọng nhất.\rGiả sử ta có danh sách sản phẩm:\nconst products = [ { id: 1, name: \"Iphone 15\", price: 1000, quantity: 2 }, { id: 2, name: \"Samsung S24\", price: 900, quantity: 1 }, { id: 3, name: \"Op Lung\", price: 10, quantity: 5 } ]; 1. map() - Biến đổi mảng Dùng khi bạn muốn tạo ra một mảng mới từ mảng cũ, nhưng thay đổi hình dạng dữ liệu.\n// Tạo danh sách chỉ chứa tên sản phẩm const productNames = products.map(item =\u003e item.name); console.log(productNames); // Output: [\"Iphone 15\", \"Samsung S24\", \"Op Lung\"] 2. filter() - Lọc dữ liệu Dùng khi muốn lấy ra các phần tử thỏa mãn điều kiện (giống như cái phễu).\n// Lọc các sản phẩm có giá trên 500$ const expensiveItems = products.filter(item =\u003e item.price \u003e 500); console.log(expensiveItems); // Output: [Object Iphone, Object Samsung] (Op Lung bị loại) 3. reduce() - Gom nhóm / Tính tổng Đây là hàm khó hiểu nhất nhưng mạnh mẽ nhất. Nó duyệt qua mảng và “cộng dồn” lại thành 1 giá trị duy nhất.\nVí dụ: Tính tổng tiền cả giỏ hàng Công thức: Tổng tiền = Giá * Số lượng của từng món cộng lại.\n// acc: biến tích lũy (accumulator) - giá trị cộng dồn // curr: phần tử hiện tại đang duyệt const totalBill = products.reduce((acc, curr) =\u003e { return acc + (curr.price * curr.quantity); }, 0); // 0 là giá trị khởi tạo ban đầu của acc console.log(totalBill); // Giải thích: // Lượt 1: 0 + (1000 * 2) = 2000 // Lượt 2: 2000 + (900 * 1) = 2900 // Lượt 3: 2900 + (10 * 5) = 2950 -\u003e Kết quả cuối cùng Quay lại\r",
+  "wordCount" : "327",
+  "inLanguage": "en",
+  "datePublished": "2025-12-24T00:00:00Z",
+  "dateModified": "2025-12-24T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Đức Qui"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/arraymethods/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DUC QUI",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon.ico"
+    }
+  }
+}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
+            <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -68,27 +140,27 @@ Giả sử ta có danh sách sản phẩm:">
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/" title="HOME">
+                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/" title="HOME">
                     <span>HOME</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/posts/" title="COURSE">
+                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/" title="COURSE">
                     <span>COURSE</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/summary/" title="SUMMARY">
+                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/summary/" title="SUMMARY">
                     <span>SUMMARY</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/about/" title="ABOUT">
+                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/about/" title="ABOUT">
                     <span>ABOUT</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/contact/" title="CONTACT">
+                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/contact/" title="CONTACT">
                     <span>CONTACT</span>
                 </a>
             </li>
@@ -244,9 +316,9 @@ Khi làm việc với các Framework hiện đại như React hay Vue, bạn s�
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/javascript/">JavaScript</a></li>
-      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/array/">Array</a></li>
-      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/functional-programming/">Functional Programming</a></li>
+      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/javascript/">JavaScript</a></li>
+      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/array/">Array</a></li>
+      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/functional-programming/">Functional Programming</a></li>
     </ul>
   </footer>
 </article>

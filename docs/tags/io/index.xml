@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>IO on DUC QUI</title>
-    <link>http://localhost:1313/NguyenDucQui_Blog/tags/io/</link>
+    <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/io/</link>
     <description>Recent content in IO on DUC QUI</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>vi</language>
     <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/tags/io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/javaioandfilehandling/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javaioandfilehandling/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/javaioandfilehandling/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javaioandfilehandling/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {

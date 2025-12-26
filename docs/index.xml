@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>DUC QUI</title>
-    <link>http://localhost:1313/NguyenDucQui_Blog/</link>
+    <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/</link>
     <description>Recent content on DUC QUI</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>vi</language>
     <lastBuildDate>Fri, 26 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://quinguyen2004.github.io/NguyenDucQui_Blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Làm chủ Java Collections: Hướng dẫn cơ bản về ArrayList, HashSet và HashMap</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/javacollectionsframework/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javacollectionsframework/</link>
       <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/javacollectionsframework/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javacollectionsframework/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -109,9 +109,9 @@ Trong lập trình Java, việc quản lý và lưu trữ dữ liệu hiệu qu�
     </item>
     <item>
       <title>Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/javaioandfilehandling/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javaioandfilehandling/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/javaioandfilehandling/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javaioandfilehandling/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -215,9 +215,9 @@ Trước đây, để đọc một file text, chúng ta phải dùng `FileReader
     </item>
     <item>
       <title>DOM Manipulation: Cách JavaScript &#39;nói chuyện&#39; với HTML</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/dommanipulation/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/dommanipulation/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/dommanipulation/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/dommanipulation/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -317,9 +317,9 @@ Trước đây, để đọc một file text, chúng ta phải dùng `FileReader
     </item>
     <item>
       <title>Java 8 Streams API: Tạm biệt vòng lặp for, chào đón code hiện đại</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/java8streamsapi/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/java8streamsapi/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/java8streamsapi/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/java8streamsapi/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -416,9 +416,9 @@ Nếu như Collections Framework (Bài 1) giúp bạn lưu trữ dữ liệu, th
     </item>
     <item>
       <title>Java Exception Handling: Bắt lỗi chuyên nghiệp với Try-Catch và Multi-catch</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/exceptionhandling/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/exceptionhandling/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/exceptionhandling/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/exceptionhandling/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -535,9 +535,9 @@ Lỗi (Bug) là điều không thể tránh khỏi. Thay vì để ứng dụng 
     </item>
     <item>
       <title>JavaScript ES6&#43;: 3 Tính năng &#39;nhỏ nhưng có võ&#39; bạn phải biết</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/es6andfeatures/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/es6andfeatures/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/es6andfeatures/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/es6andfeatures/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -635,9 +635,9 @@ Kể từ phiên bản ES6 (2015), JavaScript đã lột xác hoàn toàn. Nếu
     </item>
     <item>
       <title>Làm chủ Java String: 5 hàm quan trọng và Kỹ thuật tối ưu hiệu năng</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/javastringmethods/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javastringmethods/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/javastringmethods/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javastringmethods/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -735,9 +735,9 @@ Trong Java, `String` là đối tượng bất biến (immutable). Điều này 
     </item>
     <item>
       <title>LocalStorage và SessionStorage: Lưu dữ liệu ngay trên trình duyệt</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/localstoragesessionstorage/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/localstoragesessionstorage/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/localstoragesessionstorage/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/localstoragesessionstorage/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -862,9 +862,9 @@ Bạn muốn lưu giữ trạng thái &#34;Đã đăng nhập&#34; hoặc chế 
     </item>
     <item>
       <title>Bộ ba &#39;Thần thánh&#39; Map, Filter, Reduce: Bí kíp xử lý mảng trong JS</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/arraymethods/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/arraymethods/</link>
       <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/arraymethods/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/arraymethods/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -961,9 +961,9 @@ Khi làm việc với các Framework hiện đại như React hay Vue, bạn s�
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/about/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/about/</link>
       <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/about/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/about/</guid>
       <description>&lt;style&gt;
 /* =========================================
    1. CẤU HÌNH KHUNG TOÀN TRANG (Đã chỉnh lại cho 1 cột)
@@ -1111,7 +1111,7 @@ Khi làm việc với các Framework hiện đại như React hay Vue, bạn s�
 &lt;/style&gt;
 &lt;div class=&#34;page-layout&#34;&gt;    
     &lt;div class=&#34;about-image&#34;&gt;
-        &lt;img src=&#34;http://localhost:1313/NguyenDucQui_Blog/anhabout.jpg&#34; class=&#34;my-photo&#34; alt=&#34;Avatar&#34;&gt;
+        &lt;img src=&#34;https://quinguyen2004.github.io/NguyenDucQui_Blog/anhabout.jpg&#34; class=&#34;my-photo&#34; alt=&#34;Avatar&#34;&gt;
     &lt;/div&gt;                 
     &lt;div class=&#34;profile-split-layout&#34;&gt;               
         &lt;div class=&#34;profile-info-side&#34;&gt;
@@ -1138,9 +1138,9 @@ Khi làm việc với các Framework hiện đại như React hay Vue, bạn s�
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/summary/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/summary/</link>
       <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/summary/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/summary/</guid>
       <description>&lt;style&gt;
 /* =========================================
    1. CẤU HÌNH KHUNG CV
@@ -1553,7 +1553,7 @@ Khi làm việc với các Framework hiện đại như React hay Vue, bạn s�
 &lt;/style&gt;
 &lt;div class=&#34;cv-container&#34;&gt;
     &lt;div class=&#34;cv-sidebar&#34;&gt;
-        &lt;img src=&#34;http://localhost:1313/NguyenDucQui_Blog/avarta1.jpg&#34; class=&#34;cv-avatar&#34; alt=&#34;Avatar&#34;&gt;      
+        &lt;img src=&#34;https://quinguyen2004.github.io/NguyenDucQui_Blog/avarta1.jpg&#34; class=&#34;cv-avatar&#34; alt=&#34;Avatar&#34;&gt;      
         &lt;div class=&#34;sidebar-title&#34;&gt;LIÊN HỆ&lt;/div&gt;
         &lt;ul class=&#34;contact-list&#34;&gt;
             &lt;li&gt;&lt;/span&gt; TP. Hồ Chí Minh&lt;/li&gt;
@@ -1593,9 +1593,9 @@ Khi làm việc với các Framework hiện đại như React hay Vue, bạn s�
     </item>
     <item>
       <title>Asynchronous JavaScript: Từ Callback Hell đến Async/Await hiện đại</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/asynchronousjavascript/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/asynchronousjavascript/</link>
       <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/asynchronousjavascript/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/asynchronousjavascript/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -1693,23 +1693,23 @@ JavaScript là ngôn ngữ đơn luồng (single-threaded). Điều này có ngh
     </item>
     <item>
       <title>Java là gì? Tổng quan về ngôn ngữ lập trình Java</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/java-full-course/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/java-full-course/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/java-full-course/</guid>
       <description>Toàn bộ kiến thức về Java</description>
     </item>
     <item>
       <title>JavaScript là gì? Tổng quan về ngôn ngữ lập trình JavaScript</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/js-full-course/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/js-full-course/</guid>
       <description>Kiến thức về JavaScript</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/contact/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/contact/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/contact/</guid>
       <description>Thông tin liên hệ và gửi tin nhắn</description>
     </item>
   </channel>

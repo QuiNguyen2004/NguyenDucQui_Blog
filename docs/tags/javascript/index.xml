@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>JavaScript on DUC QUI</title>
-    <link>http://localhost:1313/NguyenDucQui_Blog/tags/javascript/</link>
+    <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/javascript/</link>
     <description>Recent content in JavaScript on DUC QUI</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>vi</language>
     <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DOM Manipulation: Cách JavaScript &#39;nói chuyện&#39; với HTML</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/dommanipulation/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/dommanipulation/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/dommanipulation/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/dommanipulation/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -112,9 +112,9 @@
     </item>
     <item>
       <title>JavaScript ES6&#43;: 3 Tính năng &#39;nhỏ nhưng có võ&#39; bạn phải biết</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/es6andfeatures/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/es6andfeatures/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/es6andfeatures/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/es6andfeatures/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -212,9 +212,9 @@ Kể từ phiên bản ES6 (2015), JavaScript đã lột xác hoàn toàn. Nếu
     </item>
     <item>
       <title>LocalStorage và SessionStorage: Lưu dữ liệu ngay trên trình duyệt</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/localstoragesessionstorage/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/localstoragesessionstorage/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/localstoragesessionstorage/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/localstoragesessionstorage/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -339,9 +339,9 @@ Bạn muốn lưu giữ trạng thái &#34;Đã đăng nhập&#34; hoặc chế 
     </item>
     <item>
       <title>Bộ ba &#39;Thần thánh&#39; Map, Filter, Reduce: Bí kíp xử lý mảng trong JS</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/arraymethods/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/arraymethods/</link>
       <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/arraymethods/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/arraymethods/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -438,9 +438,9 @@ Khi làm việc với các Framework hiện đại như React hay Vue, bạn s�
     </item>
     <item>
       <title>Asynchronous JavaScript: Từ Callback Hell đến Async/Await hiện đại</title>
-      <link>http://localhost:1313/NguyenDucQui_Blog/posts/asynchronousjavascript/</link>
+      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/asynchronousjavascript/</link>
       <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/asynchronousjavascript/</guid>
+      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/asynchronousjavascript/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {

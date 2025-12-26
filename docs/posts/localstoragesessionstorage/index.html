@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="light">
 
-<head><script src="/NguyenDucQui_Blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=NguyenDucQui_Blog/livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>LocalStorage và SessionStorage: Lưu dữ liệu ngay trên trình duyệt | DUC QUI</title>
 <meta name="keywords" content="JavaScript, Storage, Cookies">
 <meta name="description" content="
@@ -40,16 +40,16 @@ Bạn muốn lưu giữ trạng thái &#34;Đã đăng nhập&#34; hoặc chế 
 2. Cách sử dụng (Giống hệt nhau)
 Chúng ta có 4 hàm cơ bản: setItem, getItem, removeItem, clear.">
 <meta name="author" content="Đức Qui">
-<link rel="canonical" href="http://localhost:1313/NguyenDucQui_Blog/posts/localstoragesessionstorage/">
+<link rel="canonical" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/localstoragesessionstorage/">
 <link crossorigin="anonymous" href="/NguyenDucQui_Blog/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/NguyenDucQui_Blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/NguyenDucQui_Blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/NguyenDucQui_Blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/NguyenDucQui_Blog/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/NguyenDucQui_Blog/safari-pinned-tab.svg">
+<link rel="icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/NguyenDucQui_Blog/posts/localstoragesessionstorage/">
+<link rel="alternate" hreflang="en" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/localstoragesessionstorage/">
 <noscript>
     <style>
         #theme-toggle,
@@ -64,13 +64,113 @@ Chúng ta có 4 hàm cơ bản: setItem, getItem, removeItem, clear.">
         document.querySelector("html").dataset.theme = 'dark';
     }
 
+</script><meta property="og:url" content="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/localstoragesessionstorage/">
+  <meta property="og:site_name" content="DUC QUI">
+  <meta property="og:title" content="LocalStorage và SessionStorage: Lưu dữ liệu ngay trên trình duyệt">
+  <meta property="og:description" content="Bạn muốn lưu giữ trạng thái &#34;Đã đăng nhập&#34; hoặc chế độ &#34;Dark Mode&#34; ngay cả khi người dùng F5 tải lại trang? Trình duyệt cung cấp cho chúng ta **Web Storage API**.1. Phân biệt LocalStorage và SessionStorage Đặc điểm LocalStorage SessionStorage Thời gian sống Vĩnh viễn (đến khi code xóa hoặc user xóa cache). Tạm thời (mất ngay khi đóng Tab/Trình duyệt). Phạm vi Chung cho cả domain. Riêng biệt cho từng Tab. Dung lượng Khoảng 5MB-10MB. Khoảng 5MB. 2. Cách sử dụng (Giống hệt nhau) Chúng ta có 4 hàm cơ bản: setItem, getItem, removeItem, clear.">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-12-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-12-25T00:00:00+00:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="Storage">
+    <meta property="article:tag" content="Cookies">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LocalStorage và SessionStorage: Lưu dữ liệu ngay trên trình duyệt">
+<meta name="twitter:description" content="
+
+Bạn muốn lưu giữ trạng thái &#34;Đã đăng nhập&#34; hoặc chế độ &#34;Dark Mode&#34; ngay cả khi người dùng F5 tải lại trang? Trình duyệt cung cấp cho chúng ta **Web Storage API**.
+1. Phân biệt LocalStorage và SessionStorage
+
+  
+      
+          Đặc điểm
+          LocalStorage
+          SessionStorage
+      
+  
+  
+      
+          Thời gian sống
+          Vĩnh viễn (đến khi code xóa hoặc user xóa cache).
+          Tạm thời (mất ngay khi đóng Tab/Trình duyệt).
+      
+      
+          Phạm vi
+          Chung cho cả domain.
+          Riêng biệt cho từng Tab.
+      
+      
+          Dung lượng
+          Khoảng 5MB-10MB.
+          Khoảng 5MB.
+      
+  
+
+2. Cách sử dụng (Giống hệt nhau)
+Chúng ta có 4 hàm cơ bản: setItem, getItem, removeItem, clear.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Lộ Trình Học Tập",
+      "item": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "LocalStorage và SessionStorage: Lưu dữ liệu ngay trên trình duyệt",
+      "item": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/localstoragesessionstorage/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "LocalStorage và SessionStorage: Lưu dữ liệu ngay trên trình duyệt",
+  "name": "LocalStorage và SessionStorage: Lưu dữ liệu ngay trên trình duyệt",
+  "description": "\rBạn muốn lưu giữ trạng thái \"Đã đăng nhập\" hoặc chế độ \"Dark Mode\" ngay cả khi người dùng F5 tải lại trang? Trình duyệt cung cấp cho chúng ta **Web Storage API**.\r1. Phân biệt LocalStorage và SessionStorage Đặc điểm LocalStorage SessionStorage Thời gian sống Vĩnh viễn (đến khi code xóa hoặc user xóa cache). Tạm thời (mất ngay khi đóng Tab/Trình duyệt). Phạm vi Chung cho cả domain. Riêng biệt cho từng Tab. Dung lượng Khoảng 5MB-10MB. Khoảng 5MB. 2. Cách sử dụng (Giống hệt nhau) Chúng ta có 4 hàm cơ bản: setItem, getItem, removeItem, clear.\n",
+  "keywords": [
+    "JavaScript", "Storage", "Cookies"
+  ],
+  "articleBody": "\rBạn muốn lưu giữ trạng thái \"Đã đăng nhập\" hoặc chế độ \"Dark Mode\" ngay cả khi người dùng F5 tải lại trang? Trình duyệt cung cấp cho chúng ta **Web Storage API**.\r1. Phân biệt LocalStorage và SessionStorage Đặc điểm LocalStorage SessionStorage Thời gian sống Vĩnh viễn (đến khi code xóa hoặc user xóa cache). Tạm thời (mất ngay khi đóng Tab/Trình duyệt). Phạm vi Chung cho cả domain. Riêng biệt cho từng Tab. Dung lượng Khoảng 5MB-10MB. Khoảng 5MB. 2. Cách sử dụng (Giống hệt nhau) Chúng ta có 4 hàm cơ bản: setItem, getItem, removeItem, clear.\nVí dụ 1: Lưu chế độ Dark Mode (Dữ liệu đơn giản) // 1. Lưu dữ liệu localStorage.setItem('theme', 'dark'); // 2. Lấy dữ liệu const currentTheme = localStorage.getItem('theme'); if (currentTheme === 'dark') { document.body.classList.add('dark-mode'); } // 3. Xóa dữ liệu // localStorage.removeItem('theme'); Ví dụ 2: Lưu Object (Quan trọng) Storage chỉ lưu được Chuỗi (String). Nếu bạn muốn lưu một Object (ví dụ thông tin User), bạn phải ép kiểu sang JSON string.\nconst userProfile = { id: 1, name: \"Duc Qui\", role: \"Admin\" }; // SAI: localStorage.setItem('user', userProfile); -\u003e Kết quả: \"[object Object]\" // ĐÚNG: Dùng JSON.stringify localStorage.setItem('user', JSON.stringify(userProfile)); // KHI LẤY RA: Dùng JSON.parse để chuyển lại thành Object const storedUser = localStorage.getItem('user'); if (storedUser) { const userData = JSON.parse(storedUser); console.log(\"Chào mừng quay lại, \" + userData.name); } Quay lại\r",
+  "wordCount" : "231",
+  "inLanguage": "en",
+  "datePublished": "2025-12-25T00:00:00Z",
+  "dateModified": "2025-12-25T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Đức Qui"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/localstoragesessionstorage/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DUC QUI",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon.ico"
+    }
+  }
+}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
+            <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -96,27 +196,27 @@ Chúng ta có 4 hàm cơ bản: setItem, getItem, removeItem, clear.">
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/" title="HOME">
+                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/" title="HOME">
                     <span>HOME</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/posts/" title="COURSE">
+                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/" title="COURSE">
                     <span>COURSE</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/summary/" title="SUMMARY">
+                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/summary/" title="SUMMARY">
                     <span>SUMMARY</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/about/" title="ABOUT">
+                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/about/" title="ABOUT">
                     <span>ABOUT</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/NguyenDucQui_Blog/contact/" title="CONTACT">
+                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/contact/" title="CONTACT">
                     <span>CONTACT</span>
                 </a>
             </li>
@@ -320,9 +420,9 @@ Bạn muốn lưu giữ trạng thái "Đã đăng nhập" hoặc chế độ "D
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/javascript/">JavaScript</a></li>
-      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/storage/">Storage</a></li>
-      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/cookies/">Cookies</a></li>
+      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/javascript/">JavaScript</a></li>
+      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/storage/">Storage</a></li>
+      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/cookies/">Cookies</a></li>
     </ul>
   </footer>
 </article>
