@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="light">
 
-<head><meta charset="utf-8">
+<head><script src="/NguyenDucQui_Blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=NguyenDucQui_Blog/livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO | DUC QUI</title>
 <meta name="keywords" content="Java, IO, NIO, File">
 <meta name="description" content="
@@ -19,16 +19,16 @@ Files: Class chứa các phương thức static mạnh mẽ để thao tác file
 2. Đọc file nhanh với Files.readAllLines
 Phương thức này đọc toàn bộ nội dung file và trả về một List&lt;String&gt;, mỗi phần tử là một dòng.">
 <meta name="author" content="Đức Qui">
-<link rel="canonical" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javaioandfilehandling/">
+<link rel="canonical" href="http://localhost:1313/NguyenDucQui_Blog/posts/javaioandfilehandling/">
 <link crossorigin="anonymous" href="/NguyenDucQui_Blog/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/apple-touch-icon.png">
-<link rel="mask-icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/NguyenDucQui_Blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/NguyenDucQui_Blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/NguyenDucQui_Blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/NguyenDucQui_Blog/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/NguyenDucQui_Blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javaioandfilehandling/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/NguyenDucQui_Blog/posts/javaioandfilehandling/">
 <noscript>
     <style>
         #theme-toggle,
@@ -43,93 +43,13 @@ Phương thức này đọc toàn bộ nội dung file và trả về một List
         document.querySelector("html").dataset.theme = 'dark';
     }
 
-</script><meta property="og:url" content="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javaioandfilehandling/">
-  <meta property="og:site_name" content="DUC QUI">
-  <meta property="og:title" content="Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO">
-  <meta property="og:description" content="Trước đây, để đọc một file text, chúng ta phải dùng `FileReader`, `BufferedReader` bọc nhau rất rườm rà. Kể từ Java 7 (và hoàn thiện ở Java 8), gói `java.nio.file` (New IO) giúp thao tác file trở nên cực kỳ đơn giản.1. Các class cốt lõi của Java NIO Path: Đại diện cho đường dẫn file (thay thế cho File cũ). Paths: Class tiện ích để tạo đối tượng Path. Files: Class chứa các phương thức static mạnh mẽ để thao tác file (đọc, ghi, copy, delete…). 2. Đọc file nhanh với Files.readAllLines Phương thức này đọc toàn bộ nội dung file và trả về một List&lt;String&gt;, mỗi phần tử là một dòng.">
-  <meta property="og:locale" content="vi">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-12-25T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-12-25T00:00:00+00:00">
-    <meta property="article:tag" content="Java">
-    <meta property="article:tag" content="IO">
-    <meta property="article:tag" content="NIO">
-    <meta property="article:tag" content="File">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO">
-<meta name="twitter:description" content="
-
-Trước đây, để đọc một file text, chúng ta phải dùng `FileReader`, `BufferedReader` bọc nhau rất rườm rà. Kể từ Java 7 (và hoàn thiện ở Java 8), gói `java.nio.file` (New IO) giúp thao tác file trở nên cực kỳ đơn giản.
-1. Các class cốt lõi của Java NIO
-
-Path: Đại diện cho đường dẫn file (thay thế cho File cũ).
-Paths: Class tiện ích để tạo đối tượng Path.
-Files: Class chứa các phương thức static mạnh mẽ để thao tác file (đọc, ghi, copy, delete&hellip;).
-
-2. Đọc file nhanh với Files.readAllLines
-Phương thức này đọc toàn bộ nội dung file và trả về một List&lt;String&gt;, mỗi phần tử là một dòng.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Lộ Trình Học Tập",
-      "item": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO",
-      "item": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javaioandfilehandling/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO",
-  "name": "Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO",
-  "description": "\rTrước đây, để đọc một file text, chúng ta phải dùng `FileReader`, `BufferedReader` bọc nhau rất rườm rà. Kể từ Java 7 (và hoàn thiện ở Java 8), gói `java.nio.file` (New IO) giúp thao tác file trở nên cực kỳ đơn giản.\r1. Các class cốt lõi của Java NIO Path: Đại diện cho đường dẫn file (thay thế cho File cũ). Paths: Class tiện ích để tạo đối tượng Path. Files: Class chứa các phương thức static mạnh mẽ để thao tác file (đọc, ghi, copy, delete\u0026hellip;). 2. Đọc file nhanh với Files.readAllLines Phương thức này đọc toàn bộ nội dung file và trả về một List\u0026lt;String\u0026gt;, mỗi phần tử là một dòng.\n",
-  "keywords": [
-    "Java", "IO", "NIO", "File"
-  ],
-  "articleBody": "\rTrước đây, để đọc một file text, chúng ta phải dùng `FileReader`, `BufferedReader` bọc nhau rất rườm rà. Kể từ Java 7 (và hoàn thiện ở Java 8), gói `java.nio.file` (New IO) giúp thao tác file trở nên cực kỳ đơn giản.\r1. Các class cốt lõi của Java NIO Path: Đại diện cho đường dẫn file (thay thế cho File cũ). Paths: Class tiện ích để tạo đối tượng Path. Files: Class chứa các phương thức static mạnh mẽ để thao tác file (đọc, ghi, copy, delete…). 2. Đọc file nhanh với Files.readAllLines Phương thức này đọc toàn bộ nội dung file và trả về một List, mỗi phần tử là một dòng.\nCode mẫu: Đọc và Ghi file import java.nio.file.Files; import java.nio.file.Path; import java.nio.file.Paths; import java.nio.file.StandardOpenOption; import java.io.IOException; import java.util.List; public class FileManager { public static void main(String[] args) { // 1. Định nghĩa đường dẫn file // \".\" đại diện cho thư mục hiện tại của project Path path = Paths.get(\"./data.txt\"); // Dữ liệu mẫu để ghi String content = \"Hello Java NIO\\nViết file thật dễ dàng!\"; try { // 2. Ghi file (Tạo mới nếu chưa có, hoặc ghi đè) Files.write(path, content.getBytes()); System.out.println(\"Ghi file thành công!\"); // 3. Đọc file (Cách hiện đại) List\u003cString\u003e lines = Files.readAllLines(path); System.out.println(\"--- Nội dung file ---\"); // Kết hợp với Lambda Expression (Bài 2) để in ra lines.forEach(line -\u003e System.out.println(line)); } catch (IOException e) { System.out.println(\"Có lỗi khi thao tác file: \" + e.getMessage()); } } } 3. Xử lý file lớn (Big Data) với Files.lines Để đọc file lớn an toàn, chúng ta sử dụng Files.lines(path). Phương thức này trả về một Stream. Nó hoạt động theo cơ chế Lazy Loading (cần đến đâu đọc đến đó), giúp bộ nhớ luôn nhẹ nhàng dù file có nặng cả chục GB.\n// Cách đọc file lớn chuẩn kỹ sư Backend // Sử dụng Try-with-resources để tự động đóng file sau khi đọc xong try (Stream\u003cString\u003e stream = Files.lines(path)) { stream.filter(line -\u003e line.contains(\"ERROR\")) // Chỉ lọc lấy dòng lỗi .forEach(System.out::println); // In ra màn hình } catch (IOException e) { e.printStackTrace(); } 4. Các thao tác quản lý file phổ biến Ngoài đọc/ghi, Files còn cung cấp bộ công cụ “dao đa năng” để bạn quản lý tập tin và thư mục chỉ với 1 dòng code:\npublic static void fileOperationsDemo() throws IOException { Path source = Paths.get(\"./data.txt\"); Path backup = Paths.get(\"./data_backup.txt\"); // 1. Kiểm tra file có tồn tại không trước khi làm việc if (Files.exists(source)) { // 2. Copy file (thêm option REPLACE_EXISTING để ghi đè nếu file kia đã có) Files.copy(source, backup, StandardCopyOption.REPLACE_EXISTING); System.out.println(\"Đã backup file thành công!\"); // 3. Xóa file gốc Files.delete(source); System.out.println(\"Đã xóa file gốc.\"); } } Tổng kết Chuyển đổi từ java.io.File sang java.nio.file là bước đi cần thiết để code của bạn hiện đại và hiệu quả hơn.\nDùng Files.readAllLines cho file cấu hình, file text nhỏ.\nDùng Files.lines (kết hợp Stream) cho file log, dữ liệu lớn.\nTận dụng sức mạnh của class Files để copy, move, delete thay vì viết thủ công.\nQuay lại\r",
-  "wordCount" : "513",
-  "inLanguage": "en",
-  "datePublished": "2025-12-25T00:00:00Z",
-  "dateModified": "2025-12-25T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Đức Qui"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javaioandfilehandling/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "DUC QUI",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon.ico"
-    }
-  }
-}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
+            <a href="http://localhost:1313/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -155,27 +75,27 @@ Phương thức này đọc toàn bộ nội dung file và trả về một List
         </div>
         <ul id="menu">
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/" title="HOME">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/" title="HOME">
                     <span>HOME</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/" title="COURSE">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/posts/" title="COURSE">
                     <span>COURSE</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/summary/" title="SUMMARY">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/summary/" title="SUMMARY">
                     <span>SUMMARY</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/about/" title="ABOUT">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/about/" title="ABOUT">
                     <span>ABOUT</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/contact/" title="CONTACT">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/contact/" title="CONTACT">
                     <span>CONTACT</span>
                 </a>
             </li>
@@ -193,7 +113,33 @@ Phương thức này đọc toàn bộ nội dung file và trả về một List
     <div class="post-meta"><span title='2025-12-25 00:00:00 +0000 UTC'>December 25, 2025</span>&nbsp;·&nbsp;<span>Đức Qui</span>
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">MỤC LỤC NỘI DUNG</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#1-c%c3%a1c-class-c%e1%bb%91t-l%c3%b5i-c%e1%bb%a7a-java-nio" aria-label="1. Các class cốt lõi của Java NIO">1. Các class cốt lõi của Java NIO</a></li>
+                <li>
+                    <a href="#2-%c4%91%e1%bb%8dc-file-nhanh-v%e1%bb%9bi-filesreadalllines" aria-label="2. Đọc file nhanh với Files.readAllLines">2. Đọc file nhanh với Files.readAllLines</a><ul>
+                        
+                <li>
+                    <a href="#code-m%e1%ba%abu-%c4%91%e1%bb%8dc-v%c3%a0-ghi-file" aria-label="Code mẫu: Đọc và Ghi file">Code mẫu: Đọc và Ghi file</a></li></ul>
+                </li>
+                <li>
+                    <a href="#3-x%e1%bb%ad-l%c3%bd-file-l%e1%bb%9bn-big-data-v%e1%bb%9bi-fileslines" aria-label="3. Xử lý file lớn (Big Data) với Files.lines">3. Xử lý file lớn (Big Data) với Files.lines</a></li>
+                <li>
+                    <a href="#4-c%c3%a1c-thao-t%c3%a1c-qu%e1%ba%a3n-l%c3%bd-file-ph%e1%bb%95-bi%e1%ba%bfn" aria-label="4. Các thao tác quản lý file phổ biến">4. Các thao tác quản lý file phổ biến</a></li>
+                <li>
+                    <a href="#t%e1%bb%95ng-k%e1%ba%bft" aria-label="Tổng kết">Tổng kết</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><style>
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -380,10 +326,10 @@ Trước đây, để đọc một file text, chúng ta phải dùng `FileReader
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/java/">Java</a></li>
-      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/io/">IO</a></li>
-      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/nio/">NIO</a></li>
-      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/file/">File</a></li>
+      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/java/">Java</a></li>
+      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/io/">IO</a></li>
+      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/nio/">NIO</a></li>
+      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/file/">File</a></li>
     </ul>
   </footer>
 </article>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="light">
 
-<head><meta charset="utf-8">
+<head><script src="/NguyenDucQui_Blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=NguyenDucQui_Blog/livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Làm chủ Java String: 5 hàm quan trọng và Kỹ thuật tối ưu hiệu năng | DUC QUI</title>
 <meta name="keywords" content="Java, String, Performance, Tips">
 <meta name="description" content="
@@ -13,16 +13,16 @@ Trong Java, `String` là đối tượng bất biến (immutable). Điều này 
 1. 5 Hàm xử lý chuỗi &ldquo;bất ly thân&rdquo;
 Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thực tế:">
 <meta name="author" content="Đức Qui">
-<link rel="canonical" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javastringmethods/">
+<link rel="canonical" href="http://localhost:1313/NguyenDucQui_Blog/posts/javastringmethods/">
 <link crossorigin="anonymous" href="/NguyenDucQui_Blog/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/apple-touch-icon.png">
-<link rel="mask-icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/NguyenDucQui_Blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/NguyenDucQui_Blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/NguyenDucQui_Blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/NguyenDucQui_Blog/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/NguyenDucQui_Blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javastringmethods/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/NguyenDucQui_Blog/posts/javastringmethods/">
 <noscript>
     <style>
         #theme-toggle,
@@ -37,87 +37,13 @@ Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thự
         document.querySelector("html").dataset.theme = 'dark';
     }
 
-</script><meta property="og:url" content="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javastringmethods/">
-  <meta property="og:site_name" content="DUC QUI">
-  <meta property="og:title" content="Làm chủ Java String: 5 hàm quan trọng và Kỹ thuật tối ưu hiệu năng">
-  <meta property="og:description" content="Trong Java, `String` là đối tượng bất biến (immutable). Điều này có nghĩa là mỗi khi bạn chỉnh sửa chuỗi, Java thực tế đang tạo ra một chuỗi mới trong bộ nhớ. Hiểu rõ các hàm xử lý chuỗi và cách tối ưu chúng là chìa khóa để viết code chuyên nghiệp.1. 5 Hàm xử lý chuỗi “bất ly thân” Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thực tế:">
-  <meta property="og:locale" content="vi">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-12-25T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-12-25T00:00:00+00:00">
-    <meta property="article:tag" content="Java">
-    <meta property="article:tag" content="String">
-    <meta property="article:tag" content="Performance">
-    <meta property="article:tag" content="Tips">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Làm chủ Java String: 5 hàm quan trọng và Kỹ thuật tối ưu hiệu năng">
-<meta name="twitter:description" content="
-
-Trong Java, `String` là đối tượng bất biến (immutable). Điều này có nghĩa là mỗi khi bạn chỉnh sửa chuỗi, Java thực tế đang tạo ra một chuỗi mới trong bộ nhớ. Hiểu rõ các hàm xử lý chuỗi và cách tối ưu chúng là chìa khóa để viết code chuyên nghiệp.
-1. 5 Hàm xử lý chuỗi &ldquo;bất ly thân&rdquo;
-Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thực tế:">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Lộ Trình Học Tập",
-      "item": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Làm chủ Java String: 5 hàm quan trọng và Kỹ thuật tối ưu hiệu năng",
-      "item": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javastringmethods/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Làm chủ Java String: 5 hàm quan trọng và Kỹ thuật tối ưu hiệu năng",
-  "name": "Làm chủ Java String: 5 hàm quan trọng và Kỹ thuật tối ưu hiệu năng",
-  "description": "\rTrong Java, `String` là đối tượng bất biến (immutable). Điều này có nghĩa là mỗi khi bạn chỉnh sửa chuỗi, Java thực tế đang tạo ra một chuỗi mới trong bộ nhớ. Hiểu rõ các hàm xử lý chuỗi và cách tối ưu chúng là chìa khóa để viết code chuyên nghiệp.\r1. 5 Hàm xử lý chuỗi \u0026ldquo;bất ly thân\u0026rdquo; Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thực tế:\n",
-  "keywords": [
-    "Java", "String", "Performance", "Tips"
-  ],
-  "articleBody": "\rTrong Java, `String` là đối tượng bất biến (immutable). Điều này có nghĩa là mỗi khi bạn chỉnh sửa chuỗi, Java thực tế đang tạo ra một chuỗi mới trong bộ nhớ. Hiểu rõ các hàm xử lý chuỗi và cách tối ưu chúng là chìa khóa để viết code chuyên nghiệp.\r1. 5 Hàm xử lý chuỗi “bất ly thân” Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thực tế:\nlength(): Trả về độ dài chuỗi. trim(): Cắt bỏ khoảng trắng thừa ở đầu và cuối chuỗi (Rất quan trọng khi xử lý input từ người dùng). substring(int beginIndex, int endIndex): Cắt chuỗi con. indexOf(String str): Tìm vị trí xuất hiện đầu tiên của chuỗi con (trả về -1 nếu không tìm thấy). replace(CharSequence target, CharSequence replacement): Thay thế nội dung trong chuỗi. split(String regex): Tách chuỗi thành mảng dựa trên ký tự phân cách (ví dụ dấu phẩy). Code mẫu minh họa: public class StringMethodsDemo { public static void main(String[] args) { String rawInput = \" Hello Java World \"; // 1. Làm sạch dữ liệu String cleanStr = rawInput.trim(); System.out.println(\"Đã trim: [\" + cleanStr + \"]\"); // [Hello Java World] // 2. Tìm kiếm và Cắt chuỗi int index = cleanStr.indexOf(\"Java\"); if (index != -1) { String sub = cleanStr.substring(index); System.out.println(\"Chuỗi con từ vị trí tìm thấy: \" + sub); // Java World } // 3. Thay thế String replaced = cleanStr.replace(\"World\", \"Developer\"); System.out.println(\"Sau khi replace: \" + replaced); // 4. Tách chuỗi (Split) String csvData = \"apple,banana,orange\"; String[] fruits = csvData.split(\",\"); for (String fruit : fruits) { System.out.println(\"Fruit: \" + fruit); } } } 2. Mẹo hiệu năng: Tại sao phải dùng StringBuilder? Vì String là bất biến, đoạn code sau là một “thảm họa” về hiệu năng:\nString s = \"\"; for (int i = 0; i \u003c 1000; i++) { s = s + i; // TẠO RA 1000 ĐỐI TƯỢNG STRING MỚI trong bộ nhớ! } **Giải pháp: Sử dụng StringBuilder (hoặc StringBuffer cho đa luồng). Nó cho phép sửa đổi chuỗi trực tiếp mà không tạo đối tượng rác.\nStringBuilder sb = new StringBuilder(); for (int i = 0; i \u003c 1000; i++) { sb.append(i); // Chỉ thao tác trên một đối tượng duy nhất } String finalString = sb.toString(); Quy tắc vàng: Dùng cộng chuỗi (+) cho các nối chuỗi đơn giản, ít lặp. Dùng StringBuilder cho các vòng lặp hoặc xử lý chuỗi phức tạp.\n3. Cạm bẫy “chết người”: So sánh chuỗi bằng == Đây là lỗi phổ biến nhất mà lập trình viên mới thường mắc phải. Trong Java:\n==: So sánh địa chỉ ô nhớ (Reference).\n.equals(): So sánh nội dung của chuỗi (Value).\nVì String là đối tượng (Object), bạn TUYỆT ĐỐI KHÔNG được dùng == để kiểm tra nội dung văn bản, đặc biệt là khi chuỗi được tạo từ new String() hoặc nhận từ input người dùng.\nString s1 = new String(\"Hello\"); String s2 = new String(\"Hello\"); // SAI: So sánh địa chỉ bộ nhớ (sẽ trả về false vì là 2 object khác nhau trong Heap) if (s1 == s2) { System.out.println(\"Hai chuỗi bằng nhau\"); } else { System.out.println(\"Hai chuỗi KHÁC nhau\"); // Code sẽ chạy vào đây } // ĐÚNG: So sánh nội dung chữ if (s1.equals(s2)) { System.out.println(\"Nội dung giống nhau\"); // Code sẽ chạy vào đây } Mẹo nhỏ: Nếu bạn muốn so sánh không phân biệt hoa thường (ví dụ check username đăng nhập: “Admin” và “admin”), hãy dùng .equalsIgnoreCase(). 4. Các tính năng hiện đại (Java 11+) Nếu dự án của bạn đang chạy trên Java 11 trở lên, bạn có thêm những “vũ khí” rất tiện lợi mà không cần viết logic thủ công:\nisBlank(): Kiểm tra chuỗi rỗng HOẶC chỉ chứa toàn khoảng trắng (Thông minh hơn isEmpty() cũ kỹ).\nrepeat(int count): Lặp lại chuỗi n lần.\nlines(): Chia chuỗi thành một Stream các dòng (cực tiện khi xử lý văn bản nhiều dòng).\nString input = \" \"; System.out.println(input.isEmpty()); // false (vì có dấu cách) System.out.println(input.isBlank()); // true (Java 11: hiểu là chuỗi trống) String star = \"*\"; System.out.println(star.repeat(5)); // In ra: ***** Tổng kết Chuỗi (String) tuy đơn giản nhưng chứa đựng nhiều vấn đề về hiệu năng và bộ nhớ. Hãy ghi nhớ 3 điều cốt lõi để code “xịn” hơn:\nLuôn dùng .equals() để so sánh nội dung.\nDùng StringBuilder khi cần cộng gộp chuỗi nhiều lần (đặc biệt trong vòng lặp).\nLuôn xử lý đầu vào bằng trim() hoặc isBlank() để tránh lỗi logic do thừa khoảng trắng.\nQuay lại\r",
-  "wordCount" : "765",
-  "inLanguage": "en",
-  "datePublished": "2025-12-25T00:00:00Z",
-  "dateModified": "2025-12-25T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Đức Qui"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javastringmethods/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "DUC QUI",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon.ico"
-    }
-  }
-}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
+            <a href="http://localhost:1313/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -143,27 +69,27 @@ Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thự
         </div>
         <ul id="menu">
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/" title="HOME">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/" title="HOME">
                     <span>HOME</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/" title="COURSE">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/posts/" title="COURSE">
                     <span>COURSE</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/summary/" title="SUMMARY">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/summary/" title="SUMMARY">
                     <span>SUMMARY</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/about/" title="ABOUT">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/about/" title="ABOUT">
                     <span>ABOUT</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/contact/" title="CONTACT">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/contact/" title="CONTACT">
                     <span>CONTACT</span>
                 </a>
             </li>
@@ -181,7 +107,33 @@ Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thự
     <div class="post-meta"><span title='2025-12-25 00:00:00 +0000 UTC'>December 25, 2025</span>&nbsp;·&nbsp;<span>Đức Qui</span>
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">MỤC LỤC NỘI DUNG</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#1-5-h%c3%a0m-x%e1%bb%ad-l%c3%bd-chu%e1%bb%97i-b%e1%ba%a5t-ly-th%c3%a2n" aria-label="1. 5 Hàm xử lý chuỗi &ldquo;bất ly thân&rdquo;">1. 5 Hàm xử lý chuỗi &ldquo;bất ly thân&rdquo;</a><ul>
+                        
+                <li>
+                    <a href="#code-m%e1%ba%abu-minh-h%e1%bb%8da" aria-label="Code mẫu minh họa:">Code mẫu minh họa:</a></li></ul>
+                </li>
+                <li>
+                    <a href="#2-m%e1%ba%b9o-hi%e1%bb%87u-n%c4%83ng-t%e1%ba%a1i-sao-ph%e1%ba%a3i-d%c3%b9ng-stringbuilder" aria-label="2. Mẹo hiệu năng: Tại sao phải dùng StringBuilder?">2. Mẹo hiệu năng: Tại sao phải dùng StringBuilder?</a></li>
+                <li>
+                    <a href="#3-c%e1%ba%a1m-b%e1%ba%aby-ch%e1%ba%bft-ng%c6%b0%e1%bb%9di-so-s%c3%a1nh-chu%e1%bb%97i-b%e1%ba%b1ng-" aria-label="3. Cạm bẫy &ldquo;chết người&rdquo;: So sánh chuỗi bằng ==">3. Cạm bẫy &ldquo;chết người&rdquo;: So sánh chuỗi bằng ==</a></li>
+                <li>
+                    <a href="#4-c%c3%a1c-t%c3%adnh-n%c4%83ng-hi%e1%bb%87n-%c4%91%e1%ba%a1i-java-11" aria-label="4. Các tính năng hiện đại (Java 11&#43;)">4. Các tính năng hiện đại (Java 11+)</a></li>
+                <li>
+                    <a href="#t%e1%bb%95ng-k%e1%ba%bft" aria-label="Tổng kết">Tổng kết</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><style>
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -396,10 +348,10 @@ Trong Java, `String` là đối tượng bất biến (immutable). Điều này 
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/java/">Java</a></li>
-      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/string/">String</a></li>
-      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/performance/">Performance</a></li>
-      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/tips/">Tips</a></li>
+      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/java/">Java</a></li>
+      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/string/">String</a></li>
+      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/performance/">Performance</a></li>
+      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/tips/">Tips</a></li>
     </ul>
   </footer>
 </article>

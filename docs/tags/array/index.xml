@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Array on DUC QUI</title>
-    <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/array/</link>
+    <link>http://localhost:1313/NguyenDucQui_Blog/tags/array/</link>
     <description>Recent content in Array on DUC QUI</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>vi</language>
     <lastBuildDate>Wed, 24 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/array/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/tags/array/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bộ ba &#39;Thần thánh&#39; Map, Filter, Reduce: Bí kíp xử lý mảng trong JS</title>
-      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/arraymethods/</link>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/arraymethods/</link>
       <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/arraymethods/</guid>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/arraymethods/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {

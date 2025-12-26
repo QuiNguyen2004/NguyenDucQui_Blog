@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="light">
 
-<head><meta charset="utf-8">
+<head><script src="/NguyenDucQui_Blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=NguyenDucQui_Blog/livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>JavaScript là gì? Tổng quan về ngôn ngữ lập trình JavaScript | DUC QUI</title>
 <meta name="keywords" content="">
 <meta name="description" content="Kiến thức về JavaScript">
 <meta name="author" content="">
-<link rel="canonical" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/js-full-course/">
+<link rel="canonical" href="http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/">
 <link crossorigin="anonymous" href="/NguyenDucQui_Blog/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/apple-touch-icon.png">
-<link rel="mask-icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/NguyenDucQui_Blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/NguyenDucQui_Blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/NguyenDucQui_Blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/NguyenDucQui_Blog/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/NguyenDucQui_Blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/js-full-course/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/NguyenDucQui_Blog/posts/js-full-course/">
 <noscript>
     <style>
         #theme-toggle,
@@ -33,75 +33,13 @@
         document.querySelector("html").dataset.theme = 'dark';
     }
 
-</script><meta property="og:url" content="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/js-full-course/">
-  <meta property="og:site_name" content="DUC QUI">
-  <meta property="og:title" content="JavaScript là gì? Tổng quan về ngôn ngữ lập trình JavaScript">
-  <meta property="og:description" content="Kiến thức về JavaScript">
-  <meta property="og:locale" content="vi">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-12-14T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-12-14T00:00:00+00:00">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript là gì? Tổng quan về ngôn ngữ lập trình JavaScript">
-<meta name="twitter:description" content="Kiến thức về JavaScript">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Lộ Trình Học Tập",
-      "item": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "JavaScript là gì? Tổng quan về ngôn ngữ lập trình JavaScript",
-      "item": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/js-full-course/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "JavaScript là gì? Tổng quan về ngôn ngữ lập trình JavaScript",
-  "name": "JavaScript là gì? Tổng quan về ngôn ngữ lập trình JavaScript",
-  "description": "Kiến thức về JavaScript",
-  "keywords": [
-    
-  ],
-  "articleBody": "\r### JavaScript là gì?\rJavaScript là 1 trong 3 ngôn ngữ chính của lập trình web, và nó được dùng phổ biến trong suốt 20 năm qua. Từ thuở sơ khai, nó còn có tên là Mocha (năm 1995), sau đó được đổi thành Mona, Livescript, và cuối cùng là JavaScript như hiện nay.\nTính đến năm 2016, có đến 92% trang web hiện nay đang sử dụng JavaScript, và rất có thể bạn đã dùng qua rất nhiều trang web có sử dụng ngôn ngữ lập trình này.\nJavaScript hoạt động như thế nào? JavaScript là ngôn ngữ diễn dịch. Điều này có nghĩa là trình duyệt sẽ đọc mã JavaScript và thực thi ngay lập tức, chứ không cần biên dịch trước thành một tệp riêng như một số ngôn ngữ khác.\nQuy trình hoạt động cơ bản của JavaScript:\nKhi bạn truy cập một trang web, trình duyệt sẽ tải các tệp HTML, CSS và JavaScript. Trình duyệt tạo ra một mô hình gọi là DOM (Document Object Model) – mô tả cấu trúc của trang web dưới dạng cây. JavaScript sẽ tìm các phần tử trong DOM và thay đổi chúng dựa trên hành động của người dùng (như click chuột, cuộn chuột, gõ phím…). Sau đó, trình duyệt sẽ cập nhật hiển thị để phản ánh những thay đổi đó JavaScript có vai trò gì trong trình duyệt? Thông thường, các trang web sẽ được nhúng trực tiếp JavaScript vào, hoặc sẽ sử dụng file .js để tham chiếu qua. Đây là ngôn ngữ phía máy khách, nghĩa là thay vì xử lý tập lệnh trên server của trang web, nó sẽ được tải về máy của khách truy cập và xử lý trên chính chiếc máy đó.\nCần chú ý, hiện nay có một số trình duyệt web phổ biến cho phép bạn bật/tắt JavaScript theo ý của bạn. Vậy nên, bạn cần biết những trang web mà bạn muốn truy cập sẽ bị ảnh hưởng như thế nào nếu như không có JavaScript hoạt động, từ đó sẽ quyết định có bật/tắt nó hay không.\nƯu và nhược điểm của JavaScript Khi so sánh với các đối thủ khác thì JavaScript có rất nhiều điểm mạnh có thể được kể đến dưới đây.\nĐối với lập trình viên: Đây là ngôn ngữ dễ học, dễ để phát hiện và sửa lỗi hơn. Thông qua JavaScript thì lập trình viên cũng có thể kiểm tra dữ liệu đầu vào, nhằm giảm bớt công việc kiểm tra thủ công. JavaScript cũng khá linh hoạt, và nó có thể được sử dụng ở nhiều nền tảng, trình duyệt, và không cần những công cụ quá phức tạp bởi chúng có thể được biên dịch bởi HTML từ trình duyệt web.\nĐối với khách truy cập: Ta có thể truy cập và tương tác với website hiệu quả hơn. Nhờ đặc tính gọn nhẹ mà chúng sẽ cho phép thực hiện các tác vụ trên trang web nhanh hơn.\nTuy nhiên, công cụ nào cũng sẽ điểm mạnh và điểm yếu. Dưới đây là một số điểm yếu mà bạn nên cân nhắc qua.\nNó rất dễ bị khai thác, thế nên chúng thu hút rất nhiều hacker thực hiện tìm kiếm lỗi bảo mật để lợi dụng, từ đó sẽ chèn cắm các mã độc vào máy tính của người sử dụng.\nViệc linh hoạt hỗ trợ cho các thiết bị cũng có thể tạo ra trải nghiệm không đồng nhất trên các thiết bị này, và đôi khi một số trình duyệt sẽ không hỗ trợ sử dụng JavaScript.\nQuay lại\r",
-  "wordCount" : "606",
-  "inLanguage": "en",
-  "datePublished": "2024-12-14T00:00:00Z",
-  "dateModified": "2024-12-14T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/js-full-course/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "DUC QUI",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon.ico"
-    }
-  }
-}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
+            <a href="http://localhost:1313/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -127,27 +65,27 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/" title="HOME">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/" title="HOME">
                     <span>HOME</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/" title="COURSE">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/posts/" title="COURSE">
                     <span>COURSE</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/summary/" title="SUMMARY">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/summary/" title="SUMMARY">
                     <span>SUMMARY</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/about/" title="ABOUT">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/about/" title="ABOUT">
                     <span>ABOUT</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/contact/" title="CONTACT">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/contact/" title="CONTACT">
                     <span>CONTACT</span>
                 </a>
             </li>

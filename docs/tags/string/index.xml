@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>String on DUC QUI</title>
-    <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/string/</link>
+    <link>http://localhost:1313/NguyenDucQui_Blog/tags/string/</link>
     <description>Recent content in String on DUC QUI</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>vi</language>
     <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/string/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/tags/string/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Làm chủ Java String: 5 hàm quan trọng và Kỹ thuật tối ưu hiệu năng</title>
-      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javastringmethods/</link>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/javastringmethods/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javastringmethods/</guid>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/javastringmethods/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {

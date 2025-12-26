@@ -57,12 +57,12 @@ hidemeta: true
 
 /* Cột thông tin nhỏ bên trái */
 .profile-info-side {
-    flex: 0 0 200px; /* Cố định chiều rộng cột info */
+    flex: 0 0 200px; /
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Canh trái cho gọn */
-    gap: 20px; 
-    padding-right: 20px;
+    gap: 10px; 
+    padding-right: 5px;
     border-right: 1px solid #eee;
 }
 
@@ -158,19 +158,19 @@ hidemeta: true
         <div class="profile-info-side">
             <div class="meta-item">
                 <span class="meta-label">Địa điểm</span>
-                <div class="meta-value"><span class="meta-icon">📍</span> TP. Hồ Chí Minh</div>
+                <div class="meta-value"></span> TP. Hồ Chí Minh</div>
             </div>
             <div class="meta-item">
                 <span class="meta-label">Email</span>
-                <div class="meta-value"><span class="meta-icon">📧</span> nguyenducqui2004@gmail.com</div>
+                <div class="meta-value"></span> nguyenducqui2004@gmail.com</div>
             </div>
             <div class="meta-item">
                 <span class="meta-label">Học vấn</span>
-                <div class="meta-value"><span class="meta-icon">🎓</span> HUTECH University</div>
+                <div class="meta-value"></span> HUTECH University</div>
             </div>
             <div class="meta-item">
                 <span class="meta-label">Trạng thái</span>
-                <div class="meta-value"><span class="meta-icon">🟢</span> Sẵn sàng</div>
+                <div class="meta-value"></span> Sẵn sàng</div>
             </div>
         </div>
         <div class="profile-text-side">                   

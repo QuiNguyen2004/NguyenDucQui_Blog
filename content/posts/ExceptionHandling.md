@@ -4,6 +4,9 @@ date: 2025-12-25
 author: "Đức Qui"
 tags: ["Java", "Exception", "Error Handling"]
 categories: ["Tutorial"]
+ShowToc: true
+TocOpen: true
+hidemeta: false
 ---
 <style>
     /* Container chính giới hạn chiều rộng và căn giữa */

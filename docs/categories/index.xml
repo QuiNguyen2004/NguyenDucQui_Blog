@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on DUC QUI</title>
-    <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/categories/</link>
+    <link>http://localhost:1313/NguyenDucQui_Blog/categories/</link>
     <description>Recent content in Categories on DUC QUI</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>vi</language>
     <lastBuildDate>Fri, 26 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://quinguyen2004.github.io/NguyenDucQui_Blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tutorial</title>
-      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/categories/tutorial/</link>
+      <link>http://localhost:1313/NguyenDucQui_Blog/categories/tutorial/</link>
       <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/categories/tutorial/</guid>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/categories/tutorial/</guid>
       <description></description>
     </item>
   </channel>

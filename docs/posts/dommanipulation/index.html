@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="light">
 
-<head><meta charset="utf-8">
+<head><script src="/NguyenDucQui_Blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=NguyenDucQui_Blog/livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>DOM Manipulation: Cách JavaScript &#39;nói chuyện&#39; với HTML | DUC QUI</title>
 <meta name="keywords" content="JavaScript, DOM, Frontend">
 <meta name="description" content="
@@ -15,16 +15,16 @@ document.getElementById(&#39;id&#39;): Lấy theo ID (nhanh nhất).
 document.querySelector(&#39;.class&#39;): Lấy phần tử đầu tiên khớp với CSS Selector (Rất linh hoạt).
 document.querySelectorAll(&#39;p&#39;): Lấy tất cả các thẻ p.">
 <meta name="author" content="Đức Qui">
-<link rel="canonical" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/dommanipulation/">
+<link rel="canonical" href="http://localhost:1313/NguyenDucQui_Blog/posts/dommanipulation/">
 <link crossorigin="anonymous" href="/NguyenDucQui_Blog/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/apple-touch-icon.png">
-<link rel="mask-icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/NguyenDucQui_Blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/NguyenDucQui_Blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/NguyenDucQui_Blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/NguyenDucQui_Blog/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/NguyenDucQui_Blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/dommanipulation/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/NguyenDucQui_Blog/posts/dommanipulation/">
 <noscript>
     <style>
         #theme-toggle,
@@ -39,88 +39,13 @@ document.querySelectorAll(&#39;p&#39;): Lấy tất cả các thẻ p.">
         document.querySelector("html").dataset.theme = 'dark';
     }
 
-</script><meta property="og:url" content="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/dommanipulation/">
-  <meta property="og:site_name" content="DUC QUI">
-  <meta property="og:title" content="DOM Manipulation: Cách JavaScript &#39;nói chuyện&#39; với HTML">
-  <meta property="og:description" content="Để làm website &#34;động&#34; (click nút thì hiện popup, đổi màu...), JavaScript cần thao tác với DOM (Document Object Model). Dưới đây là các lệnh cơ bản nhất.1. Truy xuất phần tử (Selectors) document.getElementById(&#39;id&#39;): Lấy theo ID (nhanh nhất). document.querySelector(&#39;.class&#39;): Lấy phần tử đầu tiên khớp với CSS Selector (Rất linh hoạt). document.querySelectorAll(&#39;p&#39;): Lấy tất cả các thẻ p.">
-  <meta property="og:locale" content="vi">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-12-25T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-12-25T00:00:00+00:00">
-    <meta property="article:tag" content="JavaScript">
-    <meta property="article:tag" content="DOM">
-    <meta property="article:tag" content="Frontend">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DOM Manipulation: Cách JavaScript &#39;nói chuyện&#39; với HTML">
-<meta name="twitter:description" content="
-
-Để làm website &#34;động&#34; (click nút thì hiện popup, đổi màu...), JavaScript cần thao tác với DOM (Document Object Model). Dưới đây là các lệnh cơ bản nhất.
-1. Truy xuất phần tử (Selectors)
-document.getElementById(&#39;id&#39;): Lấy theo ID (nhanh nhất).
-document.querySelector(&#39;.class&#39;): Lấy phần tử đầu tiên khớp với CSS Selector (Rất linh hoạt).
-document.querySelectorAll(&#39;p&#39;): Lấy tất cả các thẻ p.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Lộ Trình Học Tập",
-      "item": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "DOM Manipulation: Cách JavaScript 'nói chuyện' với HTML",
-      "item": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/dommanipulation/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "DOM Manipulation: Cách JavaScript 'nói chuyện' với HTML",
-  "name": "DOM Manipulation: Cách JavaScript \u0027nói chuyện\u0027 với HTML",
-  "description": "\rĐể làm website \"động\" (click nút thì hiện popup, đổi màu...), JavaScript cần thao tác với DOM (Document Object Model). Dưới đây là các lệnh cơ bản nhất.\r1. Truy xuất phần tử (Selectors) document.getElementById('id'): Lấy theo ID (nhanh nhất). document.querySelector('.class'): Lấy phần tử đầu tiên khớp với CSS Selector (Rất linh hoạt). document.querySelectorAll('p'): Lấy tất cả các thẻ p.\n",
-  "keywords": [
-    "JavaScript", "DOM", "Frontend"
-  ],
-  "articleBody": "\rĐể làm website \"động\" (click nút thì hiện popup, đổi màu...), JavaScript cần thao tác với DOM (Document Object Model). Dưới đây là các lệnh cơ bản nhất.\r1. Truy xuất phần tử (Selectors) document.getElementById('id'): Lấy theo ID (nhanh nhất). document.querySelector('.class'): Lấy phần tử đầu tiên khớp với CSS Selector (Rất linh hoạt). document.querySelectorAll('p'): Lấy tất cả các thẻ p.\n2. Lắng nghe sự kiện (Event Listener) Đừng gán onclick trực tiếp vào HTML nữa, hãy dùng addEventListener để code JS tách biệt và sạch sẽ.\n\u003cbutton id=\"btn-login\"\u003eĐăng nhập\u003c/button\u003e \u003cdiv id=\"box\" style=\"width: 100px; height: 100px; background: red;\"\u003e\u003c/div\u003e // JavaScript const btn = document.querySelector('#btn-login'); const box = document.querySelector('#box'); btn.addEventListener('click', function() { alert(\"Bạn đã click nút Đăng nhập!\"); // Thay đổi màu cái hộp bên dưới box.style.backgroundColor = \"blue\"; }); 3. Thao tác Class (CSS) Thay vì sửa style trực tiếp, chuyên nghiệp hơn là thêm/xóa class CSS.\n/* CSS */ .dark-mode { background-color: black; color: white; } // JS: Toggle class (Có thì xóa, chưa có thì thêm) document.body.classList.toggle('dark-mode'); Quay lại\r",
-  "wordCount" : "170",
-  "inLanguage": "en",
-  "datePublished": "2025-12-25T00:00:00Z",
-  "dateModified": "2025-12-25T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Đức Qui"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/dommanipulation/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "DUC QUI",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon.ico"
-    }
-  }
-}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
+            <a href="http://localhost:1313/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -146,27 +71,27 @@ document.querySelectorAll(&#39;p&#39;): Lấy tất cả các thẻ p.">
         </div>
         <ul id="menu">
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/" title="HOME">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/" title="HOME">
                     <span>HOME</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/" title="COURSE">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/posts/" title="COURSE">
                     <span>COURSE</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/summary/" title="SUMMARY">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/summary/" title="SUMMARY">
                     <span>SUMMARY</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/about/" title="ABOUT">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/about/" title="ABOUT">
                     <span>ABOUT</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/contact/" title="CONTACT">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/contact/" title="CONTACT">
                     <span>CONTACT</span>
                 </a>
             </li>
@@ -184,7 +109,25 @@ document.querySelectorAll(&#39;p&#39;): Lấy tất cả các thẻ p.">
     <div class="post-meta"><span title='2025-12-25 00:00:00 +0000 UTC'>December 25, 2025</span>&nbsp;·&nbsp;<span>Đức Qui</span>
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">MỤC LỤC NỘI DUNG</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#1-truy-xu%e1%ba%a5t-ph%e1%ba%a7n-t%e1%bb%ad-selectors" aria-label="1. Truy xuất phần tử (Selectors)">1. Truy xuất phần tử (Selectors)</a></li>
+                <li>
+                    <a href="#2-l%e1%ba%afng-nghe-s%e1%bb%b1-ki%e1%bb%87n-event-listener" aria-label="2. Lắng nghe sự kiện (Event Listener)">2. Lắng nghe sự kiện (Event Listener)</a></li>
+                <li>
+                    <a href="#3-thao-t%c3%a1c-class-css" aria-label="3. Thao tác Class (CSS)">3. Thao tác Class (CSS)</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><style>
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -315,9 +258,9 @@ document.querySelectorAll(&#39;p&#39;): Lấy tất cả các thẻ p.">
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/javascript/">JavaScript</a></li>
-      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/dom/">DOM</a></li>
-      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/frontend/">Frontend</a></li>
+      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/javascript/">JavaScript</a></li>
+      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/dom/">DOM</a></li>
+      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/frontend/">Frontend</a></li>
     </ul>
   </footer>
 </article>

@@ -4,6 +4,9 @@ date: 2025-12-25
 author: "Đức Qui"
 tags: ["JavaScript", "ES6", "Frontend", "Tips"]
 categories: ["Tutorial"]
+ShowToc: true
+TocOpen: true
+hidemeta: false
 ---
 <style>
     /* Container chính giới hạn chiều rộng và căn giữa */

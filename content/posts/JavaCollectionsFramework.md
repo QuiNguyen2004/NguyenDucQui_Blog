@@ -4,6 +4,9 @@ date: 2025-12-26
 author: "Đức Qui"
 tags: ["Java", "Programming", "Data Structures", "Backend"]
 categories: ["Tutorial"]
+ShowToc: true
+TocOpen: true
+hidemeta: false
 ---
 <style>
     /* Container chính giới hạn chiều rộng và căn giữa */

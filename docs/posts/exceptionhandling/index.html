@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="light">
 
-<head><meta charset="utf-8">
+<head><script src="/NguyenDucQui_Blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=NguyenDucQui_Blog/livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Java Exception Handling: Bắt lỗi chuyên nghiệp với Try-Catch và Multi-catch | DUC QUI</title>
 <meta name="keywords" content="Java, Exception, Error Handling">
 <meta name="description" content="
@@ -32,16 +32,16 @@ Ví dụ: public void readFile() throws IOException { ... }
 3. Tính năng Multi-catch (Java 7&#43;)
 Trước đây, nếu muốn bắt nhiều lỗi, bạn phải viết nhiều khối catch lặp lại code. Từ Java 7, bạn có thể gộp chúng lại bằng dấu |.">
 <meta name="author" content="Đức Qui">
-<link rel="canonical" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/exceptionhandling/">
+<link rel="canonical" href="http://localhost:1313/NguyenDucQui_Blog/posts/exceptionhandling/">
 <link crossorigin="anonymous" href="/NguyenDucQui_Blog/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/apple-touch-icon.png">
-<link rel="mask-icon" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/NguyenDucQui_Blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/NguyenDucQui_Blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/NguyenDucQui_Blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/NguyenDucQui_Blog/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/NguyenDucQui_Blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/exceptionhandling/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/NguyenDucQui_Blog/posts/exceptionhandling/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,105 +56,13 @@ Trước đây, nếu muốn bắt nhiều lỗi, bạn phải viết nhiều kh
         document.querySelector("html").dataset.theme = 'dark';
     }
 
-</script><meta property="og:url" content="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/exceptionhandling/">
-  <meta property="og:site_name" content="DUC QUI">
-  <meta property="og:title" content="Java Exception Handling: Bắt lỗi chuyên nghiệp với Try-Catch và Multi-catch">
-  <meta property="og:description" content="Lỗi (Bug) là điều không thể tránh khỏi. Thay vì để ứng dụng &#34;sập&#34; (crash) trước mặt người dùng, Java cung cấp cơ chế `try-catch` để xử lý tình huống ngoại lệ một cách duyên dáng.1. Cấu trúc cơ bản: Try - Catch - Finally Try: Chứa đoạn code “nguy hiểm” có khả năng gây lỗi. Catch: Nơi xử lý khi lỗi xảy ra. Finally: Code trong khối này LUÔN LUÔN chạy, dù có lỗi hay không (Thường dùng để đóng kết nối DB, đóng file). 2. Phân biệt throw và throws throw: Hành động ném ra một lỗi cụ thể (Dùng bên trong thân hàm). Ví dụ: if (age &lt; 18) throw new ArithmeticException(&#34;Chưa đủ tuổi&#34;); throws: Khai báo rằng hàm này có thể gây ra lỗi, người gọi hàm phải tự xử lý (Dùng ở chữ ký hàm). Ví dụ: public void readFile() throws IOException { ... } 3. Tính năng Multi-catch (Java 7&#43;) Trước đây, nếu muốn bắt nhiều lỗi, bạn phải viết nhiều khối catch lặp lại code. Từ Java 7, bạn có thể gộp chúng lại bằng dấu |.">
-  <meta property="og:locale" content="vi">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-12-25T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-12-25T00:00:00+00:00">
-    <meta property="article:tag" content="Java">
-    <meta property="article:tag" content="Exception">
-    <meta property="article:tag" content="Error Handling">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java Exception Handling: Bắt lỗi chuyên nghiệp với Try-Catch và Multi-catch">
-<meta name="twitter:description" content="
-
-Lỗi (Bug) là điều không thể tránh khỏi. Thay vì để ứng dụng &#34;sập&#34; (crash) trước mặt người dùng, Java cung cấp cơ chế `try-catch` để xử lý tình huống ngoại lệ một cách duyên dáng.
-1. Cấu trúc cơ bản: Try - Catch - Finally
-
-Try: Chứa đoạn code &ldquo;nguy hiểm&rdquo; có khả năng gây lỗi.
-Catch: Nơi xử lý khi lỗi xảy ra.
-Finally: Code trong khối này LUÔN LUÔN chạy, dù có lỗi hay không (Thường dùng để đóng kết nối DB, đóng file).
-
-2. Phân biệt throw và throws
-
-throw: Hành động ném ra một lỗi cụ thể (Dùng bên trong thân hàm).
-
-Ví dụ: if (age &lt; 18) throw new ArithmeticException(&quot;Chưa đủ tuổi&quot;);
-
-
-throws: Khai báo rằng hàm này có thể gây ra lỗi, người gọi hàm phải tự xử lý (Dùng ở chữ ký hàm).
-
-Ví dụ: public void readFile() throws IOException { ... }
-
-
-
-3. Tính năng Multi-catch (Java 7&#43;)
-Trước đây, nếu muốn bắt nhiều lỗi, bạn phải viết nhiều khối catch lặp lại code. Từ Java 7, bạn có thể gộp chúng lại bằng dấu |.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Lộ Trình Học Tập",
-      "item": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Java Exception Handling: Bắt lỗi chuyên nghiệp với Try-Catch và Multi-catch",
-      "item": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/exceptionhandling/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Java Exception Handling: Bắt lỗi chuyên nghiệp với Try-Catch và Multi-catch",
-  "name": "Java Exception Handling: Bắt lỗi chuyên nghiệp với Try-Catch và Multi-catch",
-  "description": "\rLỗi (Bug) là điều không thể tránh khỏi. Thay vì để ứng dụng \"sập\" (crash) trước mặt người dùng, Java cung cấp cơ chế `try-catch` để xử lý tình huống ngoại lệ một cách duyên dáng.\r1. Cấu trúc cơ bản: Try - Catch - Finally Try: Chứa đoạn code \u0026ldquo;nguy hiểm\u0026rdquo; có khả năng gây lỗi. Catch: Nơi xử lý khi lỗi xảy ra. Finally: Code trong khối này LUÔN LUÔN chạy, dù có lỗi hay không (Thường dùng để đóng kết nối DB, đóng file). 2. Phân biệt throw và throws throw: Hành động ném ra một lỗi cụ thể (Dùng bên trong thân hàm). Ví dụ: if (age \u0026lt; 18) throw new ArithmeticException(\u0026quot;Chưa đủ tuổi\u0026quot;); throws: Khai báo rằng hàm này có thể gây ra lỗi, người gọi hàm phải tự xử lý (Dùng ở chữ ký hàm). Ví dụ: public void readFile() throws IOException { ... } 3. Tính năng Multi-catch (Java 7+) Trước đây, nếu muốn bắt nhiều lỗi, bạn phải viết nhiều khối catch lặp lại code. Từ Java 7, bạn có thể gộp chúng lại bằng dấu |.\n",
-  "keywords": [
-    "Java", "Exception", "Error Handling"
-  ],
-  "articleBody": "\rLỗi (Bug) là điều không thể tránh khỏi. Thay vì để ứng dụng \"sập\" (crash) trước mặt người dùng, Java cung cấp cơ chế `try-catch` để xử lý tình huống ngoại lệ một cách duyên dáng.\r1. Cấu trúc cơ bản: Try - Catch - Finally Try: Chứa đoạn code “nguy hiểm” có khả năng gây lỗi. Catch: Nơi xử lý khi lỗi xảy ra. Finally: Code trong khối này LUÔN LUÔN chạy, dù có lỗi hay không (Thường dùng để đóng kết nối DB, đóng file). 2. Phân biệt throw và throws throw: Hành động ném ra một lỗi cụ thể (Dùng bên trong thân hàm). Ví dụ: if (age \u003c 18) throw new ArithmeticException(\"Chưa đủ tuổi\"); throws: Khai báo rằng hàm này có thể gây ra lỗi, người gọi hàm phải tự xử lý (Dùng ở chữ ký hàm). Ví dụ: public void readFile() throws IOException { ... } 3. Tính năng Multi-catch (Java 7+) Trước đây, nếu muốn bắt nhiều lỗi, bạn phải viết nhiều khối catch lặp lại code. Từ Java 7, bạn có thể gộp chúng lại bằng dấu |.\nCode mẫu tổng hợp: import java.util.Scanner; import java.util.InputMismatchException; public class ExceptionDemo { public static void main(String[] args) { Scanner scanner = new Scanner(System.in); try { System.out.print(\"Nhập số chia: \"); int divisor = scanner.nextInt(); // Có thể gây lỗi chia cho 0 int result = 100 / divisor; System.out.println(\"Kết quả: \" + result); // Giả sử có một mảng int[] arr = {1, 2}; System.out.println(arr[10]); // Lỗi truy cập ngoài mảng } catch (ArithmeticException | ArrayIndexOutOfBoundsException e) { // MULTI-CATCH: Bắt cả lỗi toán học và lỗi mảng ở đây System.out.println(\"Lỗi tính toán hoặc truy cập mảng: \" + e.getMessage()); } catch (InputMismatchException e) { // Bắt lỗi nhập sai kiểu dữ liệu (nhập chữ thay vì số) System.out.println(\"Vui lòng chỉ nhập số nguyên!\"); } catch (Exception e) { // Bắt tất cả các lỗi còn lại (Trùm cuối) System.out.println(\"Lỗi không xác định: \" + e.toString()); } finally { // Luôn chạy để dọn dẹp System.out.println(\"Kết thúc chương trình, đóng Scanner.\"); scanner.close(); } } } 4. Try-with-resources (Java 7+): Quên đi nỗi lo rò rỉ bộ nhớ Ở ví dụ trên, chúng ta phải dùng khối finally để đóng Scanner. Nếu bạn mở kết nối Database, mở File, mở Network… bạn sẽ có hàng tá dòng code close() trong finally, rất rối rắm và dễ quên.\nTry-with-resources cho phép khai báo tài nguyên ngay trong dấu ngoặc tròn try(…). Java sẽ tự động đóng chúng khi khối try kết thúc (dù có lỗi hay không). // Cú pháp: try (Khai báo tài nguyên cần tự đóng ở đây) try (Scanner scanner = new Scanner(System.in)) { System.out.print(\"Nhập số: \"); int number = scanner.nextInt(); System.out.println(\"Bạn đã nhập: \" + number); // KHÔNG CẦN viết finally để scanner.close() nữa! // Java tự làm việc đó cho bạn. } catch (Exception e) { e.printStackTrace(); } 5 Tạo Custom Exception (Ngoại lệ tự định nghĩa) Đôi khi các lỗi có sẵn của Java không mô tả đúng nghiệp vụ của bạn (ví dụ: lỗi “Số dư tài khoản không đủ”). Lúc này, bạn cần tạo Exception riêng. // 1. Tạo class lỗi riêng, kế thừa Exception (nếu muốn bắt buộc xử lý) class NotEnoughMoneyException extends Exception { public NotEnoughMoneyException(String message) { super(message); } } // 2. Sử dụng trong code public class BankAccount { private double balance = 100.0; public void withdraw(double amount) throws NotEnoughMoneyException { if (amount \u003e balance) { // Ném lỗi tự tạo ra throw new NotEnoughMoneyException(\"Số dư không đủ để rút \" + amount); } balance -= amount; System.out.println(\"Rút tiền thành công!\"); } public static void main(String[] args) { BankAccount acc = new BankAccount(); try { acc.withdraw(500.0); // Cố tình rút quá số dư } catch (NotEnoughMoneyException e) { System.err.println(\"Giao dịch thất bại: \" + e.getMessage()); } } } Tổng kết Exception Handling không chỉ là để sửa lỗi, mà là để kiểm soát rủi ro và giữ cho trải nghiệm người dùng không bị gián đoạn. Hãy ưu tiên dùng Try-with-resources và hạn chế Checked Exceptions không cần thiết.\nQuay lại\r",
-  "wordCount" : "685",
-  "inLanguage": "en",
-  "datePublished": "2025-12-25T00:00:00Z",
-  "dateModified": "2025-12-25T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Đức Qui"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/exceptionhandling/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "DUC QUI",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://quinguyen2004.github.io/NguyenDucQui_Blog/favicon.ico"
-    }
-  }
-}
 </script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
+            <a href="http://localhost:1313/NguyenDucQui_Blog/" accesskey="h" title="DUC QUI (Alt + H)">DUC QUI</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -180,27 +88,27 @@ Trước đây, nếu muốn bắt nhiều lỗi, bạn phải viết nhiều kh
         </div>
         <ul id="menu">
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/" title="HOME">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/" title="HOME">
                     <span>HOME</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/" title="COURSE">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/posts/" title="COURSE">
                     <span>COURSE</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/summary/" title="SUMMARY">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/summary/" title="SUMMARY">
                     <span>SUMMARY</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/about/" title="ABOUT">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/about/" title="ABOUT">
                     <span>ABOUT</span>
                 </a>
             </li>
             <li>
-                <a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/contact/" title="CONTACT">
+                <a href="http://localhost:1313/NguyenDucQui_Blog/contact/" title="CONTACT">
                     <span>CONTACT</span>
                 </a>
             </li>
@@ -218,7 +126,35 @@ Trước đây, nếu muốn bắt nhiều lỗi, bạn phải viết nhiều kh
     <div class="post-meta"><span title='2025-12-25 00:00:00 +0000 UTC'>December 25, 2025</span>&nbsp;·&nbsp;<span>Đức Qui</span>
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">MỤC LỤC NỘI DUNG</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#1-c%e1%ba%a5u-tr%c3%bac-c%c6%a1-b%e1%ba%a3n-try---catch---finally" aria-label="1. Cấu trúc cơ bản: Try - Catch - Finally">1. Cấu trúc cơ bản: Try - Catch - Finally</a></li>
+                <li>
+                    <a href="#2-ph%c3%a2n-bi%e1%bb%87t-throw-v%c3%a0-throws" aria-label="2. Phân biệt throw và throws">2. Phân biệt throw và throws</a></li>
+                <li>
+                    <a href="#3-t%c3%adnh-n%c4%83ng-multi-catch-java-7" aria-label="3. Tính năng Multi-catch (Java 7&#43;)">3. Tính năng Multi-catch (Java 7+)</a><ul>
+                        
+                <li>
+                    <a href="#code-m%e1%ba%abu-t%e1%bb%95ng-h%e1%bb%a3p" aria-label="Code mẫu tổng hợp:">Code mẫu tổng hợp:</a></li></ul>
+                </li>
+                <li>
+                    <a href="#4-try-with-resources-java-7-qu%c3%aan-%c4%91i-n%e1%bb%97i-lo-r%c3%b2-r%e1%bb%89-b%e1%bb%99-nh%e1%bb%9b" aria-label="4. Try-with-resources (Java 7&#43;): Quên đi nỗi lo rò rỉ bộ nhớ">4. Try-with-resources (Java 7+): Quên đi nỗi lo rò rỉ bộ nhớ</a></li>
+                <li>
+                    <a href="#5-t%e1%ba%a1o-custom-exception-ngo%e1%ba%a1i-l%e1%bb%87-t%e1%bb%b1-%c4%91%e1%bb%8bnh-ngh%c4%a9a" aria-label="5 Tạo Custom Exception (Ngoại lệ tự định nghĩa)">5 Tạo Custom Exception (Ngoại lệ tự định nghĩa)</a></li>
+                <li>
+                    <a href="#t%e1%bb%95ng-k%e1%ba%bft" aria-label="Tổng kết">Tổng kết</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><style>
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -433,9 +369,9 @@ Lỗi (Bug) là điều không thể tránh khỏi. Thay vì để ứng dụng 
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/java/">Java</a></li>
-      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/exception/">Exception</a></li>
-      <li><a href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/error-handling/">Error Handling</a></li>
+      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/java/">Java</a></li>
+      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/exception/">Exception</a></li>
+      <li><a href="http://localhost:1313/NguyenDucQui_Blog/tags/error-handling/">Error Handling</a></li>
     </ul>
   </footer>
 </article>

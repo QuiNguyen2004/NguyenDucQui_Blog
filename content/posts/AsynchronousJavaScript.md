@@ -4,6 +4,9 @@ date: 2025-12-07
 author: "Đức Qui"
 tags: ["JavaScript", "Async", "Promise", "API"]
 categories: ["Tutorial"]
+ShowToc: true
+TocOpen: true
+hidemeta: false
 ---
 <style>
     /* Container chính giới hạn chiều rộng và căn giữa */

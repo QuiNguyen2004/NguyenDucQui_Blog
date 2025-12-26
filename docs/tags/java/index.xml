@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Java on DUC QUI</title>
-    <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/java/</link>
+    <link>http://localhost:1313/NguyenDucQui_Blog/tags/java/</link>
     <description>Recent content in Java on DUC QUI</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>vi</language>
     <lastBuildDate>Fri, 26 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://quinguyen2004.github.io/NguyenDucQui_Blog/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/NguyenDucQui_Blog/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Làm chủ Java Collections: Hướng dẫn cơ bản về ArrayList, HashSet và HashMap</title>
-      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javacollectionsframework/</link>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/javacollectionsframework/</link>
       <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javacollectionsframework/</guid>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/javacollectionsframework/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -109,9 +109,9 @@ Trong lập trình Java, việc quản lý và lưu trữ dữ liệu hiệu qu�
     </item>
     <item>
       <title>Đọc ghi file trong Java: Quên cách cũ đi, hãy dùng Java NIO</title>
-      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javaioandfilehandling/</link>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/javaioandfilehandling/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javaioandfilehandling/</guid>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/javaioandfilehandling/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -215,9 +215,9 @@ Trước đây, để đọc một file text, chúng ta phải dùng `FileReader
     </item>
     <item>
       <title>Java 8 Streams API: Tạm biệt vòng lặp for, chào đón code hiện đại</title>
-      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/java8streamsapi/</link>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/java8streamsapi/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/java8streamsapi/</guid>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/java8streamsapi/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -314,9 +314,9 @@ Nếu như Collections Framework (Bài 1) giúp bạn lưu trữ dữ liệu, th
     </item>
     <item>
       <title>Java Exception Handling: Bắt lỗi chuyên nghiệp với Try-Catch và Multi-catch</title>
-      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/exceptionhandling/</link>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/exceptionhandling/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/exceptionhandling/</guid>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/exceptionhandling/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
@@ -433,9 +433,9 @@ Lỗi (Bug) là điều không thể tránh khỏi. Thay vì để ứng dụng 
     </item>
     <item>
       <title>Làm chủ Java String: 5 hàm quan trọng và Kỹ thuật tối ưu hiệu năng</title>
-      <link>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javastringmethods/</link>
+      <link>http://localhost:1313/NguyenDucQui_Blog/posts/javastringmethods/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://quinguyen2004.github.io/NguyenDucQui_Blog/posts/javastringmethods/</guid>
+      <guid>http://localhost:1313/NguyenDucQui_Blog/posts/javastringmethods/</guid>
       <description>&lt;style&gt;
     /* Container chính giới hạn chiều rộng và căn giữa */
     .post-container {
