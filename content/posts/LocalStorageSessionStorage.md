@@ -151,6 +151,60 @@ if (storedUser) {
     console.log("Chào mừng quay lại, " + userData.name);
 }
 ```
+## 3. Những cạm bẫy cần tránh (Quan trọng)
+LocalStorage rất tiện, nhưng nếu lạm dụng, nó sẽ trở thành "con dao hai lưỡi".
+
+### a. Vấn đề bảo mật (Security Risk)
+**Đây là quy tắc vàng:** Không bao giờ lưu thông tin nhạy cảm vào LocalStorage.
+
+Tại sao? Bất kỳ mã JavaScript nào chạy trên trang web (bao gồm cả các thư viện bên thứ 3 mà bạn nhúng vào) đều có thể đọc được LocalStorage.
+
+- **Rủi ro:** Nếu trang web dính lỗi XSS (Cross-Site Scripting), hacker có thể đánh cắp toàn bộ dữ liệu trong Storage.
+
+- **Tránh lưu:** Mật khẩu, thông tin thẻ tín dụng, số CCCD.
+
+**Lưu ý với Token:** Nhiều người lưu JWT (JSON Web Token) trong LocalStorage. Việc này rất phổ biến nhưng không an toàn tuyệt đối bằng HttpOnly Cookie. Hãy cân nhắc kỹ dựa trên yêu cầu bảo mật của dự án.
+
+### b. Lỗi tràn bộ nhớ (Quota Exceeded Error)
+Dù có 5MB, nhưng nếu bạn cứ setItem liên tục mà không kiểm soát, trình duyệt sẽ ném ra lỗi.
+
+```JavaScript
+
+try {
+    localStorage.setItem('bigData', heavyString);
+} catch (e) {
+    if (e.name === 'QuotaExceededError') {
+        alert('Bộ nhớ trình duyệt đã đầy! Vui lòng dọn dẹp cache.');
+        // Logic xóa bớt dữ liệu cũ ở đây
+    }
+}
+```
+### c. Chặn luồng chính (Synchronous Blocking)
+Web Storage hoạt động đồng bộ **(synchronous)**. Nghĩa là khi bạn đọc/ghi một file JSON quá lớn, trình duyệt sẽ bị "đơ" một chút cho đến khi xử lý xong.
+
+**Giải pháp:** Chỉ lưu dữ liệu nhẹ. Với dữ liệu lớn, hãy dùng **IndexedDB**.
+
+## 4. Kỹ thuật nâng cao: Đồng bộ dữ liệu giữa các Tab
+Bạn có bao giờ thấy Facebook tự động logout ở Tab A khi bạn bấm đăng xuất ở Tab B không? Họ dùng sự kiện storage.
+
+Sự kiện này chỉ kích hoạt khi một Tab khác thay đổi dữ liệu trong LocalStorage (không kích hoạt trên chính Tab đang thao tác).
+
+```JavaScript
+
+// Lắng nghe sự kiện thay đổi storage
+window.addEventListener('storage', (event) => {
+    if (event.key === 'user_token' && event.newValue === null) {
+        // Nếu token bị xóa (user đã logout ở tab khác)
+        alert('Bạn đã đăng xuất từ một tab khác!');
+        window.location.href = '/login'; // Chuyển hướng về trang login
+    }
+    
+    if (event.key === 'theme') {
+        // Đồng bộ dark mode ngay lập tức
+        applyTheme(event.newValue);
+    }
+});
+```
 </div>
 <div class="btn-back-container">
     <a href="/NguyenDucQui_Blog/posts/" class="back-btn">Quay lại</a>

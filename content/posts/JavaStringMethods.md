@@ -151,7 +151,7 @@ for (int i = 0; i < 1000; i++) {
     s = s + i; // TẠO RA 1000 ĐỐI TƯỢNG STRING MỚI trong bộ nhớ!
 }
 ```
-****Giải pháp**: Sử dụng StringBuilder (hoặc StringBuffer cho đa luồng). Nó cho phép sửa đổi chuỗi trực tiếp mà không tạo đối tượng rác.
+****Giải pháp**: Sử dụng **StringBuilder** (hoặc **StringBuffer** cho đa luồng). Nó cho phép sửa đổi chuỗi trực tiếp mà không tạo đối tượng rác.
 ```java
 StringBuilder sb = new StringBuilder();
 for (int i = 0; i < 1000; i++) {
@@ -164,9 +164,9 @@ String finalString = sb.toString();
 ## 3. Cạm bẫy "chết người": So sánh chuỗi bằng ==
 Đây là lỗi phổ biến nhất mà lập trình viên mới thường mắc phải. Trong Java:
 
-- ==: So sánh địa chỉ ô nhớ (Reference).
+- **==:** So sánh địa chỉ ô nhớ **(Reference)**.
 
-- .equals(): So sánh nội dung của chuỗi (Value).
+- **.equals():** So sánh nội dung của chuỗi **(Value)**.
 
 Vì String là đối tượng (Object), bạn TUYỆT ĐỐI KHÔNG được dùng == để kiểm tra nội dung văn bản, đặc biệt là khi chuỗi được tạo từ new String() hoặc nhận từ input người dùng.
 ```java
@@ -185,15 +185,15 @@ if (s1.equals(s2)) {
     System.out.println("Nội dung giống nhau"); // Code sẽ chạy vào đây
 }
 ```
-- **Mẹo nhỏ**: Nếu bạn muốn so sánh không phân biệt hoa thường (ví dụ check username đăng nhập: "Admin" và "admin"), hãy dùng .equalsIgnoreCase().
+- **Mẹo nhỏ**: Nếu bạn muốn so sánh không phân biệt hoa thường (ví dụ check username đăng nhập: "Admin" và "admin"), hãy dùng **.equalsIgnoreCase()**.
 ## 4. Các tính năng hiện đại (Java 11+)
 Nếu dự án của bạn đang chạy trên Java 11 trở lên, bạn có thêm những "vũ khí" rất tiện lợi mà không cần viết logic thủ công:
 
-- isBlank(): Kiểm tra chuỗi rỗng HOẶC chỉ chứa toàn khoảng trắng (Thông minh hơn isEmpty() cũ kỹ).
+- **isBlank():** Kiểm tra chuỗi rỗng HOẶC chỉ chứa toàn khoảng trắng (Thông minh hơn **isEmpty()** cũ kỹ).
 
-- repeat(int count): Lặp lại chuỗi n lần.
+- **repeat(int count):** Lặp lại chuỗi n lần.
 
-- lines(): Chia chuỗi thành một Stream các dòng (cực tiện khi xử lý văn bản nhiều dòng).
+- **lines():** Chia chuỗi thành một Stream các dòng (cực tiện khi xử lý văn bản nhiều dòng).
 ```java
 String input = "   ";
 System.out.println(input.isEmpty()); // false (vì có dấu cách)
@@ -202,15 +202,83 @@ System.out.println(input.isBlank()); // true (Java 11: hiểu là chuỗi trốn
 String star = "*";
 System.out.println(star.repeat(5)); // In ra: *****
 ```
+## 5. Bí mật về "String Pool" (Vùng nhớ hằng chuỗi)
+Bạn có bao giờ thắc mắc tại sao chúng ta hiếm khi thấy ai viết **String s = new String("Hello")**; không? Đó là vì Java có một cơ chế tối ưu bộ nhớ cực hay gọi là **String Pool**.
 
+**Cách hoạt động:** Khi bạn tạo chuỗi bằng dấu ngoặc kép **String s = "Hello"**;, Java sẽ kiểm tra trong "bể chứa" (Pool) xem đã có chuỗi "Hello" chưa.
+
+- Nếu có rồi: Nó trả về tham chiếu tới chuỗi cũ (Tiết kiệm RAM).
+
+- Nếu chưa: Nó tạo mới và bỏ vào Pool.
+
+**Ngược lại:** Nếu dùng new String("Hello"), bạn ép Java tạo ra một đối tượng hoàn toàn mới trong bộ nhớ Heap, bỏ qua cơ chế Pool. Điều này gây lãng phí.
+
+Lời khuyên: Luôn ưu tiên cách khai báo trực tiếp (String s = "...") thay vì dùng từ khóa new.
+## 6. Text Blocks (Java 15+): Cứu tinh cho SQL và JSON
+Trước đây, nếu bạn muốn gán một chuỗi HTML, JSON hoặc câu lệnh SQL dài vào biến **String**, bạn phải đối mặt với "cơn ác mộng" của việc nối chuỗi và ký tự thoát (\n, \").
+
+**Java 15** (chính thức) đã giới thiệu Text Blocks (sử dụng 3 dấu ngoặc kép """).
+
+Cách cũ (Rất rối mắt):
+```java
+String json = "{\n" +
+              "  \"name\": \"John\",\n" +
+              "  \"age\": 30\n" +
+              "}";
+```
+Cách mới với Text Blocks (Sạch sẽ, dễ đọc):
+```java
+String json = """
+              {
+                  "name": "John",
+                  "age": 30
+              }
+              """;
+```
+## 7. String.format(): Định dạng chuỗi chuyên nghiệp
+Thay vì cộng chuỗi thủ công để tạo ra một câu thông báo phức tạp (ví dụ: hiển thị giá tiền, ngày tháng), hãy dùng **String.format()**. Nó giúp code của bạn giống như một mẫu **(template)** dễ quản lý.
+
+```Java
+
+String product = "Laptop";
+double price = 1500.50;
+
+// Cách "nông dân" (Khó đọc, dễ sai sót khoảng trắng)
+String msg1 = "Sản phẩm " + product + " có giá là " + price + " USD";
+
+// Cách "chuyên gia" (Dễ nhìn, định dạng được số thập phân)
+// %s: chuỗi, %.2f: số thực lấy 2 số sau dấu phẩy
+String msg2 = String.format("Sản phẩm %s có giá là %.2f USD", product, price);
+
+System.out.println(msg2); // Output: Sản phẩm Laptop có giá là 1500.50 USD
+```
+## 8. Đừng "tự chế xe đạp": Hãy dùng thư viện (Bonus)
+Trong môi trường doanh nghiệp **(Enterprise)**, việc xử lý null là rất quan trọng để tránh lỗi NullPointerException. Thay vì viết **if (str != null && str.length() > 0)**, các lập trình viên kinh nghiệm thường dùng thư viện **Apache Commons Lang** với **class StringUtils.**
+
+- **StringUtils.isEmpty(str):** Kiểm tra rỗng an toàn (không bị lỗi ngay cả khi str là null).
+
+- **StringUtils.capitalize(str):** Viết hoa chữ cái đầu.
+
+```Java
+
+    // Ví dụ thực tế
+    String input = null;
+
+    // if (input.trim().isEmpty()) -> Sẽ BỊ LỖI NullPointerException ngay lập tức!
+
+    // Dùng thư viện: An toàn tuyệt đối
+    if (StringUtils.isBlank(input)) {
+        System.out.println("Chuỗi rỗng hoặc null");
+    }
+```
 ## Tổng kết
-- Chuỗi (String) tuy đơn giản nhưng chứa đựng nhiều vấn đề về hiệu năng và bộ nhớ. Hãy ghi nhớ 3 điều cốt lõi để code "xịn" hơn:
+- Chuỗi **(String)** tuy đơn giản nhưng chứa đựng nhiều vấn đề về hiệu năng và bộ nhớ. Hãy ghi nhớ 3 điều cốt lõi để code "xịn" hơn:
 
-- Luôn dùng .equals() để so sánh nội dung.
+- Luôn dùng **.equals()** để so sánh nội dung.
 
-- Dùng StringBuilder khi cần cộng gộp chuỗi nhiều lần (đặc biệt trong vòng lặp).
+- Dùng **StringBuilder** khi cần cộng gộp chuỗi nhiều lần (đặc biệt trong vòng lặp).
 
-- Luôn xử lý đầu vào bằng trim() hoặc isBlank() để tránh lỗi logic do thừa khoảng trắng.
+- Luôn xử lý đầu vào bằng **trim()** hoặc **isBlank()** để tránh lỗi logic do thừa khoảng trắng.
 </div>
 <div class="btn-back-container">
     <a href="/NguyenDucQui_Blog/posts/" class="back-btn">Quay lại</a>

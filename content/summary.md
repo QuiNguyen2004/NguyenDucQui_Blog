@@ -441,7 +441,7 @@ layout: "page"
             <span class="tag">Giải quyết vấn đề</span>
             <span class="tag">Quản lý thời gian</span>
         </div>
-        <a href="https://drive.google.com/file/d/1OFvfhNxF8TCTsTdroENzYTbKmw6mQpUr/view?usp=drive_link" style="display:block; text-align:center; background:#6c8af1; color:white; padding:10px; border-radius:6px; margin-top:20px; font-weight:bold; text-decoration:none;">📥 TẢI CV (PDF)</a>
+        <a href="https://drive.google.com/file/d/1alat_KZuE0hmtVnK6pXprhUtQdQ_ttwV/view?usp=drive_link" style="display:block; text-align:center; background:#6c8af1; color:white; padding:10px; border-radius:6px; margin-top:20px; font-weight:bold; text-decoration:none;">📥 TẢI CV (PDF)</a>
     </div>
     <div class="cv-main">
         <div class="section-header">

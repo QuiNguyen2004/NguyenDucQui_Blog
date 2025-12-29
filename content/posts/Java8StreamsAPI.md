@@ -147,10 +147,9 @@ List<Integer> evenNumbers = numbers.stream()
 // Kết quả: [2, 4, 6]
 ```
 ### B. Map (Chuyển đổi dữ liệu)
-map() dùng để biến đổi phần tử từ dạng này sang dạng khác (ví dụ: từ số sang chữ, từ đối tượng User sang String email, hoặc tính toán lại giá trị). Số lượng phần tử đầu ra bằng số lượng phần tử đầu vào.
+**map()** dùng để biến đổi phần tử từ dạng này sang dạng khác (ví dụ: từ số sang chữ, từ đối tượng User sang String email, hoặc tính toán lại giá trị). Số lượng phần tử đầu ra bằng số lượng phần tử đầu vào.
 
 ```Java
-
 List<String> words = Arrays.asList("java", "stream", "api");
 
 // Chuyển đổi từ chuỗi sang độ dài của chuỗi
@@ -173,6 +172,100 @@ Set<String> set = stream.collect(Collectors.toSet());
 // Gom về chuỗi duy nhất (nối các phần tử)
 String joined = stream.collect(Collectors.joining(", "));
 ```
+## D. Sorted (Sắp xếp dữ liệu)
+Thay vì dùng **Collections.sort()** bên ngoài, bạn có thể sắp xếp ngay trong dòng chảy dữ liệu.
+
+```Java
+List<String> names = Arrays.asList("Cuong", "An", "Binh");
+
+// 1. Sắp xếp mặc định (A -> Z)
+List<String> sortedNames = names.stream()
+    .sorted() 
+    .collect(Collectors.toList()); 
+// Kết quả: [An, Binh, Cuong]
+
+// 2. Sắp xếp tùy chỉnh (Ví dụ: Theo độ dài chuỗi, từ ngắn đến dài)
+List<String> byLength = names.stream()
+    .sorted((s1, s2) -> s1.length() - s2.length())
+    .collect(Collectors.toList());
+```
+## E. Distinct & Limit (Lọc trùng và Giới hạn)
+Hai hàm này cực kỳ hữu ích khi làm chức năng phân trang **(pagination)** hoặc loại bỏ dữ liệu rác.
+
+```Java
+
+List<Integer> numbers = Arrays.asList(1, 2, 2, 3, 4, 4, 5);
+
+// Lấy 3 số đầu tiên KHÔNG trùng nhau
+List<Integer> result = numbers.stream()
+    .distinct()  // Loại bỏ số trùng -> [1, 2, 3, 4, 5]
+    .limit(3)    // Chỉ lấy 3 số đầu -> [1, 2, 3]
+    .collect(Collectors.toList());
+```
+## 3. Các thao tác kết thúc (Terminal Operations) khác
+Ngoài collect(), Stream còn có nhiều cách khác để "chốt đơn" dữ liệu. Hãy nhớ: Nếu không có Terminal Operation, Stream sẽ không chạy!
+
+### A. forEach (Duyệt và thực thi)
+Dùng khi bạn muốn làm gì đó với từng phần tử (ví dụ: in ra màn hình, lưu vào DB) mà không cần trả về danh sách mới.
+
+```Java
+
+List<String> names = Arrays.asList("An", "Binh", "Cuong");
+// In từng tên ra màn hình
+names.stream().forEach(name -> System.out.println("Xin chào " + name));
+```
+### B. count, min, max (Thống kê)
+```Java
+
+long count = names.stream().filter(n -> n.length() > 3).count();
+
+// Tìm số nhỏ nhất
+Optional<Integer> min = numbers.stream().min(Integer::compare);
+```
+### C. anyMatch, allMatch, noneMatch (Kiểm tra điều kiện)
+Trả về boolean. Rất nhanh vì nó sử dụng cơ chế **Short-circuiting** (ngắt mạch - ví dụ tìm thấy một cái sai là dừng ngay, không cần duyệt hết).
+
+```Java
+
+boolean hasAn = names.stream().anyMatch(n -> n.equals("An")); // True nếu có ít nhất 1 người tên An
+boolean allShort = names.stream().allMatch(n -> n.length() < 10); // True nếu TẤT CẢ đều ngắn hơn 10 ký tự
+```
+## 4. Cơ chế "Lazy Evaluation" (Đánh giá lười) - Bí mật hiệu năng
+Đây là điểm "ăn tiền" của Stream so với vòng lặp for truyền thống.
+
+Hãy xem đoạn code sau:
+
+```Java
+
+names.stream()
+     .filter(n -> {
+         System.out.println("Đang lọc: " + n);
+         return n.length() > 3;
+     })
+     .map(n -> {
+         System.out.println("Đang map: " + n);
+         return n.toUpperCase();
+     })
+     .limit(2)
+     .collect(Collectors.toList());
+```
+Điều gì xảy ra? Stream thông minh đến mức nó sẽ kết hợp các bước lại. Ngay khi tìm đủ 2 phần tử (limit(2)), nó sẽ DỪNG NGAY LẬP TỨC, không thèm xử lý các phần tử còn lại trong danh sách.
+
+Vòng lặp For cũ: Thường sẽ duyệt hết danh sách rồi mới cắt lấy 2 phần tử (lãng phí).
+
+**Stream:** Chỉ làm đúng mức cần thiết.
+
+## 5. Parallel Streams (Đa luồng) - Vũ khí hạng nặng
+Nếu bạn có một danh sách 1 triệu phần tử, xử lý tuần tự **(Sequential)**sẽ lâu. Stream cho phép bạn bật chế độ "đa luồng" cực dễ chỉ bằng cách thay **stream()** thành **parallelStream().**
+
+```Java
+
+// Java sẽ tự động chia nhỏ list ra và xử lý trên nhiều lõi CPU cùng lúc
+long count = bigList.parallelStream()
+    .filter(e -> e.isActive())
+    .count();
+```
+**⚠️ Cảnh báo:**Chỉ dùng parallelStream khi dữ liệu thực sự lớn và các tác vụ độc lập nhau. Nếu dùng bừa bãi cho list nhỏ, chi phí quản lý luồng sẽ làm code chạy chậm hơn cả cách thường!
 ## Tổng kết nhanh
 Tại sao bạn nên dùng Streams thay vì vòng lặp for?
 

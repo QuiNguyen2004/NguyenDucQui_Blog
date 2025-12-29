@@ -142,8 +142,8 @@ Chúng ta có 4 hàm cơ bản: setItem, getItem, removeItem, clear.">
   "keywords": [
     "JavaScript", "Storage", "Cookies"
   ],
-  "articleBody": "\rBạn muốn lưu giữ trạng thái \"Đã đăng nhập\" hoặc chế độ \"Dark Mode\" ngay cả khi người dùng F5 tải lại trang? Trình duyệt cung cấp cho chúng ta **Web Storage API**.\r1. Phân biệt LocalStorage và SessionStorage Đặc điểm LocalStorage SessionStorage Thời gian sống Vĩnh viễn (đến khi code xóa hoặc user xóa cache). Tạm thời (mất ngay khi đóng Tab/Trình duyệt). Phạm vi Chung cho cả domain. Riêng biệt cho từng Tab. Dung lượng Khoảng 5MB-10MB. Khoảng 5MB. 2. Cách sử dụng (Giống hệt nhau) Chúng ta có 4 hàm cơ bản: setItem, getItem, removeItem, clear.\nVí dụ 1: Lưu chế độ Dark Mode (Dữ liệu đơn giản) // 1. Lưu dữ liệu localStorage.setItem('theme', 'dark'); // 2. Lấy dữ liệu const currentTheme = localStorage.getItem('theme'); if (currentTheme === 'dark') { document.body.classList.add('dark-mode'); } // 3. Xóa dữ liệu // localStorage.removeItem('theme'); Ví dụ 2: Lưu Object (Quan trọng) Storage chỉ lưu được Chuỗi (String). Nếu bạn muốn lưu một Object (ví dụ thông tin User), bạn phải ép kiểu sang JSON string.\nconst userProfile = { id: 1, name: \"Duc Qui\", role: \"Admin\" }; // SAI: localStorage.setItem('user', userProfile); -\u003e Kết quả: \"[object Object]\" // ĐÚNG: Dùng JSON.stringify localStorage.setItem('user', JSON.stringify(userProfile)); // KHI LẤY RA: Dùng JSON.parse để chuyển lại thành Object const storedUser = localStorage.getItem('user'); if (storedUser) { const userData = JSON.parse(storedUser); console.log(\"Chào mừng quay lại, \" + userData.name); } Quay lại\r",
-  "wordCount" : "231",
+  "articleBody": "\rBạn muốn lưu giữ trạng thái \"Đã đăng nhập\" hoặc chế độ \"Dark Mode\" ngay cả khi người dùng F5 tải lại trang? Trình duyệt cung cấp cho chúng ta **Web Storage API**.\r1. Phân biệt LocalStorage và SessionStorage Đặc điểm LocalStorage SessionStorage Thời gian sống Vĩnh viễn (đến khi code xóa hoặc user xóa cache). Tạm thời (mất ngay khi đóng Tab/Trình duyệt). Phạm vi Chung cho cả domain. Riêng biệt cho từng Tab. Dung lượng Khoảng 5MB-10MB. Khoảng 5MB. 2. Cách sử dụng (Giống hệt nhau) Chúng ta có 4 hàm cơ bản: setItem, getItem, removeItem, clear.\nVí dụ 1: Lưu chế độ Dark Mode (Dữ liệu đơn giản) // 1. Lưu dữ liệu localStorage.setItem('theme', 'dark'); // 2. Lấy dữ liệu const currentTheme = localStorage.getItem('theme'); if (currentTheme === 'dark') { document.body.classList.add('dark-mode'); } // 3. Xóa dữ liệu // localStorage.removeItem('theme'); Ví dụ 2: Lưu Object (Quan trọng) Storage chỉ lưu được Chuỗi (String). Nếu bạn muốn lưu một Object (ví dụ thông tin User), bạn phải ép kiểu sang JSON string.\nconst userProfile = { id: 1, name: \"Duc Qui\", role: \"Admin\" }; // SAI: localStorage.setItem('user', userProfile); -\u003e Kết quả: \"[object Object]\" // ĐÚNG: Dùng JSON.stringify localStorage.setItem('user', JSON.stringify(userProfile)); // KHI LẤY RA: Dùng JSON.parse để chuyển lại thành Object const storedUser = localStorage.getItem('user'); if (storedUser) { const userData = JSON.parse(storedUser); console.log(\"Chào mừng quay lại, \" + userData.name); } 3. Những cạm bẫy cần tránh (Quan trọng) LocalStorage rất tiện, nhưng nếu lạm dụng, nó sẽ trở thành “con dao hai lưỡi”.\na. Vấn đề bảo mật (Security Risk) Đây là quy tắc vàng: Không bao giờ lưu thông tin nhạy cảm vào LocalStorage.\nTại sao? Bất kỳ mã JavaScript nào chạy trên trang web (bao gồm cả các thư viện bên thứ 3 mà bạn nhúng vào) đều có thể đọc được LocalStorage.\nRủi ro: Nếu trang web dính lỗi XSS (Cross-Site Scripting), hacker có thể đánh cắp toàn bộ dữ liệu trong Storage.\nTránh lưu: Mật khẩu, thông tin thẻ tín dụng, số CCCD.\nLưu ý với Token: Nhiều người lưu JWT (JSON Web Token) trong LocalStorage. Việc này rất phổ biến nhưng không an toàn tuyệt đối bằng HttpOnly Cookie. Hãy cân nhắc kỹ dựa trên yêu cầu bảo mật của dự án.\nb. Lỗi tràn bộ nhớ (Quota Exceeded Error) Dù có 5MB, nhưng nếu bạn cứ setItem liên tục mà không kiểm soát, trình duyệt sẽ ném ra lỗi.\ntry { localStorage.setItem('bigData', heavyString); } catch (e) { if (e.name === 'QuotaExceededError') { alert('Bộ nhớ trình duyệt đã đầy! Vui lòng dọn dẹp cache.'); // Logic xóa bớt dữ liệu cũ ở đây } } c. Chặn luồng chính (Synchronous Blocking) Web Storage hoạt động đồng bộ (synchronous). Nghĩa là khi bạn đọc/ghi một file JSON quá lớn, trình duyệt sẽ bị “đơ” một chút cho đến khi xử lý xong.\nGiải pháp: Chỉ lưu dữ liệu nhẹ. Với dữ liệu lớn, hãy dùng IndexedDB.\n4. Kỹ thuật nâng cao: Đồng bộ dữ liệu giữa các Tab Bạn có bao giờ thấy Facebook tự động logout ở Tab A khi bạn bấm đăng xuất ở Tab B không? Họ dùng sự kiện storage.\nSự kiện này chỉ kích hoạt khi một Tab khác thay đổi dữ liệu trong LocalStorage (không kích hoạt trên chính Tab đang thao tác).\n// Lắng nghe sự kiện thay đổi storage window.addEventListener('storage', (event) =\u003e { if (event.key === 'user_token' \u0026\u0026 event.newValue === null) { // Nếu token bị xóa (user đã logout ở tab khác) alert('Bạn đã đăng xuất từ một tab khác!'); window.location.href = '/login'; // Chuyển hướng về trang login } if (event.key === 'theme') { // Đồng bộ dark mode ngay lập tức applyTheme(event.newValue); } }); Quay lại\r",
+  "wordCount" : "620",
   "inLanguage": "en",
   "datePublished": "2025-12-25T00:00:00Z",
   "dateModified": "2025-12-25T00:00:00Z",
@@ -249,10 +249,21 @@ Chúng ta có 4 hàm cơ bản: setItem, getItem, removeItem, clear.">
                 <li>
                     <a href="#v%c3%ad-d%e1%bb%a5-1-l%c6%b0u-ch%e1%ba%bf-%c4%91%e1%bb%99-dark-mode-d%e1%bb%af-li%e1%bb%87u-%c4%91%c6%a1n-gi%e1%ba%a3n" aria-label="Ví dụ 1: Lưu chế độ Dark Mode (Dữ liệu đơn giản)">Ví dụ 1: Lưu chế độ Dark Mode (Dữ liệu đơn giản)</a></li>
                 <li>
-                    <a href="#v%c3%ad-d%e1%bb%a5-2-l%c6%b0u-object-quan-tr%e1%bb%8dng" aria-label="Ví dụ 2: Lưu Object (Quan trọng)">Ví dụ 2: Lưu Object (Quan trọng)</a>
+                    <a href="#v%c3%ad-d%e1%bb%a5-2-l%c6%b0u-object-quan-tr%e1%bb%8dng" aria-label="Ví dụ 2: Lưu Object (Quan trọng)">Ví dụ 2: Lưu Object (Quan trọng)</a></li></ul>
                 </li>
-            </ul>
-            </li>
+                <li>
+                    <a href="#3-nh%e1%bb%afng-c%e1%ba%a1m-b%e1%ba%aby-c%e1%ba%a7n-tr%c3%a1nh-quan-tr%e1%bb%8dng" aria-label="3. Những cạm bẫy cần tránh (Quan trọng)">3. Những cạm bẫy cần tránh (Quan trọng)</a><ul>
+                        
+                <li>
+                    <a href="#a-v%e1%ba%a5n-%c4%91%e1%bb%81-b%e1%ba%a3o-m%e1%ba%adt-security-risk" aria-label="a. Vấn đề bảo mật (Security Risk)">a. Vấn đề bảo mật (Security Risk)</a></li>
+                <li>
+                    <a href="#b-l%e1%bb%97i-tr%c3%a0n-b%e1%bb%99-nh%e1%bb%9b-quota-exceeded-error" aria-label="b. Lỗi tràn bộ nhớ (Quota Exceeded Error)">b. Lỗi tràn bộ nhớ (Quota Exceeded Error)</a></li>
+                <li>
+                    <a href="#c-ch%e1%ba%b7n-lu%e1%bb%93ng-ch%c3%adnh-synchronous-blocking" aria-label="c. Chặn luồng chính (Synchronous Blocking)">c. Chặn luồng chính (Synchronous Blocking)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#4-k%e1%bb%b9-thu%e1%ba%adt-n%c3%a2ng-cao-%c4%91%e1%bb%93ng-b%e1%bb%99-d%e1%bb%af-li%e1%bb%87u-gi%e1%bb%afa-c%c3%a1c-tab" aria-label="4. Kỹ thuật nâng cao: Đồng bộ dữ liệu giữa các Tab">4. Kỹ thuật nâng cao: Đồng bộ dữ liệu giữa các Tab</a>
+                </li>
             </ul>
         </div>
     </details>
@@ -411,6 +422,51 @@ Bạn muốn lưu giữ trạng thái "Đã đăng nhập" hoặc chế độ "D
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">userData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">storedUser</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Chào mừng quay lại, &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">userData</span>.<span style="color:#a6e22e">name</span>);
 </span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="3-những-cạm-bẫy-cần-tránh-quan-trọng">3. Những cạm bẫy cần tránh (Quan trọng)<a hidden class="anchor" aria-hidden="true" href="#3-những-cạm-bẫy-cần-tránh-quan-trọng">#</a></h2>
+<p>LocalStorage rất tiện, nhưng nếu lạm dụng, nó sẽ trở thành &ldquo;con dao hai lưỡi&rdquo;.</p>
+<h3 id="a-vấn-đề-bảo-mật-security-risk">a. Vấn đề bảo mật (Security Risk)<a hidden class="anchor" aria-hidden="true" href="#a-vấn-đề-bảo-mật-security-risk">#</a></h3>
+<p><strong>Đây là quy tắc vàng:</strong> Không bao giờ lưu thông tin nhạy cảm vào LocalStorage.</p>
+<p>Tại sao? Bất kỳ mã JavaScript nào chạy trên trang web (bao gồm cả các thư viện bên thứ 3 mà bạn nhúng vào) đều có thể đọc được LocalStorage.</p>
+<ul>
+<li>
+<p><strong>Rủi ro:</strong> Nếu trang web dính lỗi XSS (Cross-Site Scripting), hacker có thể đánh cắp toàn bộ dữ liệu trong Storage.</p>
+</li>
+<li>
+<p><strong>Tránh lưu:</strong> Mật khẩu, thông tin thẻ tín dụng, số CCCD.</p>
+</li>
+</ul>
+<p><strong>Lưu ý với Token:</strong> Nhiều người lưu JWT (JSON Web Token) trong LocalStorage. Việc này rất phổ biến nhưng không an toàn tuyệt đối bằng HttpOnly Cookie. Hãy cân nhắc kỹ dựa trên yêu cầu bảo mật của dự án.</p>
+<h3 id="b-lỗi-tràn-bộ-nhớ-quota-exceeded-error">b. Lỗi tràn bộ nhớ (Quota Exceeded Error)<a hidden class="anchor" aria-hidden="true" href="#b-lỗi-tràn-bộ-nhớ-quota-exceeded-error">#</a></h3>
+<p>Dù có 5MB, nhưng nếu bạn cứ setItem liên tục mà không kiểm soát, trình duyệt sẽ ném ra lỗi.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;bigData&#39;</span>, <span style="color:#a6e22e">heavyString</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;QuotaExceededError&#39;</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Bộ nhớ trình duyệt đã đầy! Vui lòng dọn dẹp cache.&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Logic xóa bớt dữ liệu cũ ở đây
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="c-chặn-luồng-chính-synchronous-blocking">c. Chặn luồng chính (Synchronous Blocking)<a hidden class="anchor" aria-hidden="true" href="#c-chặn-luồng-chính-synchronous-blocking">#</a></h3>
+<p>Web Storage hoạt động đồng bộ <strong>(synchronous)</strong>. Nghĩa là khi bạn đọc/ghi một file JSON quá lớn, trình duyệt sẽ bị &ldquo;đơ&rdquo; một chút cho đến khi xử lý xong.</p>
+<p><strong>Giải pháp:</strong> Chỉ lưu dữ liệu nhẹ. Với dữ liệu lớn, hãy dùng <strong>IndexedDB</strong>.</p>
+<h2 id="4-kỹ-thuật-nâng-cao-đồng-bộ-dữ-liệu-giữa-các-tab">4. Kỹ thuật nâng cao: Đồng bộ dữ liệu giữa các Tab<a hidden class="anchor" aria-hidden="true" href="#4-kỹ-thuật-nâng-cao-đồng-bộ-dữ-liệu-giữa-các-tab">#</a></h2>
+<p>Bạn có bao giờ thấy Facebook tự động logout ở Tab A khi bạn bấm đăng xuất ở Tab B không? Họ dùng sự kiện storage.</p>
+<p>Sự kiện này chỉ kích hoạt khi một Tab khác thay đổi dữ liệu trong LocalStorage (không kích hoạt trên chính Tab đang thao tác).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Lắng nghe sự kiện thay đổi storage
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;storage&#39;</span>, (<span style="color:#a6e22e">event</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">key</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;user_token&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">newValue</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Nếu token bị xóa (user đã logout ở tab khác)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Bạn đã đăng xuất từ một tab khác!&#39;</span>);
+</span></span><span style="display:flex;"><span>        window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/login&#39;</span>; <span style="color:#75715e">// Chuyển hướng về trang login
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">key</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;theme&#39;</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Đồng bộ dark mode ngay lập tức
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">applyTheme</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">newValue</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
 </span></span></code></pre></div></div>
 <div class="btn-back-container">
     <a href="/NguyenDucQui_Blog/posts/" class="back-btn">Quay lại</a>

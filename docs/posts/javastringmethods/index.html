@@ -89,8 +89,8 @@ Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thự
   "keywords": [
     "Java", "String", "Performance", "Tips"
   ],
-  "articleBody": "\rTrong Java, `String` là đối tượng bất biến (immutable). Điều này có nghĩa là mỗi khi bạn chỉnh sửa chuỗi, Java thực tế đang tạo ra một chuỗi mới trong bộ nhớ. Hiểu rõ các hàm xử lý chuỗi và cách tối ưu chúng là chìa khóa để viết code chuyên nghiệp.\r1. 5 Hàm xử lý chuỗi “bất ly thân” Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thực tế:\nlength(): Trả về độ dài chuỗi. trim(): Cắt bỏ khoảng trắng thừa ở đầu và cuối chuỗi (Rất quan trọng khi xử lý input từ người dùng). substring(int beginIndex, int endIndex): Cắt chuỗi con. indexOf(String str): Tìm vị trí xuất hiện đầu tiên của chuỗi con (trả về -1 nếu không tìm thấy). replace(CharSequence target, CharSequence replacement): Thay thế nội dung trong chuỗi. split(String regex): Tách chuỗi thành mảng dựa trên ký tự phân cách (ví dụ dấu phẩy). Code mẫu minh họa: public class StringMethodsDemo { public static void main(String[] args) { String rawInput = \" Hello Java World \"; // 1. Làm sạch dữ liệu String cleanStr = rawInput.trim(); System.out.println(\"Đã trim: [\" + cleanStr + \"]\"); // [Hello Java World] // 2. Tìm kiếm và Cắt chuỗi int index = cleanStr.indexOf(\"Java\"); if (index != -1) { String sub = cleanStr.substring(index); System.out.println(\"Chuỗi con từ vị trí tìm thấy: \" + sub); // Java World } // 3. Thay thế String replaced = cleanStr.replace(\"World\", \"Developer\"); System.out.println(\"Sau khi replace: \" + replaced); // 4. Tách chuỗi (Split) String csvData = \"apple,banana,orange\"; String[] fruits = csvData.split(\",\"); for (String fruit : fruits) { System.out.println(\"Fruit: \" + fruit); } } } 2. Mẹo hiệu năng: Tại sao phải dùng StringBuilder? Vì String là bất biến, đoạn code sau là một “thảm họa” về hiệu năng:\nString s = \"\"; for (int i = 0; i \u003c 1000; i++) { s = s + i; // TẠO RA 1000 ĐỐI TƯỢNG STRING MỚI trong bộ nhớ! } **Giải pháp: Sử dụng StringBuilder (hoặc StringBuffer cho đa luồng). Nó cho phép sửa đổi chuỗi trực tiếp mà không tạo đối tượng rác.\nStringBuilder sb = new StringBuilder(); for (int i = 0; i \u003c 1000; i++) { sb.append(i); // Chỉ thao tác trên một đối tượng duy nhất } String finalString = sb.toString(); Quy tắc vàng: Dùng cộng chuỗi (+) cho các nối chuỗi đơn giản, ít lặp. Dùng StringBuilder cho các vòng lặp hoặc xử lý chuỗi phức tạp.\n3. Cạm bẫy “chết người”: So sánh chuỗi bằng == Đây là lỗi phổ biến nhất mà lập trình viên mới thường mắc phải. Trong Java:\n==: So sánh địa chỉ ô nhớ (Reference).\n.equals(): So sánh nội dung của chuỗi (Value).\nVì String là đối tượng (Object), bạn TUYỆT ĐỐI KHÔNG được dùng == để kiểm tra nội dung văn bản, đặc biệt là khi chuỗi được tạo từ new String() hoặc nhận từ input người dùng.\nString s1 = new String(\"Hello\"); String s2 = new String(\"Hello\"); // SAI: So sánh địa chỉ bộ nhớ (sẽ trả về false vì là 2 object khác nhau trong Heap) if (s1 == s2) { System.out.println(\"Hai chuỗi bằng nhau\"); } else { System.out.println(\"Hai chuỗi KHÁC nhau\"); // Code sẽ chạy vào đây } // ĐÚNG: So sánh nội dung chữ if (s1.equals(s2)) { System.out.println(\"Nội dung giống nhau\"); // Code sẽ chạy vào đây } Mẹo nhỏ: Nếu bạn muốn so sánh không phân biệt hoa thường (ví dụ check username đăng nhập: “Admin” và “admin”), hãy dùng .equalsIgnoreCase(). 4. Các tính năng hiện đại (Java 11+) Nếu dự án của bạn đang chạy trên Java 11 trở lên, bạn có thêm những “vũ khí” rất tiện lợi mà không cần viết logic thủ công:\nisBlank(): Kiểm tra chuỗi rỗng HOẶC chỉ chứa toàn khoảng trắng (Thông minh hơn isEmpty() cũ kỹ).\nrepeat(int count): Lặp lại chuỗi n lần.\nlines(): Chia chuỗi thành một Stream các dòng (cực tiện khi xử lý văn bản nhiều dòng).\nString input = \" \"; System.out.println(input.isEmpty()); // false (vì có dấu cách) System.out.println(input.isBlank()); // true (Java 11: hiểu là chuỗi trống) String star = \"*\"; System.out.println(star.repeat(5)); // In ra: ***** Tổng kết Chuỗi (String) tuy đơn giản nhưng chứa đựng nhiều vấn đề về hiệu năng và bộ nhớ. Hãy ghi nhớ 3 điều cốt lõi để code “xịn” hơn:\nLuôn dùng .equals() để so sánh nội dung.\nDùng StringBuilder khi cần cộng gộp chuỗi nhiều lần (đặc biệt trong vòng lặp).\nLuôn xử lý đầu vào bằng trim() hoặc isBlank() để tránh lỗi logic do thừa khoảng trắng.\nQuay lại\r",
-  "wordCount" : "765",
+  "articleBody": "\rTrong Java, `String` là đối tượng bất biến (immutable). Điều này có nghĩa là mỗi khi bạn chỉnh sửa chuỗi, Java thực tế đang tạo ra một chuỗi mới trong bộ nhớ. Hiểu rõ các hàm xử lý chuỗi và cách tối ưu chúng là chìa khóa để viết code chuyên nghiệp.\r1. 5 Hàm xử lý chuỗi “bất ly thân” Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thực tế:\nlength(): Trả về độ dài chuỗi. trim(): Cắt bỏ khoảng trắng thừa ở đầu và cuối chuỗi (Rất quan trọng khi xử lý input từ người dùng). substring(int beginIndex, int endIndex): Cắt chuỗi con. indexOf(String str): Tìm vị trí xuất hiện đầu tiên của chuỗi con (trả về -1 nếu không tìm thấy). replace(CharSequence target, CharSequence replacement): Thay thế nội dung trong chuỗi. split(String regex): Tách chuỗi thành mảng dựa trên ký tự phân cách (ví dụ dấu phẩy). Code mẫu minh họa: public class StringMethodsDemo { public static void main(String[] args) { String rawInput = \" Hello Java World \"; // 1. Làm sạch dữ liệu String cleanStr = rawInput.trim(); System.out.println(\"Đã trim: [\" + cleanStr + \"]\"); // [Hello Java World] // 2. Tìm kiếm và Cắt chuỗi int index = cleanStr.indexOf(\"Java\"); if (index != -1) { String sub = cleanStr.substring(index); System.out.println(\"Chuỗi con từ vị trí tìm thấy: \" + sub); // Java World } // 3. Thay thế String replaced = cleanStr.replace(\"World\", \"Developer\"); System.out.println(\"Sau khi replace: \" + replaced); // 4. Tách chuỗi (Split) String csvData = \"apple,banana,orange\"; String[] fruits = csvData.split(\",\"); for (String fruit : fruits) { System.out.println(\"Fruit: \" + fruit); } } } 2. Mẹo hiệu năng: Tại sao phải dùng StringBuilder? Vì String là bất biến, đoạn code sau là một “thảm họa” về hiệu năng:\nString s = \"\"; for (int i = 0; i \u003c 1000; i++) { s = s + i; // TẠO RA 1000 ĐỐI TƯỢNG STRING MỚI trong bộ nhớ! } **Giải pháp: Sử dụng StringBuilder (hoặc StringBuffer cho đa luồng). Nó cho phép sửa đổi chuỗi trực tiếp mà không tạo đối tượng rác.\nStringBuilder sb = new StringBuilder(); for (int i = 0; i \u003c 1000; i++) { sb.append(i); // Chỉ thao tác trên một đối tượng duy nhất } String finalString = sb.toString(); Quy tắc vàng: Dùng cộng chuỗi (+) cho các nối chuỗi đơn giản, ít lặp. Dùng StringBuilder cho các vòng lặp hoặc xử lý chuỗi phức tạp.\n3. Cạm bẫy “chết người”: So sánh chuỗi bằng == Đây là lỗi phổ biến nhất mà lập trình viên mới thường mắc phải. Trong Java:\n==: So sánh địa chỉ ô nhớ (Reference).\n.equals(): So sánh nội dung của chuỗi (Value).\nVì String là đối tượng (Object), bạn TUYỆT ĐỐI KHÔNG được dùng == để kiểm tra nội dung văn bản, đặc biệt là khi chuỗi được tạo từ new String() hoặc nhận từ input người dùng.\nString s1 = new String(\"Hello\"); String s2 = new String(\"Hello\"); // SAI: So sánh địa chỉ bộ nhớ (sẽ trả về false vì là 2 object khác nhau trong Heap) if (s1 == s2) { System.out.println(\"Hai chuỗi bằng nhau\"); } else { System.out.println(\"Hai chuỗi KHÁC nhau\"); // Code sẽ chạy vào đây } // ĐÚNG: So sánh nội dung chữ if (s1.equals(s2)) { System.out.println(\"Nội dung giống nhau\"); // Code sẽ chạy vào đây } Mẹo nhỏ: Nếu bạn muốn so sánh không phân biệt hoa thường (ví dụ check username đăng nhập: “Admin” và “admin”), hãy dùng .equalsIgnoreCase(). 4. Các tính năng hiện đại (Java 11+) Nếu dự án của bạn đang chạy trên Java 11 trở lên, bạn có thêm những “vũ khí” rất tiện lợi mà không cần viết logic thủ công:\nisBlank(): Kiểm tra chuỗi rỗng HOẶC chỉ chứa toàn khoảng trắng (Thông minh hơn isEmpty() cũ kỹ).\nrepeat(int count): Lặp lại chuỗi n lần.\nlines(): Chia chuỗi thành một Stream các dòng (cực tiện khi xử lý văn bản nhiều dòng).\nString input = \" \"; System.out.println(input.isEmpty()); // false (vì có dấu cách) System.out.println(input.isBlank()); // true (Java 11: hiểu là chuỗi trống) String star = \"*\"; System.out.println(star.repeat(5)); // In ra: ***** 5. Bí mật về “String Pool” (Vùng nhớ hằng chuỗi) Bạn có bao giờ thắc mắc tại sao chúng ta hiếm khi thấy ai viết String s = new String(“Hello”); không? Đó là vì Java có một cơ chế tối ưu bộ nhớ cực hay gọi là String Pool.\nCách hoạt động: Khi bạn tạo chuỗi bằng dấu ngoặc kép String s = “Hello”;, Java sẽ kiểm tra trong “bể chứa” (Pool) xem đã có chuỗi “Hello” chưa.\nNếu có rồi: Nó trả về tham chiếu tới chuỗi cũ (Tiết kiệm RAM).\nNếu chưa: Nó tạo mới và bỏ vào Pool.\nNgược lại: Nếu dùng new String(“Hello”), bạn ép Java tạo ra một đối tượng hoàn toàn mới trong bộ nhớ Heap, bỏ qua cơ chế Pool. Điều này gây lãng phí.\nLời khuyên: Luôn ưu tiên cách khai báo trực tiếp (String s = “…”) thay vì dùng từ khóa new.\n6. Text Blocks (Java 15+): Cứu tinh cho SQL và JSON Trước đây, nếu bạn muốn gán một chuỗi HTML, JSON hoặc câu lệnh SQL dài vào biến String, bạn phải đối mặt với “cơn ác mộng” của việc nối chuỗi và ký tự thoát (\\n, \").\nJava 15 (chính thức) đã giới thiệu Text Blocks (sử dụng 3 dấu ngoặc kép “”\").\nCách cũ (Rất rối mắt):\nString json = \"{\\n\" + \" \\\"name\\\": \\\"John\\\",\\n\" + \" \\\"age\\\": 30\\n\" + \"}\"; Cách mới với Text Blocks (Sạch sẽ, dễ đọc):\nString json = \"\"\" { \"name\": \"John\", \"age\": 30 } \"\"\"; 7. String.format(): Định dạng chuỗi chuyên nghiệp Thay vì cộng chuỗi thủ công để tạo ra một câu thông báo phức tạp (ví dụ: hiển thị giá tiền, ngày tháng), hãy dùng String.format(). Nó giúp code của bạn giống như một mẫu (template) dễ quản lý.\nString product = \"Laptop\"; double price = 1500.50; // Cách \"nông dân\" (Khó đọc, dễ sai sót khoảng trắng) String msg1 = \"Sản phẩm \" + product + \" có giá là \" + price + \" USD\"; // Cách \"chuyên gia\" (Dễ nhìn, định dạng được số thập phân) // %s: chuỗi, %.2f: số thực lấy 2 số sau dấu phẩy String msg2 = String.format(\"Sản phẩm %s có giá là %.2f USD\", product, price); System.out.println(msg2); // Output: Sản phẩm Laptop có giá là 1500.50 USD 8. Đừng “tự chế xe đạp”: Hãy dùng thư viện (Bonus) Trong môi trường doanh nghiệp (Enterprise), việc xử lý null là rất quan trọng để tránh lỗi NullPointerException. Thay vì viết if (str != null \u0026\u0026 str.length() \u003e 0), các lập trình viên kinh nghiệm thường dùng thư viện Apache Commons Lang với class StringUtils.\nStringUtils.isEmpty(str): Kiểm tra rỗng an toàn (không bị lỗi ngay cả khi str là null).\nStringUtils.capitalize(str): Viết hoa chữ cái đầu.\n// Ví dụ thực tế String input = null; // if (input.trim().isEmpty()) -\u003e Sẽ BỊ LỖI NullPointerException ngay lập tức! // Dùng thư viện: An toàn tuyệt đối if (StringUtils.isBlank(input)) { System.out.println(\"Chuỗi rỗng hoặc null\"); } Tổng kết Chuỗi (String) tuy đơn giản nhưng chứa đựng nhiều vấn đề về hiệu năng và bộ nhớ. Hãy ghi nhớ 3 điều cốt lõi để code “xịn” hơn:\nLuôn dùng .equals() để so sánh nội dung.\nDùng StringBuilder khi cần cộng gộp chuỗi nhiều lần (đặc biệt trong vòng lặp).\nLuôn xử lý đầu vào bằng trim() hoặc isBlank() để tránh lỗi logic do thừa khoảng trắng.\nQuay lại\r",
+  "wordCount" : "1264",
   "inLanguage": "en",
   "datePublished": "2025-12-25T00:00:00Z",
   "dateModified": "2025-12-25T00:00:00Z",
@@ -200,6 +200,14 @@ Dưới đây là các hàm bạn sẽ sử dụng trong 90% các dự án thự
                     <a href="#3-c%e1%ba%a1m-b%e1%ba%aby-ch%e1%ba%bft-ng%c6%b0%e1%bb%9di-so-s%c3%a1nh-chu%e1%bb%97i-b%e1%ba%b1ng-" aria-label="3. Cạm bẫy &ldquo;chết người&rdquo;: So sánh chuỗi bằng ==">3. Cạm bẫy &ldquo;chết người&rdquo;: So sánh chuỗi bằng ==</a></li>
                 <li>
                     <a href="#4-c%c3%a1c-t%c3%adnh-n%c4%83ng-hi%e1%bb%87n-%c4%91%e1%ba%a1i-java-11" aria-label="4. Các tính năng hiện đại (Java 11&#43;)">4. Các tính năng hiện đại (Java 11+)</a></li>
+                <li>
+                    <a href="#5-b%c3%ad-m%e1%ba%adt-v%e1%bb%81-string-pool-v%c3%b9ng-nh%e1%bb%9b-h%e1%ba%b1ng-chu%e1%bb%97i" aria-label="5. Bí mật về &ldquo;String Pool&rdquo; (Vùng nhớ hằng chuỗi)">5. Bí mật về &ldquo;String Pool&rdquo; (Vùng nhớ hằng chuỗi)</a></li>
+                <li>
+                    <a href="#6-text-blocks-java-15-c%e1%bb%a9u-tinh-cho-sql-v%c3%a0-json" aria-label="6. Text Blocks (Java 15&#43;): Cứu tinh cho SQL và JSON">6. Text Blocks (Java 15+): Cứu tinh cho SQL và JSON</a></li>
+                <li>
+                    <a href="#7-stringformat-%c4%91%e1%bb%8bnh-d%e1%ba%a1ng-chu%e1%bb%97i-chuy%c3%aan-nghi%e1%bb%87p" aria-label="7. String.format(): Định dạng chuỗi chuyên nghiệp">7. String.format(): Định dạng chuỗi chuyên nghiệp</a></li>
+                <li>
+                    <a href="#8-%c4%91%e1%bb%abng-t%e1%bb%b1-ch%e1%ba%bf-xe-%c4%91%e1%ba%a1p-h%c3%a3y-d%c3%b9ng-th%c6%b0-vi%e1%bb%87n-bonus" aria-label="8. Đừng &ldquo;tự chế xe đạp&rdquo;: Hãy dùng thư viện (Bonus)">8. Đừng &ldquo;tự chế xe đạp&rdquo;: Hãy dùng thư viện (Bonus)</a></li>
                 <li>
                     <a href="#t%e1%bb%95ng-k%e1%ba%bft" aria-label="Tổng kết">Tổng kết</a>
                 </li>
@@ -344,7 +352,7 @@ Trong Java, `String` là đối tượng bất biến (immutable). Điều này 
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> 1000; i<span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>    s <span style="color:#f92672">=</span> s <span style="color:#f92672">+</span> i; <span style="color:#75715e">// TẠO RA 1000 ĐỐI TƯỢNG STRING MỚI trong bộ nhớ!</span>
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>**<strong>Giải pháp</strong>: Sử dụng StringBuilder (hoặc StringBuffer cho đa luồng). Nó cho phép sửa đổi chuỗi trực tiếp mà không tạo đối tượng rác.</p>
+</span></span></code></pre></div><p>**<strong>Giải pháp</strong>: Sử dụng <strong>StringBuilder</strong> (hoặc <strong>StringBuffer</strong> cho đa luồng). Nó cho phép sửa đổi chuỗi trực tiếp mà không tạo đối tượng rác.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>StringBuilder sb <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StringBuilder();
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> 1000; i<span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>    sb.<span style="color:#a6e22e">append</span>(i); <span style="color:#75715e">// Chỉ thao tác trên một đối tượng duy nhất</span>
@@ -355,10 +363,10 @@ Trong Java, `String` là đối tượng bất biến (immutable). Điều này 
 <p>Đây là lỗi phổ biến nhất mà lập trình viên mới thường mắc phải. Trong Java:</p>
 <ul>
 <li>
-<p>==: So sánh địa chỉ ô nhớ (Reference).</p>
+<p><strong>==:</strong> So sánh địa chỉ ô nhớ <strong>(Reference)</strong>.</p>
 </li>
 <li>
-<p>.equals(): So sánh nội dung của chuỗi (Value).</p>
+<p><strong>.equals():</strong> So sánh nội dung của chuỗi <strong>(Value)</strong>.</p>
 </li>
 </ul>
 <p>Vì String là đối tượng (Object), bạn TUYỆT ĐỐI KHÔNG được dùng == để kiểm tra nội dung văn bản, đặc biệt là khi chuỗi được tạo từ new String() hoặc nhận từ input người dùng.</p>
@@ -377,19 +385,19 @@ Trong Java, `String` là đối tượng bất biến (immutable). Điều này 
 </span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Nội dung giống nhau&#34;</span>); <span style="color:#75715e">// Code sẽ chạy vào đây</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><ul>
-<li><strong>Mẹo nhỏ</strong>: Nếu bạn muốn so sánh không phân biệt hoa thường (ví dụ check username đăng nhập: &ldquo;Admin&rdquo; và &ldquo;admin&rdquo;), hãy dùng .equalsIgnoreCase().</li>
+<li><strong>Mẹo nhỏ</strong>: Nếu bạn muốn so sánh không phân biệt hoa thường (ví dụ check username đăng nhập: &ldquo;Admin&rdquo; và &ldquo;admin&rdquo;), hãy dùng <strong>.equalsIgnoreCase()</strong>.</li>
 </ul>
 <h2 id="4-các-tính-năng-hiện-đại-java-11">4. Các tính năng hiện đại (Java 11+)<a hidden class="anchor" aria-hidden="true" href="#4-các-tính-năng-hiện-đại-java-11">#</a></h2>
 <p>Nếu dự án của bạn đang chạy trên Java 11 trở lên, bạn có thêm những &ldquo;vũ khí&rdquo; rất tiện lợi mà không cần viết logic thủ công:</p>
 <ul>
 <li>
-<p>isBlank(): Kiểm tra chuỗi rỗng HOẶC chỉ chứa toàn khoảng trắng (Thông minh hơn isEmpty() cũ kỹ).</p>
+<p><strong>isBlank():</strong> Kiểm tra chuỗi rỗng HOẶC chỉ chứa toàn khoảng trắng (Thông minh hơn <strong>isEmpty()</strong> cũ kỹ).</p>
 </li>
 <li>
-<p>repeat(int count): Lặp lại chuỗi n lần.</p>
+<p><strong>repeat(int count):</strong> Lặp lại chuỗi n lần.</p>
 </li>
 <li>
-<p>lines(): Chia chuỗi thành một Stream các dòng (cực tiện khi xử lý văn bản nhiều dòng).</p>
+<p><strong>lines():</strong> Chia chuỗi thành một Stream các dòng (cực tiện khi xử lý văn bản nhiều dòng).</p>
 </li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String input <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;   &#34;</span>;
@@ -398,19 +406,81 @@ Trong Java, `String` là đối tượng bất biến (immutable). Điều này 
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>String star <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;*&#34;</span>;
 </span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(star.<span style="color:#a6e22e">repeat</span>(5)); <span style="color:#75715e">// In ra: *****</span>
+</span></span></code></pre></div><h2 id="5-bí-mật-về-string-pool-vùng-nhớ-hằng-chuỗi">5. Bí mật về &ldquo;String Pool&rdquo; (Vùng nhớ hằng chuỗi)<a hidden class="anchor" aria-hidden="true" href="#5-bí-mật-về-string-pool-vùng-nhớ-hằng-chuỗi">#</a></h2>
+<p>Bạn có bao giờ thắc mắc tại sao chúng ta hiếm khi thấy ai viết <strong>String s = new String(&ldquo;Hello&rdquo;)</strong>; không? Đó là vì Java có một cơ chế tối ưu bộ nhớ cực hay gọi là <strong>String Pool</strong>.</p>
+<p><strong>Cách hoạt động:</strong> Khi bạn tạo chuỗi bằng dấu ngoặc kép <strong>String s = &ldquo;Hello&rdquo;</strong>;, Java sẽ kiểm tra trong &ldquo;bể chứa&rdquo; (Pool) xem đã có chuỗi &ldquo;Hello&rdquo; chưa.</p>
+<ul>
+<li>
+<p>Nếu có rồi: Nó trả về tham chiếu tới chuỗi cũ (Tiết kiệm RAM).</p>
+</li>
+<li>
+<p>Nếu chưa: Nó tạo mới và bỏ vào Pool.</p>
+</li>
+</ul>
+<p><strong>Ngược lại:</strong> Nếu dùng new String(&ldquo;Hello&rdquo;), bạn ép Java tạo ra một đối tượng hoàn toàn mới trong bộ nhớ Heap, bỏ qua cơ chế Pool. Điều này gây lãng phí.</p>
+<p>Lời khuyên: Luôn ưu tiên cách khai báo trực tiếp (String s = &ldquo;&hellip;&rdquo;) thay vì dùng từ khóa new.</p>
+<h2 id="6-text-blocks-java-15-cứu-tinh-cho-sql-và-json">6. Text Blocks (Java 15+): Cứu tinh cho SQL và JSON<a hidden class="anchor" aria-hidden="true" href="#6-text-blocks-java-15-cứu-tinh-cho-sql-và-json">#</a></h2>
+<p>Trước đây, nếu bạn muốn gán một chuỗi HTML, JSON hoặc câu lệnh SQL dài vào biến <strong>String</strong>, bạn phải đối mặt với &ldquo;cơn ác mộng&rdquo; của việc nối chuỗi và ký tự thoát (\n, &quot;).</p>
+<p><strong>Java 15</strong> (chính thức) đã giới thiệu Text Blocks (sử dụng 3 dấu ngoặc kép &ldquo;&rdquo;&quot;).</p>
+<p>Cách cũ (Rất rối mắt):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String json <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{\n&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#34;  \&#34;name\&#34;: \&#34;John\&#34;,\n&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#34;  \&#34;age\&#34;: 30\n&#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#34;}&#34;</span>;
+</span></span></code></pre></div><p>Cách mới với Text Blocks (Sạch sẽ, dễ đọc):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String json <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  &#34;name&#34;: &#34;John&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  &#34;age&#34;: 30
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;&#34;&#34;</span>;
+</span></span></code></pre></div><h2 id="7-stringformat-định-dạng-chuỗi-chuyên-nghiệp">7. String.format(): Định dạng chuỗi chuyên nghiệp<a hidden class="anchor" aria-hidden="true" href="#7-stringformat-định-dạng-chuỗi-chuyên-nghiệp">#</a></h2>
+<p>Thay vì cộng chuỗi thủ công để tạo ra một câu thông báo phức tạp (ví dụ: hiển thị giá tiền, ngày tháng), hãy dùng <strong>String.format()</strong>. Nó giúp code của bạn giống như một mẫu <strong>(template)</strong> dễ quản lý.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>String product <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Laptop&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> price <span style="color:#f92672">=</span> 1500.<span style="color:#a6e22e">50</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Cách &#34;nông dân&#34; (Khó đọc, dễ sai sót khoảng trắng)</span>
+</span></span><span style="display:flex;"><span>String msg1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Sản phẩm &#34;</span> <span style="color:#f92672">+</span> product <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; có giá là &#34;</span> <span style="color:#f92672">+</span> price <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; USD&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Cách &#34;chuyên gia&#34; (Dễ nhìn, định dạng được số thập phân)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// %s: chuỗi, %.2f: số thực lấy 2 số sau dấu phẩy</span>
+</span></span><span style="display:flex;"><span>String msg2 <span style="color:#f92672">=</span> String.<span style="color:#a6e22e">format</span>(<span style="color:#e6db74">&#34;Sản phẩm %s có giá là %.2f USD&#34;</span>, product, price);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(msg2); <span style="color:#75715e">// Output: Sản phẩm Laptop có giá là 1500.50 USD</span>
+</span></span></code></pre></div><h2 id="8-đừng-tự-chế-xe-đạp-hãy-dùng-thư-viện-bonus">8. Đừng &ldquo;tự chế xe đạp&rdquo;: Hãy dùng thư viện (Bonus)<a hidden class="anchor" aria-hidden="true" href="#8-đừng-tự-chế-xe-đạp-hãy-dùng-thư-viện-bonus">#</a></h2>
+<p>Trong môi trường doanh nghiệp <strong>(Enterprise)</strong>, việc xử lý null là rất quan trọng để tránh lỗi NullPointerException. Thay vì viết <strong>if (str != null &amp;&amp; str.length() &gt; 0)</strong>, các lập trình viên kinh nghiệm thường dùng thư viện <strong>Apache Commons Lang</strong> với <strong>class StringUtils.</strong></p>
+<ul>
+<li>
+<p><strong>StringUtils.isEmpty(str):</strong> Kiểm tra rỗng an toàn (không bị lỗi ngay cả khi str là null).</p>
+</li>
+<li>
+<p><strong>StringUtils.capitalize(str):</strong> Viết hoa chữ cái đầu.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Ví dụ thực tế</span>
+</span></span><span style="display:flex;"><span>    String input <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// if (input.trim().isEmpty()) -&gt; Sẽ BỊ LỖI NullPointerException ngay lập tức!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Dùng thư viện: An toàn tuyệt đối</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (StringUtils.<span style="color:#a6e22e">isBlank</span>(input)) {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Chuỗi rỗng hoặc null&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><h2 id="tổng-kết">Tổng kết<a hidden class="anchor" aria-hidden="true" href="#tổng-kết">#</a></h2>
 <ul>
 <li>
-<p>Chuỗi (String) tuy đơn giản nhưng chứa đựng nhiều vấn đề về hiệu năng và bộ nhớ. Hãy ghi nhớ 3 điều cốt lõi để code &ldquo;xịn&rdquo; hơn:</p>
+<p>Chuỗi <strong>(String)</strong> tuy đơn giản nhưng chứa đựng nhiều vấn đề về hiệu năng và bộ nhớ. Hãy ghi nhớ 3 điều cốt lõi để code &ldquo;xịn&rdquo; hơn:</p>
 </li>
 <li>
-<p>Luôn dùng .equals() để so sánh nội dung.</p>
+<p>Luôn dùng <strong>.equals()</strong> để so sánh nội dung.</p>
 </li>
 <li>
-<p>Dùng StringBuilder khi cần cộng gộp chuỗi nhiều lần (đặc biệt trong vòng lặp).</p>
+<p>Dùng <strong>StringBuilder</strong> khi cần cộng gộp chuỗi nhiều lần (đặc biệt trong vòng lặp).</p>
 </li>
 <li>
-<p>Luôn xử lý đầu vào bằng trim() hoặc isBlank() để tránh lỗi logic do thừa khoảng trắng.</p>
+<p>Luôn xử lý đầu vào bằng <strong>trim()</strong> hoặc <strong>isBlank()</strong> để tránh lỗi logic do thừa khoảng trắng.</p>
 </li>
 </ul>
 </div>
